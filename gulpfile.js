@@ -20,18 +20,18 @@ var gulp 		= require('gulp'),
 
 // обработка scss
 gulp.task('scss', function(){
-	return gulp.src('app/scss/**/*.scss') // Берем источник
+	return gulp.src('app/template/scss/**/*.scss') // Берем источник
 		.pipe(sass().on('error', sass.logError)) // Преобразуем Sass в CSS посредством gulp-sass
-		.pipe(gulp.dest('app/css'))  // Выгружаем результата в папку app/css
+		.pipe(gulp.dest('app/template/css'))  // Выгружаем результата в папку app/css
 });
 
 
 // сжатие css файла
 gulp.task('css-libs', ['scss'],  function(){
-	return gulp.src('app/css/styles.css') // Выбираем файл для минификации
+	return gulp.src('app/template/css/styles.css') // Выбираем файл для минификации
 		.pipe(cleancss())  // Сжимаем
 		.pipe(rename({suffix: '.min'}))  // Добавляем суффикс .min
-		.pipe(gulp.dest('app/css')) // Выгружаем в папку app/css
+		.pipe(gulp.dest('app/template/css')) // Выгружаем в папку app/css
 		.pipe(browserSync.reload({stream: true})) // Обновляем CSS на странице при изменении
 })
 
@@ -65,9 +65,9 @@ gulp.task('clean', function() {
 // отслеживаем изменения
 // в квадратных скобках перечисляются таски, которые должны выполниться до watcher (до запуска сервера)
 gulp.task('watcher', ['browser-sync', 'css-libs', 'compress'], function(){
-	return gulp.watch('app/scss/**/*.scss', ['scss', 'css-libs']), // при изменении любого *scss-файла вызываем таск scss
+	return gulp.watch('app/template/scss/**/*.scss', ['scss', 'css-libs']), // при изменении любого *scss-файла вызываем таск scss
 		gulp.watch('app/*.html', browserSync.reload),
-		gulp.watch('app/js/**/*.js', browserSync.reload)
+		gulp.watch('app/template/js/**/*.js', browserSync.reload)
 });
 
 
