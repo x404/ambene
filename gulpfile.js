@@ -81,20 +81,22 @@ gulp.task('watcher', ['browser-sync', 'css-libs', 'compress'], function(){
 
 // Удаление старых файлов
 gulp.task('sprite-clean', function () {
-	del.sync([config.sourceDir + 'images/sprite.png']);
+	del([config.sourceDir + '/images/sprite-*.png']);
 });
 
 // Создание спрайтов
 gulp.task('sprite-create', ['sprite-clean'], function () {
-    var fileName = 'sprite-' + Math.random().toString().replace(/[^0-9]/g, '') + '.png';
+    // var fileName = 'sprite-' + Math.random().toString().replace(/[^0-9]/g, '') + '.png';
+    var fileName = 'sprite.png'
 
-    var spriteData = gulp.src(config.sourceDir + '/images/sprite/*.png')
+    var spriteData = gulp.src([config.sourceDir + '/images/sprite/*.png', '!' + config.sourceDir + '/images/sprite/buttons.png'])
         .pipe(spritesmith({
             imgName: fileName,
-            cssName: 'sprite.scss',
+            cssName: '_sprite.scss',
             cssVarMap: function (sprite) {
                 sprite.name = 'icon-' + sprite.name;
-            }
+            },
+             imgPath: '../images/' + fileName
         }));
 
     spriteData.img.pipe(gulp.dest(config.destDir + '/images/'));

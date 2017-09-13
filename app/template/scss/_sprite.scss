@@ -9,17 +9,28 @@
 //
 // At the bottom of this section, we provide information about the spritesheet itself
 // $spritesheet: width height image $spritesheet-sprites;
-$icon-buttons-name: 'icon-buttons';
-$icon-buttons-x: 0px;
-$icon-buttons-y: 0px;
-$icon-buttons-offset-x: 0px;
-$icon-buttons-offset-y: 0px;
-$icon-buttons-width: 218px;
-$icon-buttons-height: 120px;
-$icon-buttons-total-width: 218px;
-$icon-buttons-total-height: 165px;
-$icon-buttons-image: 'sprite-0288314108172268.png';
-$icon-buttons: (0px, 0px, 0px, 0px, 218px, 120px, 218px, 165px, 'sprite-0288314108172268.png', 'icon-buttons', );
+$icon-button-gray-name: 'icon-button-gray';
+$icon-button-gray-x: 0px;
+$icon-button-gray-y: 61px;
+$icon-button-gray-offset-x: 0px;
+$icon-button-gray-offset-y: -61px;
+$icon-button-gray-width: 218px;
+$icon-button-gray-height: 59px;
+$icon-button-gray-total-width: 218px;
+$icon-button-gray-total-height: 165px;
+$icon-button-gray-image: '../images/sprite.png';
+$icon-button-gray: (0px, 61px, 0px, -61px, 218px, 59px, 218px, 165px, '../images/sprite.png', 'icon-button-gray', );
+$icon-button-orange-name: 'icon-button-orange';
+$icon-button-orange-x: 0px;
+$icon-button-orange-y: 0px;
+$icon-button-orange-offset-x: 0px;
+$icon-button-orange-offset-y: 0px;
+$icon-button-orange-width: 218px;
+$icon-button-orange-height: 61px;
+$icon-button-orange-total-width: 218px;
+$icon-button-orange-total-height: 165px;
+$icon-button-orange-image: '../images/sprite.png';
+$icon-button-orange: (0px, 0px, 0px, 0px, 218px, 61px, 218px, 165px, '../images/sprite.png', 'icon-button-orange', );
 $icon-qcart-name: 'icon-qcart';
 $icon-qcart-x: 0px;
 $icon-qcart-y: 120px;
@@ -29,13 +40,13 @@ $icon-qcart-width: 186px;
 $icon-qcart-height: 45px;
 $icon-qcart-total-width: 218px;
 $icon-qcart-total-height: 165px;
-$icon-qcart-image: 'sprite-0288314108172268.png';
-$icon-qcart: (0px, 120px, 0px, -120px, 186px, 45px, 218px, 165px, 'sprite-0288314108172268.png', 'icon-qcart', );
+$icon-qcart-image: '../images/sprite.png';
+$icon-qcart: (0px, 120px, 0px, -120px, 186px, 45px, 218px, 165px, '../images/sprite.png', 'icon-qcart', );
 $spritesheet-width: 218px;
 $spritesheet-height: 165px;
-$spritesheet-image: 'sprite-0288314108172268.png';
-$spritesheet-sprites: ($icon-buttons, $icon-qcart, );
-$spritesheet: (218px, 165px, 'sprite-0288314108172268.png', $spritesheet-sprites, );
+$spritesheet-image: '../images/sprite.png';
+$spritesheet-sprites: ($icon-button-gray, $icon-button-orange, $icon-qcart, );
+$spritesheet: (218px, 165px, '../images/sprite.png', $spritesheet-sprites, );
 
 // The provided mixins are intended to be used with the array-like variables
 //

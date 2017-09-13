@@ -276,7 +276,10 @@ input::-moz-focus-inner {
     display: flex;
     align-items: center; }
   .header__qcart-box {
-    background: url(../images/qcart.png) no-repeat left top;
+    background-image: url(../images/sprite.png);
+    background-position: 0px -120px;
+    width: 186px;
+    height: 45px;
     color: #fff;
     font-style: italic;
     height: 45px;
@@ -421,7 +424,11 @@ input::-moz-focus-inner {
 .products__submit {
   font-size: 18px;
   font-size: 1.8rem;
-  background: url(../images/buttons.png) no-repeat left top;
+  background-image: url(../images/sprite.png);
+  background-position: 0px -61px;
+  width: 218px;
+  height: 59px;
+  background-color: transparent;
   border: none;
   color: #fff;
   cursor: pointer;
@@ -434,15 +441,19 @@ input::-moz-focus-inner {
     position: relative;
     z-index: 2; }
   .products__submit:before {
+    background-image: url(../images/sprite.png);
+    background-position: 0px 0px;
+    width: 218px;
+    height: 61px;
     -webkit-transition: all 0.2s ease-out;
     transition: all 0.2s ease-out;
+    background-color: transparent;
     height: 59px;
-    width: 218px;
-    background: url(../images/buttons.png) no-repeat left -59px;
     left: 0;
+    opacity: 0;
     top: 0;
-    z-index: 1;
-    opacity: 0; }
+    width: 218px;
+    z-index: 1; }
   .products__submit:hover:before {
     opacity: 1; }
 
@@ -480,9 +491,6 @@ input::-moz-focus-inner {
   .owl-carousel .owl-controls .owl-buttons .owl-prev {
     left: -110px; }
   .owl-carousel .owl-controls .owl-buttons .owl-next {
-    background-image: url(../images/sprite.png);
-    background-repeat: no-repeat;
-    background-position: 0 0;
     right: -110px; }
 
 /* =main

@@ -177,12 +177,6 @@ input::-moz-focus-inner{
 }
 
 
-@mixin sprite($x:0, $y:0){
-	background-image: url(../images/sprite.png);
-	background-repeat: no-repeat;
-	background-position: $x $y;
-}
-
 .before{
 	content: "";
 	display: block;
@@ -276,7 +270,8 @@ input::-moz-focus-inner{
 		align-items: center;
 	}
 	&__qcart-box{
-		background: url(../images/qcart.png) no-repeat left top;
+		// background: url(../images/qcart.png) no-repeat left top;
+		@include sprite($icon-qcart);
 		color: $color2;
 		font-style: italic;
 		height: 45px;
@@ -462,7 +457,8 @@ input::-moz-focus-inner{
 	&__submit{
 		@extend .italic;
 		@include font-size(1.8);
-		background: url(../images/buttons.png) no-repeat left top;
+		@include sprite($icon-button-gray);
+		background-color: transparent;
 		border: none;
 		color: $color2;
 		cursor: pointer;
@@ -477,14 +473,15 @@ input::-moz-focus-inner{
 		}
 		&:before{
 			@extend .before;
+			@include sprite($icon-button-orange);
 			@include transition;
+			background-color: transparent;
 			height: 59px;
-			width: 218px;
-			background: url(../images/buttons.png) no-repeat left -59px;
 			left: 0;
-			top: 0;
-			z-index: 1;
 			opacity: 0;
+			top: 0;
+			width: 218px;
+			z-index: 1;
 		}
 		&:hover{
 			&:before{
@@ -540,7 +537,7 @@ input::-moz-focus-inner{
 				left: -110px;
 			}
 			.owl-next{
-				@include sprite;
+				// @include sprite;
 				// .rotation(180deg);
 				right: -110px;
 			}
