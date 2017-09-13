@@ -8,9 +8,10 @@ $color3:#808080;
 $color4:#0563bf;
 $color5:#f00;
 $color6:#f7f7f7;
+$color7:#333;
+$color8:#d9d9d9;
+$color9:#e6e6e6;
 
-$color7:#80bbde;
-$color8:#292929;
 
 
 * {
@@ -126,7 +127,16 @@ input::-moz-focus-inner{
 	font-weight: normal;
 }
 
-
+/* font-family: "SegoeUIItalic"; */
+@font-face {
+	font-family: "SegoeUIItalic";
+	src: url("../fonts/SegoeUIItalic/SegoeUIItalic.eot");
+	src: url("../fonts/SegoeUIItalic/SegoeUIItalic.eot?#iefix")format("embedded-opentype"),
+	url("../fonts/SegoeUIItalic/SegoeUIItalic.woff") format("woff"),
+	url("../fonts/SegoeUIItalic/SegoeUIItalic.ttf") format("truetype");
+	font-style: normal;
+	font-weight: normal;
+}
 
 
 .cg{font-family: 'CenturyGothic';}
@@ -134,6 +144,11 @@ input::-moz-focus-inner{
 .bold{
 	font-family: "SegoeUIBold";
 }
+.italic{
+	font-family: "SegoeUIItalic";
+}
+
+
 
 .tdn{
 	text-decoration: none;
@@ -175,7 +190,7 @@ input::-moz-focus-inner{
 }
 
 
-.form-control {
+.form-control2 {
    border: 1px solid $color3;
    border-radius: 0;
    margin-top: 0.6rem;
@@ -336,7 +351,7 @@ input::-moz-focus-inner{
 /* =products
 ---------------------------*/
 .products{
-	&__title{
+	&__head{
 		@include font-size(2.4);
 		@extend .bold;
 		color: $color3;
@@ -367,10 +382,122 @@ input::-moz-focus-inner{
 			padding: 1rem 4rem;
 			text-transform: uppercase;
 			@include transition;
+			&.current,
 			&:hover{
 				background-color: $color4;
 				color: $color2;
 			}
+		}
+	}
+
+	&__tab{
+		justify-content: space-between;
+		&__subtitle{
+
+		}
+	}
+
+	&__title,
+	&__subtitle{
+		@include font-size(1.8);
+		@extend .bold;
+		color: $color4;
+	}
+
+	&__pricetitle{
+		@include font-size(1.8);
+		@extend .bold;
+		color: $color3;
+		margin: .5rem 0 2rem;
+		span{
+			@include font-size(2.4);
+			color: $color4;
+		}
+	}
+
+	&__count{
+		display: flex;
+		justify-content: center;
+		margin-top: 2rem;
+		$h : 30px;
+		.minus,
+		.plus{
+			@extend .bold;
+			@include font-size(3);
+			@include transition-param(background-color);
+			color: $color4;
+			display: block;
+			height: $h;
+			line-height: .8;
+			text-align: center;
+			text-decoration: none;
+			width: $h;
+			&:hover{
+				background-color: $color9;
+			}
+		}
+		.form-control{
+			@include font-size(1.5);
+			@extend .bold;
+			color: $color4;
+			border: 1px solid $color8;
+			height: $h;
+			padding: 0;
+			text-align: center;
+			width: 78px;
+		}
+	}
+
+	&__price{
+		@include font-size(2.4);
+		@extend .bold;
+		color: $color3;
+		margin-top: 1rem;
+		span{
+			color: $color4;
+			@include font-size(3.6);			
+		}
+	}
+
+	&__submit{
+		@extend .italic;
+		@include font-size(1.8);
+		background: url(../images/buttons.png) no-repeat left top;
+		border: none;
+		color: $color2;
+		cursor: pointer;
+		height: 59px;
+		margin-top: 1.5rem;
+		padding-bottom: 22px;
+		width: 218px;
+		position: relative;
+		span{
+			position: relative;
+			z-index: 2;
+		}
+		&:before{
+			@extend .before;
+			@include transition;
+			height: 59px;
+			width: 218px;
+			background: url(../images/buttons.png) no-repeat left -59px;
+			left: 0;
+			top: 0;
+			z-index: 1;
+			opacity: 0;
+		}
+		&:hover{
+			&:before{
+				opacity: 1;
+			}
+		}
+	}
+
+
+	&__text{
+		color: $color7;
+		p{
+			line-height: 1;
 		}
 	}
 }

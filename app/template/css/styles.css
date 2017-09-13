@@ -169,14 +169,26 @@ input::-moz-focus-inner {
   font-style: normal;
   font-weight: normal; }
 
+/* font-family: "SegoeUIItalic"; */
+@font-face {
+  font-family: "SegoeUIItalic";
+  src: url("../fonts/SegoeUIItalic/SegoeUIItalic.eot");
+  src: url("../fonts/SegoeUIItalic/SegoeUIItalic.eot?#iefix") format("embedded-opentype"), url("../fonts/SegoeUIItalic/SegoeUIItalic.woff") format("woff"), url("../fonts/SegoeUIItalic/SegoeUIItalic.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal; }
+
 .cg, .header {
   font-family: 'CenturyGothic'; }
 
 .cgb, .header__phone {
   font-family: 'CenturyGothicBold'; }
 
-.bold, .info__title, .products__title, .products__tabs {
+.bold, .info__title, .products__head, .products__tabs, .products__title, .products__subtitle, .products__pricetitle, .products__count .minus,
+.products__count .plus, .products__count .form-control, .products__price {
   font-family: "SegoeUIBold"; }
+
+.italic, .products__submit {
+  font-family: "SegoeUIItalic"; }
 
 .tdn, .more-link {
   text-decoration: none; }
@@ -197,17 +209,17 @@ input::-moz-focus-inner {
 .text-right {
   text-align: right; }
 
-.before {
+.before, .products__submit:before {
   content: "";
   display: block;
   position: absolute; }
 
-.form-control {
+.form-control2 {
   border: 1px solid #808080;
   border-radius: 0;
   margin-top: 0.6rem;
   font-size: 16px; }
-  .form-control:focus, .form-control:active {
+  .form-control2:focus, .form-control2:active {
     border-color: #f00;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(222, 72, 111, 0.3); }
 
@@ -316,14 +328,14 @@ input::-moz-focus-inner {
 ---------------------------*/
 /* =products
 ---------------------------*/
-.products__title {
+.products__head {
   font-size: 24px;
   font-size: 2.4rem;
   color: #808080;
   margin: 3.8rem auto;
   text-transform: uppercase;
   width: 54%; }
-  .products__title span {
+  .products__head span {
     color: #0563bf; }
 
 .products__tabs {
@@ -344,9 +356,100 @@ input::-moz-focus-inner {
     text-transform: uppercase;
     -webkit-transition: all 0.2s ease-out;
     transition: all 0.2s ease-out; }
-    .products__tabs .button:hover {
+    .products__tabs .button.current, .products__tabs .button:hover {
       background-color: #0563bf;
       color: #fff; }
+
+.products__tab {
+  justify-content: space-between; }
+
+.products__title, .products__subtitle {
+  font-size: 18px;
+  font-size: 1.8rem;
+  color: #0563bf; }
+
+.products__pricetitle {
+  font-size: 18px;
+  font-size: 1.8rem;
+  color: #808080;
+  margin: .5rem 0 2rem; }
+  .products__pricetitle span {
+    font-size: 24px;
+    font-size: 2.4rem;
+    color: #0563bf; }
+
+.products__count {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem; }
+  .products__count .minus,
+  .products__count .plus {
+    font-size: 30px;
+    font-size: 3rem;
+    -webkit-transition: background-color 0.2s ease-out;
+    transition: background-color 0.2s ease-out;
+    color: #0563bf;
+    display: block;
+    height: 30px;
+    line-height: .8;
+    text-align: center;
+    text-decoration: none;
+    width: 30px; }
+    .products__count .minus:hover,
+    .products__count .plus:hover {
+      background-color: #e6e6e6; }
+  .products__count .form-control {
+    font-size: 15px;
+    font-size: 1.5rem;
+    color: #0563bf;
+    border: 1px solid #d9d9d9;
+    height: 30px;
+    padding: 0;
+    text-align: center;
+    width: 78px; }
+
+.products__price {
+  font-size: 24px;
+  font-size: 2.4rem;
+  color: #808080;
+  margin-top: 1rem; }
+  .products__price span {
+    color: #0563bf;
+    font-size: 36px;
+    font-size: 3.6rem; }
+
+.products__submit {
+  font-size: 18px;
+  font-size: 1.8rem;
+  background: url(../images/buttons.png) no-repeat left top;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  height: 59px;
+  margin-top: 1.5rem;
+  padding-bottom: 22px;
+  width: 218px;
+  position: relative; }
+  .products__submit span {
+    position: relative;
+    z-index: 2; }
+  .products__submit:before {
+    -webkit-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+    height: 59px;
+    width: 218px;
+    background: url(../images/buttons.png) no-repeat left -59px;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    opacity: 0; }
+  .products__submit:hover:before {
+    opacity: 1; }
+
+.products__text {
+  color: #333; }
+  .products__text p {
+    line-height: 1; }
 
 /* =/products
 ---------------------------*/
