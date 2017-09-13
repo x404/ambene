@@ -209,7 +209,7 @@ input::-moz-focus-inner {
 .text-right {
   text-align: right; }
 
-.before, .products__submit:before {
+.before, .products__submit:before, .about:before {
   content: "";
   display: block;
   position: absolute; }
@@ -452,6 +452,20 @@ input::-moz-focus-inner {
     line-height: 1; }
 
 /* =/products
+---------------------------*/
+/* =about
+---------------------------*/
+.about {
+  background: url(../images/about-bg.jpg) no-repeat center top;
+  position: relative;
+  margin-top: 2rem; }
+  .about:before {
+    background: #02060f;
+    height: 500px;
+    width: 100%;
+    z-index: -1; }
+
+/* =/about
 ---------------------------*/
 .owl-carousel .owl-controls {
   position: absolute;
