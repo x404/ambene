@@ -12,7 +12,7 @@
 <meta name="robots" content="noindex,nofollow" />
 
 <title>Главная</title>
-<link rel="stylesheet" href="css/styles.min.css" />
+<link rel="stylesheet" href="/template/css/styles.min.css" />
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="/js/jquery-1.12.4.min.js"><\/script>')</script>
@@ -36,33 +36,37 @@
 <!-- =header -->
 <header class="header">
 	<div class="container">
-		<!-- =navbar -->
-		<nav id="navbar">
-			<ul>
-				<li><a href="#" title="">Главная</a></li>
-				<li><a href="#" title="">Купить</a></li>
-				<li><a href="#" title="">Применение</a></li>
-				<li><a href="#" title="">Отзывы</a></li>
-				<li><a href="#" title="">Инструкции</a></li>
-				<li><a href="#" title="">Контакты</a></li>
-			</ul>
-		</nav>
-		<!-- =/navbar -->
+		<div class="flexbox">
+			<!-- =navbar -->
+			<nav id="navbar" class="header__nav">
+				<ul>
+					<li><a href="#" title="">Главная</a></li>
+					<li><a href="#" title="">Купить</a></li>
+					<li><a href="#" title="">Применение</a></li>
+					<li><a href="#" title="">Отзывы</a></li>
+					<li><a href="#" title="">Инструкции</a></li>
+					<li><a href="#" title="">Контакты</a></li>
+				</ul>
+			</nav>
+			<!-- =/navbar -->
 
-		<!-- =contacts -->
-		<div class="header__contacts">
-			<div class="header__contacts__phone">
-				<a href="tel:+74957840948">+7 (495) 784 0948</a>
+			<!-- =contacts -->
+			<div class="header__contacts text-center">
+				<div class="header__phone">
+					<a href="tel:+74957840948">+7 <span>(495)</span> 784 0948</a>
+				</div>
+				<a href="#" class="header__callback">Заказать звонок</a>
 			</div>
-			<a href="#" class="header__contacts__callback">Заказать звонок</a>
-		</div>
-		<!-- =/contacts -->
+			<!-- =/contacts -->
 
-		<!-- =qcart -->
-		<div class="header__qcart">
-			<a href="#">2 шт.</a>
+			<!-- =qcart -->
+			<div class="header__qcart">
+				<div class="header__qcart-box">
+					<a href="#" class="header__qcart-link">2 шт.</a>					
+				</div>
+			</div>
+			<!-- =/qcart -->
 		</div>
-		<!-- =/qcart -->
 	</div>
 </header>	
 <!-- =/header -->
@@ -78,36 +82,40 @@
 <!-- =info -->
 <section class="info">
 	<div class="container">
-		<div class="info__cell">
-			<div class="info__cell__icon">
-				<img src="template/images/airplan.png" alt="" />
+		<div class="flexbox">
+			<div class="info__cell">
+				<div class="info__icon">
+					<img src="template/images/airplan.png" alt="" />
+				</div>
+				<div class="info__title">Прямые поставки из Германии</div>
+				<div class="info__text">
+					<p>Все препараты Ambene Parenteral торговой марки Recordati Pharma, Germany привезены из Германии. Мы на 100% уверены в качестве предоставляемого продукта.</p>
+					<p>Наша компания соблюдает все необходимые условия транспортировки и хранения препарата.</p>
+				</div>
+				<div class="info__more text-center">< <a href="#" title="" class="more-link" data-more="">подробнее</a> ></div>
 			</div>
-			<div class="info__cell__title">Прямые поставки из Германии</div>
-			<div class="info__cell__text">
-				<p>Все препараты Ambene Parenteral торговой марки Recordati Pharma, Germany привезены из Германии. Мы на 100% уверены в качестве предоставляемого продукта.</p>
-				<p>Наша компания соблюдает все необходимые условия транспортировки и хранения препарата.</p>
+			<div class="info__cell">
+				<div class="info__icon">
+					<img src="template/images/car.png" alt="" />
+				</div>
+				<div class="info__title">Бесплатная доставка по Москве</div>
+				<div class="info__text">
+					<p>Все препараты Ambene Parenteral торговой марки Recordati Pharma, Germany привезены из Германии. Мы на 100% уверены в качестве предоставляемого продукта.</p>
+					<p>Наша компания соблюдает все необходимые условия транспортировки и хранения препарата.</p>
+				</div>
+				<div class="info__more text-center">< <a href="#" title="" class="more-link" data-more="">подробнее</a> ></div>
 			</div>
-			<div class="info__cell__more">< <a href="#" title="" data-more="">подробнее</a> ></div>
-		</div>
-			<div class="info__cell__icon">
-				<img src="template/images/car.png" alt="" />
+			<div class="info__cell">
+				<div class="info__icon">
+					<img src="template/images/map.png" alt="" />
+				</div>
+				<div class="info__title">Доставка по всей России!</div>
+				<div class="info__text">
+					<p>Наша компания осуществляет доставку препарата Амбене во все города России. Вы можете выбрать для себя наиболее удобный способ получения препарата.</p>
+					<p>Почтой России, наложенным платежом. Срок доставки до 7-ми рабочих дней.</p>
+				</div>
+				<div class="info__more text-center">< <a href="#" title="" class="more-link" data-more="">подробнее</a> ></div>
 			</div>
-			<div class="info__cell__title">Бесплатная доставка по Москве</div>
-			<div class="info__cell__text">
-				<p>Все препараты Ambene Parenteral торговой марки Recordati Pharma, Germany привезены из Германии. Мы на 100% уверены в качестве предоставляемого продукта.</p>
-				<p>Наша компания соблюдает все необходимые условия транспортировки и хранения препарата.</p>
-			</div>
-			<div class="info__cell__more">< <a href="#" title="" data-more="">подробнее</a> ></div>
-		</div>
-			<div class="info__cell__icon">
-				<img src="template/images/map.png" alt="" />
-			</div>
-			<div class="info__cell__title">Доставка по всей России!</div>
-			<div class="info__cell__text">
-				<p>Наша компания осуществляет доставку препарата Амбене во все города России. Вы можете выбрать для себя наиболее удобный способ получения препарата.</p>
-				<p>Почтой России, наложенным платежом. Срок доставки до 7-ми рабочих дней.</p>
-			</div>
-			<div class="info__cell__more">< <a href="#" title="" data-more="">подробнее</a> ></div>
 		</div>
 	</div>
 </section>
@@ -115,7 +123,7 @@
 
 
 <!-- =products -->
-<section class="products">
+<section class="products text-center">
 	<div class="container">
 		<div class="products__title"><span>Выберите</span> нужное количество препарата <span>Ambene</span> и уже <span>сегодня</span> мы его доставим !!!</div>
 
