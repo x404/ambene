@@ -10,6 +10,7 @@ var gulp 		= require('gulp'),
 	cleancss 	= require('gulp-clean-css'),
 	rename	 	= require('gulp-rename'),
 	del 		= require('del'),
+	spritesmith = require('gulp.spritesmith'),
 	imagemin 	= require('gulp-imagemin'), // Подключаем библиотеку для работы с изображениями
 	pngquant 	= require('imagemin-pngquant'), // Подключаем библиотеку для работы с png
 	cache 		= require('gulp-cache'); // Подключаем библиотеку кеширования
@@ -18,11 +19,17 @@ var gulp 		= require('gulp'),
 	// devip();
 
 
+var config = {
+	sourceDir : 'app/template',
+	destDir : 'app/template'
+};
+
+
 // обработка scss
 gulp.task('scss', function(){
-	return gulp.src('app/template/scss/**/*.scss') // Берем источник
+	return gulp.src(config.sourceDir + '/scss/**/*.scss') // Берем источник
 		.pipe(sass().on('error', sass.logError)) // Преобразуем Sass в CSS посредством gulp-sass
-		.pipe(gulp.dest('app/template/css'))  // Выгружаем результата в папку app/css
+		.pipe(gulp.dest(config.destDir + '/css'))  // Выгружаем результата в папку app/css
 });
 
 
@@ -71,6 +78,33 @@ gulp.task('watcher', ['browser-sync', 'css-libs', 'compress'], function(){
 });
 
 
+
+// Удаление старых файлов
+gulp.task('sprite-clean', function () {
+	del.sync([config.sourceDir + 'images/sprite.png']);
+});
+
+// Создание спрайтов
+gulp.task('sprite-create', ['sprite-clean'], function () {
+    var fileName = 'sprite-' + Math.random().toString().replace(/[^0-9]/g, '') + '.png';
+
+    var spriteData = gulp.src(config.sourceDir + '/images/sprite/*.png')
+        .pipe(spritesmith({
+            imgName: fileName,
+            cssName: 'sprite.scss',
+            cssVarMap: function (sprite) {
+                sprite.name = 'icon-' + sprite.name;
+            }
+        }));
+
+    spriteData.img.pipe(gulp.dest(config.destDir + '/images/'));
+
+    spriteData.css.pipe(gulp.dest(config.sourceDir + '/scss/'));
+
+    return spriteData;
+});
+
+
 gulp.task('img', function() {
     return gulp.src('app/images/**/*') // Берем все изображения из app
         .pipe(cache(imagemin({  // Сжимаем их с наилучшими настройками с учетом кеширования
@@ -81,7 +115,6 @@ gulp.task('img', function() {
         })))
         .pipe(gulp.dest('dist/images')); // Выгружаем на продакшен
 });
-
 
 
 
