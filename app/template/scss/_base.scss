@@ -61,11 +61,6 @@ input::-moz-focus-inner{
 }
 
 
-.outerwrapper{
-	-webkit-flex: 1;
-	flex: 1;
-}
-
 /*** standart classes *****/
 p{
 	margin: .7rem 0;
@@ -79,7 +74,7 @@ h2{font-size:2.4rem}
 h3{font-size:1.6rem}
 
 
-*:focus{outline:none}
+// *:focus{outline:none}
 
 input::-moz-focus-inner{
 	border: 0;
@@ -216,7 +211,7 @@ input::-moz-focus-inner{
 .header{
 	@extend .cg;
 	.flexbox{
-		height: 10rem;		
+		height: 9.8rem;
 	}
 	&__nav{
 		flex-basis: 50%;
@@ -236,17 +231,19 @@ input::-moz-focus-inner{
 		}
 	}
 	&__contacts{
-		flex-basis: 30%;
-		height: 100%;
-		align-items: center;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-around;
+		flex-basis: 33%;
+		text-align: center;
+		// height: 100%;
+		// align-items: center;
+		// display: flex;
+		// flex-direction: column;
+		// justify-content: space-around;
 	}
 
 	&__phone{
 		@extend .cgb;
 		padding-top: 1.8rem;
+		padding-bottom: 1rem;
 		a{
 			@include font-size(3);
 			color: $color4;
@@ -302,8 +299,7 @@ input::-moz-focus-inner{
 ---------------------------*/
 .slider{
 	background: $color1;
-	height: 200px;
-
+	height: 500px;
 }
 /* =/slider
 ---------------------------*/
@@ -334,14 +330,19 @@ input::-moz-focus-inner{
 		@extend .bold;
 		@include font-size(1.8);
 		color: $color4;
-		padding-bottom: 2rem;
-		padding-top: 2.5rem;
+		padding-bottom: .7rem;
+		padding-top: 2.2rem;
 		text-align: center;
 		text-transform: uppercase;
 	}
+	
+
+	&__text{
+		line-height: 1.2;
+	}
 
 	&__more{
-		margin-top: 1.5rem;
+		margin-top: 1.8rem;
 	}
 }
 /* =/delivery
@@ -355,7 +356,8 @@ input::-moz-focus-inner{
 		@include font-size(2.4);
 		@extend .bold;
 		color: $color3;
-		margin: 3.8rem auto;
+		line-height: 1.3;
+		margin: 3.2rem auto 0;
 		text-transform: uppercase;
 		width: 54%;
 		span{
@@ -365,23 +367,23 @@ input::-moz-focus-inner{
 
 	&__tabs{
 		@extend .bold;
-		margin: 3rem 0;
+		margin: 2.6rem 0;
 		li{
 			display: inline-block;
-			margin:0 2.4rem;
+			margin:0 1.2rem;
 			&:not(.button){
 				@include font-size(2.4);
 				color: $color3;
 			}
 		}
 		.button{
-			color: $color4;
+			@include transition;
 			border-radius: 2px;
 			border: 1px solid $color4;
+			color: $color4;
 			cursor: pointer;
-			padding: 1rem 4rem;
+			padding: .8rem 4.6rem;
 			text-transform: uppercase;
-			@include transition;
 			&.current,
 			&:hover{
 				background-color: $color4;

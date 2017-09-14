@@ -443,20 +443,22 @@
 /* =footer
 ---------------------------*/
 footer{
-	background-color: $color9;
+	background: url(../images/footer-bg.png) no-repeat center bottom $color9;
 	padding: 1rem 0;
 	font-style: italic;
 	@extend .cg;
 	.flexbox{
-		justify-content: space-between;
+		// justify-content: space-between;
 	}
+
+
 }
 
 .footer{
 	&__menu{
 		display: flex;
 		align-items: center;
-		// padding-top: 2rem;
+		flex-basis: 420px;
 		ul{
 			padding-right: 3rem;
 			li{
@@ -473,6 +475,7 @@ footer{
 	}
 
 	&__center{
+		flex-basis: 415px;
 		a{
 			@extend .tdn;
 			color: $color4;
@@ -480,6 +483,7 @@ footer{
 	}
 
 	&__right{
+		flex-grow: 1;
 		a{
 			@extend .tdn;
 			color: $color4;
