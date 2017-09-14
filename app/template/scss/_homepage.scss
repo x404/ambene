@@ -1,0 +1,162 @@
+/* =about
+---------------------------*/
+.about{
+	padding-bottom: 3rem;
+	&__head{
+		color: $color2;
+		height: 18rem;
+		align-items: center;
+	}
+	&__left{
+		@extend .bold;
+		@include font-size(7.2);
+		line-height: 1;
+		padding-left: 4rem;
+		padding-right: 10rem;
+		text-transform: uppercase;
+	}
+	&__right{
+		@include font-size(1.5);
+		line-height: 1.8;
+		padding-top: 1rem;
+		text-transform: uppercase;
+	}
+
+	&__content{
+		justify-content:space-between;
+	}
+	&__cell{
+		flex-basis: 25%;
+	}
+
+	&__pic{
+		position: relative;
+	}
+
+	&__title{
+		$w : 258px;
+		bottom: 14px;
+		color: $color2;
+		height: 4rem;
+		left: 4px;
+		position: absolute;
+		text-align: center;
+		text-transform: uppercase;
+		width: $w;
+		padding-top: 1rem;
+		z-index: 1;
+		a{
+			color: $color2;
+			@extend .tdn;
+		}
+		&:before{
+			@extend .before;
+			background-color: $color5;
+			height: 100%;
+			left: -1px;
+			top: 0;
+			transform: skew(-10deg);
+			width: $w;
+			z-index: -1;
+		}
+	}
+
+	&__text{
+		min-height: 14.5rem;
+		padding-top: 1.2rem;
+		width: 25.7rem;
+	}
+
+	&__subtitle{
+		@extend .bold;
+		@include font-size(1.5);
+		color: $color4;
+		text-transform: uppercase;
+		text-align: center;
+	}
+}
+/* =/about
+---------------------------*/
+
+
+/* =reviews
+---------------------------*/
+.reviews{
+	background: url(../images/reviews-bg-t.gif) repeat-x left top, 
+				url(../images/reviews-bg-b.gif) repeat-x left bottom  $color6;
+	min-height: 430px;
+	padding-top: 4.5rem;
+
+	&__title{
+		@include font-size(1.5);
+		color: $color4;
+		margin-bottom: 5.8rem;
+		text-align: center;
+		text-transform: uppercase;
+		strong{
+			@extend .bold;
+			@include font-size(7.2);
+			line-height: 1;
+			padding-left: 1.5rem;
+			padding-right: 1.5rem;
+			position: relative;
+			top: .7rem;
+		}		
+	}
+	
+	&__who{
+		color: $color1;
+		@extend .bold;
+		margin-bottom: 1rem;
+	}
+
+	&__add{
+		margin-top: 2rem;
+	}
+}
+/* =/reviews
+---------------------------*/
+
+
+/* =info
+---------------------------*/
+.info{
+	&__flexbox{
+		justify-content: space-between;
+	}
+
+	&__icon,
+	&__title{
+		text-align: center;
+	}
+
+	&__cell{
+		margin-left: .8rem;
+		margin-right: .8rem;
+		&:first-child{
+			margin-left: 0;
+		}
+		&:last-child{
+			margin-right: 0;
+		}
+	}
+
+	&__icon{
+		margin: 4rem 0 3rem;
+	}
+	&__title{
+		@extend .bold;
+		@include font-size(1.8);
+		color: $color4;
+		text-transform: uppercase;
+	}
+
+	&__content{
+		margin-top: 2rem;
+		margin-bottom: 2rem;
+	}
+
+
+}
+/* =/info
+---------------------------*/

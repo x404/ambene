@@ -1,5 +1,5 @@
 /*** reset ***********/
-html,body,ul,ol,li,dl,dt,p,h1,h2,h3,h4,h5,h6,form,fieldset,a,img,label{margin:0;padding:0;border:0}
+html,body,ul,ol,li,dl,dt,p,h1,h2,h3,h4,h5,h6,form,fieldset,a,img,label,figure{margin:0;padding:0;border:0}
 header, section, footer, aside, nav, article {display:block}
 ul{list-style:none}
 $color1:#000;
@@ -197,7 +197,8 @@ input::-moz-focus-inner{
 }
 
 
-.more-link{
+.more-link,
+.add-link{
 	color: $color4;
 	@extend .tdn;
 	&:hover{
@@ -205,6 +206,9 @@ input::-moz-focus-inner{
 	}
 }
 
+.add-link{
+	@extend .italic;
+}
 
 /* =header
 ---------------------------*/
@@ -304,9 +308,9 @@ input::-moz-focus-inner{
 ---------------------------*/
 
 
-/* =info
+/* =delivery
 ---------------------------*/
-.info{
+.delivery{
 	background-color: $color6;
 	padding: 2rem 0;
 
@@ -339,7 +343,7 @@ input::-moz-focus-inner{
 		margin-top: 1.5rem;
 	}
 }
-/* =/info
+/* =/delivery
 ---------------------------*/
 
 
