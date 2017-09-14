@@ -83,7 +83,7 @@
 ---------------------------*/
 .reviews{
 	background: url(../images/reviews-bg-t.gif) repeat-x left top, 
-				url(../images/reviews-bg-b.gif) repeat-x left bottom  $color6;
+				url(../images/reviews-bg-b.gif) repeat-x left bottom $color6;
 	min-height: 430px;
 	padding-top: 4.5rem;
 
@@ -130,17 +130,6 @@
 		text-align: center;
 	}
 
-	&__cell{
-		margin-left: .8rem;
-		margin-right: .8rem;
-		&:first-child{
-			margin-left: 0;
-		}
-		&:last-child{
-			margin-right: 0;
-		}
-	}
-
 	&__icon{
 		margin: 4rem 0 3rem;
 	}
@@ -155,8 +144,175 @@
 		margin-top: 2rem;
 		margin-bottom: 2rem;
 	}
+}
 
-
+.info,
+.partners{
+	&__cell{
+		margin-left: .8rem;
+		margin-right: .8rem;
+		&:first-child{
+			margin-left: 0;
+		}
+		&:last-child{
+			margin-right: 0;
+		}
+	}
 }
 /* =/info
+---------------------------*/
+
+
+/* =manual
+---------------------------*/
+.manual{
+	background: url(../images/manual-bg-t.png) repeat-x left top, 
+				url(../images/manual-bg-b.png) repeat-x left bottom $color4;
+	color: $color2;
+	padding: 2rem 0;
+
+	&__title,
+	&__subtitle{
+		text-align: center;
+		text-transform: uppercase;
+	}
+	&__title{
+		@include font-size(7.2);
+		@extend .bold;
+	}
+	&__subtitle{
+		@include font-size(1.8);
+	}
+
+	&__flexbox{
+		justify-content: space-between;
+		margin-top: 1rem;
+	}
+	
+	&__column{
+		flex-basis: 48%;
+	}
+
+	&__item{
+		margin-top: 2.8rem;
+		&-title{
+			@include font-size(1.8);
+			margin-bottom: 1rem;
+			text-transform: uppercase;
+		}
+		p,
+		li{
+			line-height: 1.8;
+		}
+	}
+
+}
+/* =/manual
+---------------------------*/
+
+
+
+/* =partners
+---------------------------*/
+.partners{
+	padding-bottom: 2rem;
+	&__flexbox{
+		justify-content: space-between;
+		padding-top: 6rem; 
+	}
+	&__cell{
+
+	}
+
+	&__pic{
+		height: 9rem;
+		text-align: center;		
+	}
+
+	&__text{
+		padding-bottom: 1rem;
+	}
+}
+/* =/partners
+---------------------------*/
+
+
+
+
+/* =qorder
+---------------------------*/
+.qorder{
+	background-color: $color6;
+	padding: 2rem 0;
+	&__text{
+		@include font-size(1.5);
+		color: $color3;
+		line-height: 1.2;
+		text-align: center;
+	}
+
+	&__form{
+		margin-left: auto;
+		margin-right: auto;
+		padding-top: 1rem;
+		padding-bottom: 2rem;
+		width: 104rem;
+		&-rowflexbox{
+			justify-content: space-between;			
+		}
+		&-row{
+			margin-top: 1rem;
+		}
+		&-control{
+			border: 1px solid $color4;
+			padding-left: 1.4rem;
+			@extend .italic;
+			margin-right: 2rem;
+		}
+
+		input.qorder__form-control{
+			height: 2.8rem;
+			width: 100%;
+			padding-top: 0;
+			padding-bottom: 0;
+			&:last-child{
+				margin-right: 0;
+			}	
+		}
+		textarea.qorder__form-control{
+			width: 90rem;
+			height: 6rem;
+		}
+
+		.submit{
+			@extend .italic;
+			cursor: pointer;
+			background-color: $color4;
+			border: none;
+			color: $color2;
+			flex-grow: 1;
+			@include transition-param();
+			&:hover{
+				opacity: .8;
+			}
+		}
+
+		
+		.policy{
+			@extend .italic;
+			color: $color3;
+			a{
+				@extend .tdn;
+				color: $color4;
+			}
+		}
+	}
+
+	&__title{
+		@include font-size(1.5);
+		color: $color4;
+		text-align: center;
+	}
+}
+/* =/qorder
 ---------------------------*/

@@ -184,17 +184,17 @@ input::-moz-focus-inner {
   font-family: 'CenturyGothicBold'; }
 
 .bold, .delivery__title, .products__head, .products__tabs, .products__title, .products__subtitle, .products__pricetitle, .products__count .minus,
-.products__count .plus, .products__count .form-control, .products__price, .about__left, .about__subtitle, .reviews__title strong, .reviews__who, .info__title {
+.products__count .plus, .products__count .form-control, .products__price, .about__left, .about__subtitle, .reviews__title strong, .reviews__who, .info__title, .manual__title {
   font-family: "SegoeUIBold"; }
 
-.italic, .add-link, .products__submit {
+.italic, .add-link, .products__submit, .qorder__form-control, .qorder__form .submit, .qorder__form .policy {
   font-family: "SegoeUIItalic"; }
 
 .tdn, .more-link,
-.add-link, .about__title a {
+.add-link, .about__title a, .qorder__form .policy a {
   text-decoration: none; }
   .tdn:hover, .more-link:hover,
-  .add-link:hover, .about__title a:hover {
+  .add-link:hover, .about__title a:hover, .qorder__form .policy a:hover {
     text-decoration: underline; }
 
 .tdu {
@@ -603,14 +603,6 @@ footer {
 .info__icon, .info__title {
   text-align: center; }
 
-.info__cell {
-  margin-left: .8rem;
-  margin-right: .8rem; }
-  .info__cell:first-child {
-    margin-left: 0; }
-  .info__cell:last-child {
-    margin-right: 0; }
-
 .info__icon {
   margin: 4rem 0 3rem; }
 
@@ -624,7 +616,123 @@ footer {
   margin-top: 2rem;
   margin-bottom: 2rem; }
 
+.info__cell,
+.partners__cell {
+  margin-left: .8rem;
+  margin-right: .8rem; }
+  .info__cell:first-child,
+  .partners__cell:first-child {
+    margin-left: 0; }
+  .info__cell:last-child,
+  .partners__cell:last-child {
+    margin-right: 0; }
+
 /* =/info
+---------------------------*/
+/* =manual
+---------------------------*/
+.manual {
+  background: url(../images/manual-bg-t.png) repeat-x left top, url(../images/manual-bg-b.png) repeat-x left bottom #0563bf;
+  color: #fff;
+  padding: 2rem 0; }
+  .manual__title, .manual__subtitle {
+    text-align: center;
+    text-transform: uppercase; }
+  .manual__title {
+    font-size: 72px;
+    font-size: 7.2rem; }
+  .manual__subtitle {
+    font-size: 18px;
+    font-size: 1.8rem; }
+  .manual__flexbox {
+    justify-content: space-between;
+    margin-top: 1rem; }
+  .manual__column {
+    flex-basis: 48%; }
+  .manual__item {
+    margin-top: 2.8rem; }
+    .manual__item-title {
+      font-size: 18px;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      text-transform: uppercase; }
+    .manual__item p,
+    .manual__item li {
+      line-height: 1.8; }
+
+/* =/manual
+---------------------------*/
+/* =partners
+---------------------------*/
+.partners {
+  padding-bottom: 2rem; }
+  .partners__flexbox {
+    justify-content: space-between;
+    padding-top: 6rem; }
+  .partners__pic {
+    height: 9rem;
+    text-align: center; }
+  .partners__text {
+    padding-bottom: 1rem; }
+
+/* =/partners
+---------------------------*/
+/* =qorder
+---------------------------*/
+.qorder {
+  background-color: #f7f7f7;
+  padding: 2rem 0; }
+  .qorder__text {
+    font-size: 15px;
+    font-size: 1.5rem;
+    color: #808080;
+    line-height: 1.2;
+    text-align: center; }
+  .qorder__form {
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    width: 104rem; }
+    .qorder__form-rowflexbox {
+      justify-content: space-between; }
+    .qorder__form-row {
+      margin-top: 1rem; }
+    .qorder__form-control {
+      border: 1px solid #0563bf;
+      padding-left: 1.4rem;
+      margin-right: 2rem; }
+    .qorder__form input.qorder__form-control {
+      height: 2.8rem;
+      width: 100%;
+      padding-top: 0;
+      padding-bottom: 0; }
+      .qorder__form input.qorder__form-control:last-child {
+        margin-right: 0; }
+    .qorder__form textarea.qorder__form-control {
+      width: 90rem;
+      height: 6rem; }
+    .qorder__form .submit {
+      cursor: pointer;
+      background-color: #0563bf;
+      border: none;
+      color: #fff;
+      flex-grow: 1;
+      -webkit-transition: opacity 0.2s ease-out;
+      transition: opacity 0.2s ease-out; }
+      .qorder__form .submit:hover {
+        opacity: .8; }
+    .qorder__form .policy {
+      color: #808080; }
+      .qorder__form .policy a {
+        color: #0563bf; }
+  .qorder__title {
+    font-size: 15px;
+    font-size: 1.5rem;
+    color: #0563bf;
+    text-align: center; }
+
+/* =/qorder
 ---------------------------*/
 /* =mobile-menu
 ---------------------------*/
