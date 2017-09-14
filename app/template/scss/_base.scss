@@ -295,13 +295,62 @@ input::-moz-focus-inner{
 
 
 
-/* =slider
+/* =visual
 ---------------------------*/
-.slider{
-	background: $color1;
+.visual{
+	background: url(../images/visual.jpg) no-repeat center top #02060f;
 	height: 500px;
+	color: $color2;
+	@include font-size(2.4);
+	@extend .bold;
+	.container{
+		position: relative;
+		text-transform: uppercase;
+	}
+	&__label{
+		left: 424px;
+		position: absolute;
+		top: 234px;
+	}
+	&__title{
+		@include font-size(7.2);
+		position: absolute;
+		top: 140px;
+		right: 200px;
+	}
+
+	&__desc{
+		right: 50px;
+		top: 62px;
+		position: absolute;
+	}
+
+	&__slogan{
+		right: 10px;
+		top: 353px;
+		position: absolute;
+	}
+
+	&__button{
+		@extend .italic;
+		@include font-size(1.8);
+		@include sprite($icon-button-red);
+		color: $color2;
+		display: block;
+		padding-top: 6px;
+		position: absolute;
+		right: 220px;
+		text-align: center;
+		text-decoration: none;
+		text-transform: none;
+		top: 417px;
+		@include transition-param;
+		&:hover{
+			opacity: .9;
+		}
+	}
 }
-/* =/slider
+/* =/visual
 ---------------------------*/
 
 
