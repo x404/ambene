@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .container,
 .outer-container,
 .container-md {
@@ -643,8 +644,8 @@ input::-moz-focus-inner {
     position: absolute;
     top: 39%;
     left: 50%;
-    margin-left: -630px;
-    width: 1260px; }
+    margin-left: -550px;
+    width: 1100px; }
     .reviews .owl-nav .owl-prev, .reviews .owl-nav .owl-next {
       background: url(../images/prevnext.png) no-repeat left top;
       height: 43px;
@@ -800,6 +801,8 @@ input::-moz-focus-inner {
     font-size: 1.5rem;
     color: #0563bf;
     text-align: center; }
+  .qorder .policy {
+    margin-top: 1.2rem; }
 
 /* =/qorder
 ---------------------------*/
@@ -977,6 +980,45 @@ footer {
 
 /* =/footer
 ---------------------------*/
+.user-access + label {
+  cursor: pointer; }
+
+.user-access:not(checked) {
+  position: absolute;
+  opacity: 0; }
+
+.user-access:not(checked) + label {
+  position: relative;
+  /* будем позиционировать псевдочекбокс относительно label */
+  padding: 0 0 0 40px;
+  /* оставляем слева от label место под псевдочекбокс */ }
+
+/* Оформление первой части чекбокса в выключенном состоянии (фон). */
+.user-access:not(checked) + label:before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #808080; }
+
+/* Оформление второй части чекбокса в выключенном состоянии (переключатель). */
+/* Меняем фон чекбокса, когда он включен. */
+.user-access:checked + label:before {
+  border-color: #0563bf; }
+
+/* Сдвигаем переключатель чекбокса, когда он включен. */
+.user-access:checked + label:after {
+  content: '*';
+  position: absolute;
+  top: -5px;
+  left: 7px;
+  width: 22px;
+  height: 22px;
+  font-size: 30px; }
+
+/* Показываем получение фокуса. */
 /* =mobile-menu
 ---------------------------*/
 .navbar-toggle,
