@@ -31,6 +31,26 @@
 <body>
 
 
+<div class="modal fade" id="callback" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="container">
+			<button type="button" data-dismiss="modal">< <span>закрыть окно</span> ></button>
+			<form action="#" method="post">
+				<fieldset>
+					<div class="flexbox">
+						<input type="tel" name="tel" class="form-control required" value="" placeholder="" />
+						<input type="submit" value="позвонить мне" />
+					</div>
+				</fieldset>				
+				<div class="policy">
+					<input type="checkbox" id="checkbox1" value="" name="checkbox" checked="checked" class="user-access" />
+					<label for="checkbox1">Я Согласен на обработку персональных данных и принимаю условия <a href="#" title="">Пользовательского соглашения</a></label>
+				</div>			
+			</form>
+		</div>
+	</div>
+</div>
+
 <!-- =header -->
 <header class="header">
 	<div class="container">
@@ -53,7 +73,7 @@
 				<div class="header__phone">
 					<a href="tel:+74957840948">+7 <span>(495)</span> 784 0948</a>
 				</div>
-				<a href="#" class="header__callback">Заказать звонок</a>
+				<a href="#" class="header__callback" data-toggle="modal" data-target="#callback">Заказать звонок</a>
 			</div>
 			<!-- =/contacts -->
 
@@ -356,7 +376,7 @@
 			</div>
 			<div class="manual__column">
 				<div class="manual__item">
-					<div class="manual__item-title">"Ambene" <strong>противопоказания</strong> к применению!</div>
+					<div class="manual__item-title">"Ambene" <strong><u>противопоказания</u></strong> к применению!</div>
 					<div class="manual__text">
 						<p>Отказаться от применения лекарственного средства рекомендуется лицам с гиперчувствительностью к НПВС, острым гастритом, язвенной болезнью двенадцатиперстной кишки и желудка, острым инфарктом миокарда, иными заболеваниями миокарда, сопровождающимися нарушением проводимости, хронической сердечной недостаточностью в фазе декомпенсации.</p>
 						<p>Также, согласно инструкции к Амбене, медикамент не подходит пациентам с выраженными нарушениями функции почек, щитовидной железы или печени. Кроме того, противопоказаниями являются:</p>

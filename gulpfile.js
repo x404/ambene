@@ -21,7 +21,8 @@ var gulp 		= require('gulp'),
 
 var config = {
 	sourceDir : 'app/template',
-	destDir : 'app/template'
+	destDir : 'app/template',
+	libsDir : 'app/libs'
 };
 
 
@@ -54,7 +55,8 @@ gulp.task('browser-sync', function(){
 gulp.task('compress', function(){
 	pump([
 			gulp.src([  // Берем все необходимые библиотеки
-				'app/libs/jquery/dist/jquery.js' // Берем jQuery
+				libsDir + '/jquery/dist/jquery.js',
+				libsDir + '/bootstrap-modal/bootstrap-modal.js'
 			]),
 			concat('libs.min.js'), // Собираем их в кучу в новом файле libs.min.js
 			uglify(), // Сжимаем JS файл
@@ -124,8 +126,8 @@ gulp.task('img', function() {
 gulp.task('build', ['clean', 'img', 'scss', 'compress'], function(){
 	// переносим css файлы
 	var buildCss = gulp.src([ // Переносим CSS стили в продакшен
-		config.sourceDir + '/css/styles.min.css',
-		config.sourceDir + '/css/owl.carousel.css'
+		'app/template/css/styles.min.css',
+		'app/template/css/owl.carousel.css'
 	])
 	.pipe(gulp.dest('dist/template/css'));
 

@@ -11,6 +11,12 @@ $(document).ready(function(){
 	});
 
 
+	// $('[data-toggle="modal"]').click(function(e){
+	// 	e.preventDefault();
+	// 	$('body').append('<div class="modal-backdrop fade show"></div>');
+	// })
+
+
 	// mobile-menu
 	$('#navbar').each(function(){
 		var $this = $(this),
