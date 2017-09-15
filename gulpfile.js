@@ -58,7 +58,7 @@ gulp.task('compress', function(){
 			]),
 			concat('libs.min.js'), // Собираем их в кучу в новом файле libs.min.js
 			uglify(), // Сжимаем JS файл
-			gulp.dest('app/js') // Выгружаем в папку app/js
+			gulp.dest(config.sourceDir + '/js') // Выгружаем в папку app/js
 		]
 	);
 })

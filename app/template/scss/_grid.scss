@@ -48,9 +48,6 @@
 
 
 @media (min-width: 1250px) {
-	.outer-container{
-		width: 1200px;
-	}
 	.container {
 		width: 1260px;
 	}
@@ -58,17 +55,10 @@
 }
 
 @media (min-width: 1300px) {
-	// .outer-container{
-	// 	width: 940px;
-	// }
-
 	// .container {
 	// 	width: 940px;
 	// }
 
-	.container-md{
-		width: 1040px;
-	}
 }
 
 @media (min-width: 1600px) {

@@ -33,14 +33,8 @@
     width: 900px; } }
 
 @media (min-width: 1250px) {
-  .outer-container {
-    width: 1200px; }
   .container {
     width: 1260px; } }
-
-@media (min-width: 1300px) {
-  .container-md {
-    width: 1040px; } }
 
 /*---------------------------------------------------
     SCSS Elements 0.1
@@ -204,7 +198,7 @@ input::-moz-focus-inner {
 .text-right {
   text-align: right; }
 
-.before, .products__submit:before, .about:before, .about__title:before, .works:after {
+.before, .products__submit:before, .about:before, .about__title:before, .reviews__item:before, .reviews__item:after, .works:after {
   content: "";
   display: block;
   position: absolute; }
@@ -623,6 +617,46 @@ input::-moz-focus-inner {
     margin-bottom: 1rem; }
   .reviews__add {
     margin-top: 2rem; }
+  .reviews__item {
+    border: 1px solid #0563bf;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1.8rem 1.8rem 1.2rem;
+    width: 82rem;
+    position: relative; }
+    .reviews__item:before, .reviews__item:after {
+      height: 16px;
+      width: 16px;
+      background: url(../images/review-tl.png) no-repeat left top; }
+    .reviews__item:before {
+      left: -1px;
+      top: -1px; }
+    .reviews__item:after {
+      right: -1px;
+      bottom: -1px;
+      -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      transform: rotate(180deg); }
+  .reviews__content {
+    line-height: 1.3; }
+  .reviews .owl-nav {
+    position: absolute;
+    top: 39%;
+    left: 50%;
+    margin-left: -630px;
+    width: 1260px; }
+    .reviews .owl-nav .owl-prev, .reviews .owl-nav .owl-next {
+      background: url(../images/prevnext.png) no-repeat left top;
+      height: 43px;
+      position: absolute;
+      width: 28px; }
+      .reviews .owl-nav .owl-prev.disabled, .reviews .owl-nav .owl-next.disabled {
+        opacity: .6; }
+    .reviews .owl-nav .owl-next {
+      right: 0;
+      -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+      transform: rotate(180deg); }
 
 /* =/reviews
 ---------------------------*/
