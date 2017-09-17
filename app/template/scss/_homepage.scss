@@ -819,3 +819,11 @@ footer{
 /* Показываем получение фокуса. */
 .user-access:focus + label:before {
 }
+
+
+input.submit:disabled{
+	background: rgba(128, 128, 128, .3) !important;
+	&:hover{
+		opacity: 1 !important;
+	}
+}

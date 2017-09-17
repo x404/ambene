@@ -10,12 +10,17 @@ $(document).ready(function(){
 		navText: ["", ""]
 	});
 
-
-	// $('[data-toggle="modal"]').click(function(e){
-	// 	e.preventDefault();
-	// 	$('body').append('<div class="modal-backdrop fade show"></div>');
-	// })
-
+	$('.policy input').click(function(){
+		console.log("policy");
+		var $this = $(this),
+			$submit = $this.closest('.form-policy');
+		if ($this.is(':checked')){
+			$submit.find('.input, .form-control, .submit, textarea, input[type=radio]').removeAttr('disabled');
+		} else {
+			$submit.addClass('disabled');
+			$submit.find('.input, .form-control, .submit, textarea, input[type=radio]').attr('disabled', true);
+		}
+	})
 
 	// mobile-menu
 	$('#navbar').each(function(){

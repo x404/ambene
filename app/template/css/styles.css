@@ -1019,6 +1019,11 @@ footer {
   font-size: 30px; }
 
 /* Показываем получение фокуса. */
+input.submit:disabled {
+  background: rgba(128, 128, 128, 0.3) !important; }
+  input.submit:disabled:hover {
+    opacity: 1 !important; }
+
 .modal-open {
   overflow: hidden; }
 
