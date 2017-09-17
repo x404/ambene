@@ -55,8 +55,8 @@ $(document).ready(function(){
 			url = id,
 			posting = $.post(id);
 
+			console.log(title);
 		posting.done(function(data) {
-			console.log(data);
 			$('#about .title').text(title);
 			$('#about .modal__text').html(data);
 		})

@@ -140,6 +140,8 @@ gulp.task('build', ['clean', 'img', 'scss', 'compress'], function(){
 	var buildOutdate = gulp.src('app/outdatedbrowser/**/*').pipe(gulp.dest('dist/outdatedbrowser'));
 
 
+	var buildHtaccess = gulp.src('app/1.php').pipe(gulp.dest('dist'));	
+	var buildHtaccess = gulp.src('app/2.php').pipe(gulp.dest('dist'));	
 	var buildHtaccess = gulp.src('app/.htaccess').pipe(gulp.dest('dist'));	
 	var buildrobots = gulp.src('app/robots.txt').pipe(gulp.dest('dist'));	
 });
