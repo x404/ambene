@@ -55,7 +55,9 @@ gulp.task('browser-sync', function(){
 gulp.task('compress', function(){
 	pump([
 			gulp.src([  // Берем все необходимые библиотеки
-				config.libsDir + '/jquery/dist/jquery.js'
+				config.libsDir + '/jquery/dist/jquery.js',
+				config.sourceDir + '/js/util.js',
+				config.sourceDir + '/js/modal.js'
 			]),
 			concat('libs.min.js'), // Собираем их в кучу в новом файле libs.min.js
 			uglify(), // Сжимаем JS файл

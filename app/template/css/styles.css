@@ -1083,7 +1083,11 @@ footer {
   color: #333;
   position: absolute;
   right: 0;
-  top: 0; }
+  top: 0;
+  z-index: 99;
+  cursor: pointer; }
+  .close-modal:hover span {
+    text-decoration: underline; }
   .close-modal span {
     color: #0563bf; }
 
