@@ -36,10 +36,10 @@ gulp.task('scss', function(){
 
 // сжатие css файла
 gulp.task('css-libs', ['scss'],  function(){
-	return gulp.src('app/template/css/styles.css') // Выбираем файл для минификации
+	return gulp.src(config.destDir + '/css/styles.css') // Выбираем файл для минификации
 		.pipe(cleancss())  // Сжимаем
 		.pipe(rename({suffix: '.min'}))  // Добавляем суффикс .min
-		.pipe(gulp.dest('app/template/css')) // Выгружаем в папку app/css
+		.pipe(gulp.dest(config.destDir + '/css')) // Выгружаем в папку app/css
 		.pipe(browserSync.reload({stream: true})) // Обновляем CSS на странице при изменении
 })
 
@@ -57,7 +57,8 @@ gulp.task('compress', function(){
 			gulp.src([  // Берем все необходимые библиотеки
 				config.libsDir + '/jquery/dist/jquery.js',
 				config.sourceDir + '/js/util.js',
-				config.sourceDir + '/js/modal.js'
+				config.sourceDir + '/js/modal.js',
+				config.sourceDir + '/js/tab.js'
 			]),
 			concat('libs.min.js'), // Собираем их в кучу в новом файле libs.min.js
 			uglify(), // Сжимаем JS файл
