@@ -14,6 +14,8 @@
 <title>Главная</title>
 <link rel="stylesheet" href="/template/css/styles.min.css" />
 <script src="/template/js/libs.min.js"></script>
+<script src="/template/js/util.js"></script>
+<script src="/template/js/modal.js"></script>
 
 <!--[if !IE]><!-->
 <script>if(/*@cc_on!@*/false){document.documentElement.className+=' ie10';}</script>
@@ -34,18 +36,18 @@
 <div class="modal fade" id="callback" tabindex="-1" role="dialog" aria-hidden="true">
 	<div class="modal-dialog" role="document">
 		<div class="container">
-			<button type="button" data-dismiss="modal">< <span>закрыть окно</span> ></button>
+			<button type="button" data-dismiss="modal" class="close-modal">< <span>закрыть окно</span> ></button>
 			<form action="#" method="post">
 				<fieldset>
 					<div class="flexbox">
-						<input type="tel" name="tel" class="form-control required" value="" placeholder="" />
-						<input type="submit" value="позвонить мне" />
+						<input type="tel" name="tel" class="form-control required" value="" placeholder="" tabindex="0" autofocus />
+						<input type="submit" class="submit" value="позвонить мне" tabindex="1" />
 					</div>
-				</fieldset>				
-				<div class="policy">
-					<input type="checkbox" id="checkbox1" value="" name="checkbox" checked="checked" class="user-access" />
-					<label for="checkbox1">Я Согласен на обработку персональных данных и принимаю условия <a href="#" title="">Пользовательского соглашения</a></label>
-				</div>			
+					<div class="policy">
+						<input type="checkbox" id="checkbox1" value="" name="checkbox" checked="checked" class="user-access" />
+						<label for="checkbox1">Я Согласен на обработку персональных данных и принимаю условия <a href="#" title="">Пользовательского соглашения</a></label>
+					</div>
+				</fieldset>
 			</form>
 		</div>
 	</div>

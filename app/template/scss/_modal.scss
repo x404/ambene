@@ -69,6 +69,8 @@
 }
 
 
+
+
 // Modal body
 // Where all modal content resides (sibling of .modal-header and .modal-footer)
 .modal-body {
@@ -86,4 +88,75 @@
   width: 50px;
   height: 50px;
   overflow: scroll;
+}
+
+.close-modal{
+	@extend .italic;
+	background: none;
+	border: none;
+	color: $color7;
+	position: absolute;
+	right: 0;
+	top: 0;
+	span{
+		color: $color4;
+	}
+}
+
+#callback{
+	.container{
+		position: relative;
+	}
+	.modal-dialog{
+		background-color: $color6;
+		margin-left: 0;
+		margin-right: 0;
+		margin-top: 98px;
+		padding: 40px 0 12px;
+		width: 100%;
+	}
+	.close-modal{
+		top: -36px;
+		right: -6px;
+	}
+
+	form{
+		@extend .italic;
+		$color: $color10;
+		.flexbox{
+			.form-control{
+				@extend .italic;
+				@include font-size(3.6);
+				border:1px solid $color;
+				color: $color3;
+				flex-grow: 1;
+				text-align: center;
+			}
+			.submit{
+				@extend .italic;
+				@include transition;
+				background: $color;
+				border: none;
+				color: $color2;
+				cursor: pointer;
+				height: 62px;
+				margin-left: 1.8rem;
+				padding-left: 8px;
+				padding-right: 8px;
+				&:hover{
+					opacity: .9;
+				}
+			}
+		}
+
+		.policy{
+			margin-top: 1.5rem;
+			margin-bottom: 1rem;
+			color: $color3;
+			a{
+				color: $color4;
+				@extend .tdn;
+			}
+		}
+	}
 }

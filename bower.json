@@ -16,7 +16,6 @@
     "tests"
   ],
   "devDependencies": {
-    "jquery": "^3.2.1",
-    "bootstrap-modal": "^2.2.6"
+    "jquery": "^3.2.1"
   }
 }
