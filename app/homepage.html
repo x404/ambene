@@ -14,7 +14,7 @@
 <title>Главная</title>
 <link rel="stylesheet" href="/template/css/styles.min.css" />
 <script src="/template/js/libs.min.js"></script>
-<!-- <script src="/template/js/util.js"></script> -->
+<script src="/template/js/tab.js"></script>
 <!-- <script src="/template/js/modal.js"></script> -->
 
 <!--[if !IE]><!-->
@@ -32,26 +32,6 @@
 </head>
 <body>
 
-
-<div class="modal fade" id="callback" tabindex="-1" role="dialog" aria-hidden="true">
-	<div class="modal-dialog" role="document">
-		<div class="container">
-			<button type="button" data-dismiss="modal" class="close-modal">< <span>закрыть окно</span> ></button>
-			<form action="#" method="post" class="form-policy">
-				<fieldset>
-					<div class="flexbox">
-						<input type="tel" name="tel" class="form-control required" value="" placeholder="" tabindex="0" autofocus />
-						<input type="submit" class="submit" value="позвонить мне" tabindex="1" />
-					</div>
-					<div class="policy">
-						<input type="checkbox" id="checkbox1" value="" name="checkbox" checked="checked" class="user-access" />
-						<label for="checkbox1">Я Согласен на обработку персональных данных и принимаю условия <a href="#" title="">Пользовательского соглашения</a></label>
-					</div>
-				</fieldset>
-			</form>
-		</div>
-	</div>
-</div>
 
 <!-- =header -->
 <header class="header">
@@ -154,69 +134,108 @@
 		<div class="products__head"><span>Выберите</span> нужное количество препарата <span>Ambene</span> и уже <span>сегодня</span> мы его доставим !!!</div>
 
 		<div class="products__tabs">
-			<ul>
-				<li class="current button" data-target="tab_1">АМПУЛЫ</li>
-				<li> / </li>
-				<li class="button" data-target="tab_2">ТАБЛЕТКИ</li>
-			</ul>
+			<div role="tablist" class="nav nav-tabs">
+				<a class="button active" data-toggle="tab" href="#nav-ampule" id="#nav-ampule-tab" role="tab" aria-controls="nav-ampule">АМПУЛЫ</a>
+				<span class="separator"> / </span>
+				<a class="button" data-toggle="tab" href="#nav-pills" id="#nav-pills-tab" role="tab" aria-controls="nav-pills">ТАБЛЕТКИ</a>
+			</div>
 		</div>
 
-		<div class="flexbox products__tab tab_1 active">
-			<div class="products__tab-cell">
-				<h3 class="products__title">АМБЕНЕ ИНЪЕКЦИЯ ДЛЯ УКОЛОВ : 3 шт!</h3>
-				<div class="products__subtitle">СТОИМОСТЬ 3-x АМПУЛ</div>
-				<div class="products__pricetitle"><span>1.700</span> рублей!</div>
-				<img src="template/images/ampule.jpg" alt="Амбене инъекция для уколов" />
-				<form action="#" method="post">
+		<div class="tab-content">
+			<div class="tab-pane fade flexbox products__tab tab_1 show active" id="nav-ampule" aria-labelledby="nav-ampule-tab">
+				<div class="products__tab-cell">
+					<h3 class="products__title">АМБЕНЕ ИНЪЕКЦИЯ ДЛЯ УКОЛОВ : 3 шт!</h3>
+					<div class="products__subtitle">СТОИМОСТЬ 3-x АМПУЛ</div>
+					<div class="products__pricetitle"><span>1.700</span> рублей!</div>
+					<img src="template/images/ampule.jpg" alt="Амбене инъекция для уколов" />
+					<form action="#" method="post">
+						<div class="products__count">
+							<a href="#" class="minus">-</a>
+							<input name="ampule_count_1" class="form-control" type="text" value="0" />
+							<a href="#" class="plus">+</a>
+						</div>
+						<div class="products__price"><span>0</span> руб.</div>
+						<button type="button" class="products__submit"><span>купить</span></button>
+					</form>
+					<div class="products__text">
+						<p>Доставка по Москве 300 рублей!</p>
+						<p>Доставка в Регионы России почтой!</p>
+					</div>
+				</div>
+				<div class="products__tab-cell">
+					<h3 class="products__title">АМБЕНЕ ИНЪЕКЦИЯ ДЛЯ УКОЛОВ : 5 шт!</h3>
+					<div class="products__subtitle">СТОИМОСТЬ 5-ти АМПУЛ</div>
+					<div class="products__pricetitle"><span>2.700</span> рублей!</div>
+					<img src="template/images/ampule.jpg" alt="Амбене инъекция для уколов" />
 					<div class="products__count">
 						<a href="#" class="minus">-</a>
-						<input name="ampule_count_1" class="form-control" type="text" value="0" />
+						<input name="ampule_count_2" class="form-control" type="text" value="1" />
+						<a href="#" class="plus">+</a>
+					</div>
+					<div class="products__price"><span>2.700</span> руб.</div>
+					<button type="button" class="products__submit"><span>купить</span></button>
+					<div class="products__text">
+						<p>Доставка по Москве 300 рублей!</p>
+						<p>Доставка в Регионы России почтой!</p>
+					</div>
+				</div>
+				<div class="products__tab-cell">
+					<h3 class="products__title">АМБЕНЕ ИНЪЕКЦИЯ ДЛЯ УКОЛОВ : 10 шт!</h3>
+					<div class="products__subtitle">СТОИМОСТЬ 10-x АМПУЛ</div>
+					<div class="products__pricetitle"><span>4.700</span> рублей!</div>
+					<img src="template/images/ampule.jpg" alt="Амбене инъекция для уколов" />
+					<div class="products__count">
+						<a href="#" class="minus">-</a>
+						<input name="ampule_count_3" class="form-control" type="text" value="0" />
 						<a href="#" class="plus">+</a>
 					</div>
 					<div class="products__price"><span>0</span> руб.</div>
 					<button type="button" class="products__submit"><span>купить</span></button>
-				</form>
-				<div class="products__text">
-					<p>Доставка по Москве 300 рублей!</p>
-					<p>Доставка в Регионы России почтой!</p>
+					<div class="products__text">
+						<p>БЕСПЛАТНАЯ доставка по Москве на следующий день!</p>
+						<p>Доставка в Регионы России почтой!</p>
+					</div>
 				</div>
 			</div>
-			<div class="products__tab-cell">
-				<h3 class="products__title">АМБЕНЕ ИНЪЕКЦИЯ ДЛЯ УКОЛОВ : 5 шт!</h3>
-				<div class="products__subtitle">СТОИМОСТЬ 5-ти АМПУЛ</div>
-				<div class="products__pricetitle"><span>2.700</span> рублей!</div>
-				<img src="template/images/ampule.jpg" alt="Амбене инъекция для уколов" />
-				<div class="products__count">
-					<a href="#" class="minus">-</a>
-					<input name="ampule_count_2" class="form-control" type="text" value="1" />
-					<a href="#" class="plus">+</a>
+			<div class="tab-pane fade flexbox products__tab products__two" id="nav-pills" aria-labelledby="nav-pills-tab">
+				<div class="products__tab-cell">
+					<h3 class="products__title">АМБЕНЕ ТАБЛЕТКИ : 20 шт!</h3>
+					<div class="products__subtitle">СТОИМОСТЬ УПАКОВКИ</div>
+					<div class="products__pricetitle"><span>2.800</span> рублей!</div>
+					<img src="template/images/ampule.jpg" alt="Амбене инъекция для уколов" />
+					<form action="#" method="post">
+						<div class="products__count">
+							<a href="#" class="minus">-</a>
+							<input name="ampule_count_1" class="form-control" type="text" value="0" />
+							<a href="#" class="plus">+</a>
+						</div>
+						<div class="products__price"><span>0</span> руб.</div>
+						<button type="button" class="products__submit"><span>купить</span></button>
+					</form>
+					<div class="products__text">
+						<p>Доставка по Москве 300 рублей!</p>
+						<p>Доставка в Регионы России почтой!</p>
+					</div>
 				</div>
-				<div class="products__price"><span>2700</span> руб.</div>
-				<button type="button" class="products__submit"><span>купить</span></button>
-				<div class="products__text">
-					<p>Доставка по Москве 300 рублей!</p>
-					<p>Доставка в Регионы России почтой!</p>
+				<div class="products__tab-cell">
+					<h3 class="products__title">АМБЕНЕ ТАБЛЕТКИ : 50 шт!</h3>
+					<div class="products__subtitle">СТОИМОСТЬ УПАКОВКИ</div>
+					<div class="products__pricetitle"><span>4.500</span> рублей!</div>
+					<img src="template/images/ampule.jpg" alt="Амбене инъекция для уколов" />
+					<div class="products__count">
+						<a href="#" class="minus">-</a>
+						<input name="ampule_count_2" class="form-control" type="text" value="1" />
+						<a href="#" class="plus">+</a>
+					</div>
+					<div class="products__price"><span>4.500</span> руб.</div>
+					<button type="button" class="products__submit"><span>купить</span></button>
+					<div class="products__text">
+						<p>Доставка по Москве 300 рублей!</p>
+						<p>Доставка в Регионы России почтой!</p>
+					</div>
 				</div>
-			</div>
-			<div class="products__tab-cell">
-				<h3 class="products__title">АМБЕНЕ ИНЪЕКЦИЯ ДЛЯ УКОЛОВ : 10 шт!</h3>
-				<div class="products__subtitle">СТОИМОСТЬ 10-x АМПУЛ</div>
-				<div class="products__pricetitle"><span>4.700</span> рублей!</div>
-				<img src="template/images/ampule.jpg" alt="Амбене инъекция для уколов" />
-				<div class="products__count">
-					<a href="#" class="minus">-</a>
-					<input name="ampule_count_3" class="form-control" type="text" value="0" />
-					<a href="#" class="plus">+</a>
-				</div>
-				<div class="products__price"><span>0</span> руб.</div>
-				<button type="button" class="products__submit"><span>купить</span></button>
-				<div class="products__text">
-					<p>БЕСПЛАТНАЯ доставка по Москве на следующий день!</p>
-					<p>Доставка в Регионы России почтой!</p>
-				</div>
-			</div>
+			</div>			
 		</div>
-
 	</div>
 </section>
 <!-- =/products -->
@@ -577,6 +596,30 @@
 	</div>
 </footer>
 <!-- =/footer -->
+
+
+<!-- =modal callback -->
+<div class="modal fade" id="callback" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="container">
+			<button type="button" data-dismiss="modal" class="close-modal">< <span>закрыть окно</span> ></button>
+			<form action="#" method="post" class="form-policy">
+				<fieldset>
+					<div class="flexbox">
+						<input type="tel" name="tel" class="form-control required" value="" placeholder="" tabindex="0" autofocus />
+						<input type="submit" class="submit" value="позвонить мне" tabindex="1" />
+					</div>
+					<div class="policy">
+						<input type="checkbox" id="checkbox1" value="" name="checkbox" checked="checked" class="user-access" />
+						<label for="checkbox1">Я Согласен на обработку персональных данных и принимаю условия <a href="#" title="">Пользовательского соглашения</a></label>
+					</div>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+</div>
+<!-- =/modal callback -->
+
 
 
 <div id="outdated"></div>
