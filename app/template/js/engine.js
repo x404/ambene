@@ -46,6 +46,21 @@ $(document).ready(function(){
 			};
 		init();
 	});	
+
+
+	$('#about').on('show.bs.modal', function (e) {
+		let $this = $(e.relatedTarget),
+			id = $this.data('id'),
+			title = $this.data('title'),
+			url = id,
+			posting = $.post(id);
+
+		posting.done(function(data) {
+			console.log(data);
+			$('#about .title').text(title);
+			$('#about .modal__text').html(data);
+		})
+	})
 });
 
 // =заглушка для IE

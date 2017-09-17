@@ -175,7 +175,7 @@ input::-moz-focus-inner {
 .products__count .plus, .products__count .form-control, .products__price, .about__left, .about__subtitle, .reviews__title strong, .reviews__who, .info__title, .manual__title, .works .works__title {
   font-family: "SegoeUIBold"; }
 
-.italic, .add-link, .visual__button, .products__submit, .qorder__form-control, .qorder__form .submit, .qorder__form .policy, .feedback__form .row input.form-control, .feedback__form .row textarea, .feedback__form .row .submit, .close-modal, #callback form, #callback form .flexbox .form-control, #callback form .flexbox .submit {
+.italic, .add-link, .visual__button, .products__submit, .qorder__form-control, .qorder__form .submit, .qorder__form .policy, .feedback__form .row input.form-control, .feedback__form .row textarea, .feedback__form .row .submit, .modal-dialog .title, .close-modal, #callback form, #callback form .flexbox .form-control, #callback form .flexbox .submit, #about .modal__content {
   font-family: "SegoeUIItalic"; }
 
 .tdn, .more-link,
@@ -1053,9 +1053,23 @@ input.submit:disabled {
   overflow-y: auto; }
 
 .modal-dialog {
+  background-color: #f7f7f7;
   position: relative;
   width: auto;
-  margin: 10px; }
+  top: 12%;
+  padding-top: 40px;
+  padding-bottom: 40px; }
+  .modal-dialog .container {
+    position: relative; }
+  .modal-dialog .close-modal {
+    top: -36px;
+    right: -6px; }
+  .modal-dialog .title {
+    font-size: 18px;
+    font-size: 1.8rem;
+    color: #218ee0;
+    font-size: 18px;
+    font-size: 1.8rem; }
 
 .modal-content {
   position: relative;
@@ -1074,7 +1088,7 @@ input.submit:disabled {
   .modal-backdrop.fade {
     opacity: 0; }
   .modal-backdrop.show {
-    opacity: .5; }
+    opacity: .5 !important; }
 
 .modal-body {
   position: relative;
@@ -1101,20 +1115,12 @@ input.submit:disabled {
   .close-modal span {
     color: #0563bf; }
 
-#callback .container {
-  position: relative; }
-
 #callback .modal-dialog {
-  background-color: #f7f7f7;
   margin-left: 0;
   margin-right: 0;
   margin-top: 98px;
   padding: 40px 0 12px;
   width: 100%; }
-
-#callback .close-modal {
-  top: -36px;
-  right: -6px; }
 
 #callback form .flexbox .form-control {
   font-size: 36px;
@@ -1144,6 +1150,16 @@ input.submit:disabled {
   color: #808080; }
   #callback form .policy a {
     color: #0563bf; }
+
+#about .modal__content {
+  background-color: #fff;
+  border: 1px solid #0563bf;
+  color: #808080;
+  line-height: 1.7;
+  padding: 2rem 1.5rem; }
+  #about .modal__content .title {
+    padding-bottom: .5rem;
+    text-transform: uppercase; }
 
 .nav {
   flex-wrap: wrap;
