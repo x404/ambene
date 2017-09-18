@@ -58,7 +58,9 @@ gulp.task('compress', function(){
 				config.libsDir + '/jquery/dist/jquery.js',
 				config.sourceDir + '/js/util.js',
 				config.sourceDir + '/js/modal.js',
-				config.sourceDir + '/js/tab.js'
+				config.sourceDir + '/js/tab.js',
+				config.sourceDir + '/js/popper.min.js',
+				config.sourceDir + '/js/scrollspy.js'
 			]),
 			concat('libs.min.js'), // Собираем их в кучу в новом файле libs.min.js
 			uglify(), // Сжимаем JS файл

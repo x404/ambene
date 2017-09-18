@@ -97,7 +97,8 @@ body {
   font-size: 14px;
   font-size: 1.4rem;
   font-family: "SegoeUIRegular", Arial;
-  font-display: swap; }
+  font-display: swap;
+  position: relative; }
 
 html, body {
   height: 100%; }
@@ -223,6 +224,14 @@ input::-moz-focus-inner {
 /* =header
 ---------------------------*/
 .header {
+  background-color: #fff;
+  position: fixed;
+  width: 100%;
+  height: 98px;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  box-shadow: 0 0 15px #ccc;
   /* =qcart */
   /* =/qcart */ }
   .header .flexbox {
@@ -236,8 +245,9 @@ input::-moz-focus-inner {
       justify-content: space-between; }
       .header__nav ul a {
         text-decoration: none;
-        color: #808080; }
-        .header__nav ul a:hover {
+        color: #808080;
+        border-bottom: 1px dashed white; }
+        .header__nav ul a.active, .header__nav ul a:hover {
           color: #0563bf;
           border-bottom: 1px dashed #0563bf; }
   .header__contacts {
@@ -286,11 +296,12 @@ input::-moz-focus-inner {
 /* =visual
 ---------------------------*/
 .visual {
-  background: url(../images/visual.jpg) no-repeat center top #02060f;
-  height: 500px;
-  color: #fff;
   font-size: 24px;
-  font-size: 2.4rem; }
+  font-size: 2.4rem;
+  background: url(../images/visual.jpg) no-repeat center top #02060f;
+  color: #fff;
+  height: 500px;
+  margin-top: 98px; }
   .visual .container {
     position: relative;
     text-transform: uppercase; }

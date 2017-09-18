@@ -39,6 +39,7 @@ body{
 	@include font-size(1.4);
 	font-family: "SegoeUIRegular", Arial;
 	font-display: swap;
+	position: relative;
 
 }
 
@@ -210,6 +211,14 @@ input::-moz-focus-inner{
 ---------------------------*/
 .header{
 	@extend .cg;
+	background-color: $color2;
+	position: fixed;
+	width: 100%;
+	height: 98px;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+	box-shadow: 0 0 15px #ccc;
 	.flexbox{
 		height: 9.8rem;
 	}
@@ -223,6 +232,8 @@ input::-moz-focus-inner{
 			a{
 				text-decoration: none;
 				color: $color3;
+				border-bottom: 1px dashed rgba(255,255,255,1);
+				&.active,
 				&:hover{
 					color: $color4;
 					border-bottom: 1px dashed $color4;
@@ -298,11 +309,12 @@ input::-moz-focus-inner{
 /* =visual
 ---------------------------*/
 .visual{
-	background: url(../images/visual.jpg) no-repeat center top #02060f;
-	height: 500px;
-	color: $color2;
-	@include font-size(2.4);
 	@extend .bold;
+	@include font-size(2.4);
+	background: url(../images/visual.jpg) no-repeat center top #02060f;
+	color: $color2;
+	height: 500px;
+	margin-top: 98px;
 	.container{
 		position: relative;
 		text-transform: uppercase;

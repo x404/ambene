@@ -13,9 +13,9 @@
 
 <title>Главная</title>
 <link rel="stylesheet" href="/template/css/styles.min.css" />
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>  -->
 <script src="/template/js/libs.min.js"></script>
-<!-- <script src="/template/js/tab.js"></script> -->
-<!-- <script src="/template/js/modal.js"></script> -->
+<!-- <script src="/template/js/bootstrap.min.js"></script> -->
 
 <!--[if !IE]><!-->
 <script>if(/*@cc_on!@*/false){document.documentElement.className+=' ie10';}</script>
@@ -30,8 +30,7 @@
 <![endif]-->
 
 </head>
-<body>
-
+<body data-spy="scroll" data-target="#navbar" data-offset="98">
 
 <!-- =header -->
 <header class="header">
@@ -39,13 +38,13 @@
 		<div class="flexbox">
 			<!-- =navbar -->
 			<nav id="navbar" class="header__nav">
-				<ul>
-					<li><a href="#" title="">Главная</a></li>
-					<li><a href="#" title="">Купить</a></li>
-					<li><a href="#" title="">Применение</a></li>
-					<li><a href="#" title="">Отзывы</a></li>
-					<li><a href="#" title="">Инструкции</a></li>
-					<li><a href="#" title="">Контакты</a></li>
+				<ul class="nav nav-tabs" role="tablist">
+					<li><a class="nav-link" href="#home" title="">Главная</a></li>
+					<li><a class="nav-link" href="#products" title="">Купить</a></li>
+					<li><a class="nav-link" href="#about" title="">Применение</a></li>
+					<li><a class="nav-link" href="#reviews" title="">Отзывы</a></li>
+					<li><a class="nav-link" href="#manual" title="">Инструкции</a></li>
+					<li><a class="nav-link" href="#map" title="">Контакты</a></li>
 				</ul>
 			</nav>
 			<!-- =/navbar -->
@@ -73,13 +72,13 @@
 
 
 <!-- =visual -->
-<section class="visual">
+<section class="visual" id="home">
 	<div class="container">
 		<img src="template/images/madbek.png" alt="Скидка 500 рублей" class="visual__label" />
 		<p class="visual__desc text-right">препарат от боли<br> и воспалений в суставах</p>
 		<p class="visual__title">AMBENE</p>
 		<p class="visual__slogan">С нами надежно и выгодно сотрудничать!</p>
-		<a href="#" class="visual__button">купить</a>
+		<a href="#products" class="visual__button">купить</a>
 	</div>
 </section>
 <!-- =/visual -->
@@ -129,7 +128,7 @@
 
 
 <!-- =products -->
-<section class="products text-center">
+<section class="products text-center" id="products">
 	<div class="container">
 		<div class="products__head"><span>Выберите</span> нужное количество препарата <span>Ambene</span> и уже <span>сегодня</span> мы его доставим !!!</div>
 
@@ -248,7 +247,7 @@
 
 
 <!-- =about -->
-<section class="about">
+<section class="about" id="about">
 	<div class="container">
 		<div class="about__head flexbox">
 			<div class="about__left">Ambene</div>
@@ -316,7 +315,7 @@
 <!-- =/about -->
 
 <!-- =reviews -->
-<section class="reviews">
+<section class="reviews" id="reviews">
 	<div class="container">
 		<div class="reviews__title">Отзывы покупателей о препарате <strong>AMBENE</strong> Амбене в ампулах</div>
 		<div class="carousel owl-carousel" id="foo1">
@@ -381,7 +380,7 @@
 
 
 <!-- =manual -->
-<section class="manual">
+<section class="manual" id="manual">
 	<div class="container">
 		<div class="manual__title">Ambene</div>
 		<div class="manual__subtitle">Инструкция по применению !</div>
@@ -503,7 +502,7 @@
 
 
 <!-- =map -->
-<section class="map">
+<section class="map" id="map">
 	<div id="map">
 	<!-- <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A80600646ac10cadd848dbdb512348e4a3581b41b13b9aa9ba1232058fd164336&amp;width=100%25&amp;height=435&amp;lang=ru_UA&amp;scroll=true"></script> -->
 	</div>
@@ -680,7 +679,7 @@
 <script src="/template/js/owl.carousel.min.js"></script>
 <link rel="stylesheet" property="stylesheet" href="template/css/owl.carousel.css" />
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.0/vue.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.0/vue.js"></script> -->
 
 <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script> -->
 
