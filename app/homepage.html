@@ -487,8 +487,8 @@
 						<input type="submit" class="submit" value="отправить" />
 					</div>
 					<div class="qorder__form-row policy">
-						<input type="checkbox" id="checkbox1" value="" name="checkbox" checked="checked" class="user-access" />
-						<label for="checkbox1">Я Согласен на обработку персональных данных и принимаю условия <a href="#.pdf" title="" target="_blank">Пользовательского соглашения</a></label>
+						<input type="checkbox" id="checkbox2" value="" name="checkbox" checked="checked" class="user-access" />
+						<label for="checkbox2">Я Согласен на обработку персональных данных и принимаю условия <a href="#.pdf" title="" target="_blank">Пользовательского соглашения</a></label>
 					</div>
 				</fieldset>
 			</form>
@@ -608,11 +608,11 @@
 	<div class="modal-dialog" role="document">
 		<div class="container">
 			<button type="button" data-dismiss="modal" class="close-modal">< <span>закрыть окно</span> ></button>
-			<form action="#" method="post" class="form-policy">
+			<form action="#" method="post" class="form-policy" id="callback-form">
 				<fieldset>
 					<div class="flexbox">
 						<input type="tel" name="tel" class="form-control required" value="" placeholder="" tabindex="0" autofocus />
-						<input type="submit" class="submit" value="позвонить мне" tabindex="1" />
+						<button type="button" class="submit" tabindex="1" >позвонить мне</button>
 					</div>
 					<div class="policy">
 						<input type="checkbox" id="checkbox1" value="" name="checkbox" checked="checked" class="user-access" />

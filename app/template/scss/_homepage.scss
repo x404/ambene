@@ -1,3 +1,28 @@
+
+.owl-carousel{
+	.owl-controls{
+		position: absolute;
+		width: 100%;
+		top: 115px;
+		.owl-buttons{
+			.owl-prev,
+			.owl-next{
+				background: url(../images/prevnext.png) no-repeat left top;
+				width: 65px;
+				height: 65px;
+				position: absolute;
+			}
+			.owl-prev{
+				left: -110px;
+			}
+			.owl-next{
+				right: -110px;
+			}
+		}
+	}
+}
+
+
 /* =products
 ---------------------------*/
 .products{
@@ -884,5 +909,16 @@ textarea{
 		&:hover{
 			opacity: .85;
 		}
+	}
+}
+
+label.error{
+	display: none !important;
+}
+
+.form-control,
+textarea{
+	&.error{
+		border-color: red !important
 	}
 }

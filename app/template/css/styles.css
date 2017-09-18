@@ -1083,6 +1083,13 @@ textarea {
   .addreview .submit:hover {
     opacity: .85; }
 
+label.error {
+  display: none !important; }
+
+.form-control.error,
+textarea.error {
+  border-color: red !important; }
+
 .modal-open {
   overflow: hidden; }
 
@@ -1216,6 +1223,10 @@ textarea {
   #about .modal__content .title {
     padding-bottom: .5rem;
     text-transform: uppercase; }
+
+.submit:disabled {
+  cursor: default !important;
+  background-color: #ccc !important; }
 
 .nav {
   flex-wrap: wrap;

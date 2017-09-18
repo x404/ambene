@@ -244,11 +244,6 @@ input::-moz-focus-inner{
 	&__contacts{
 		flex-basis: 33%;
 		text-align: center;
-		// height: 100%;
-		// align-items: center;
-		// display: flex;
-		// flex-direction: column;
-		// justify-content: space-around;
 	}
 
 	&__phone{
@@ -408,30 +403,3 @@ input::-moz-focus-inner{
 }
 /* =/delivery
 ---------------------------*/
-
-
-
-.owl-carousel{
-	.owl-controls{
-		position: absolute;
-		width: 100%;
-		top: 115px;
-		.owl-buttons{
-			.owl-prev,
-			.owl-next{
-				background: url(../images/prevnext.png) no-repeat left top;
-				width: 65px;
-				height: 65px;
-				position: absolute;
-			}
-			.owl-prev{
-				left: -110px;
-			}
-			.owl-next{
-				// @include sprite;
-				// .rotation(180deg);
-				right: -110px;
-			}
-		}
-	}
-}

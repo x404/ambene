@@ -18,6 +18,15 @@ $(document).ready(function(){
 
 
 
+	// validation quick form
+	$('#callback-form .submit').click(function(){
+		$('#callback-form').submit();
+		return false;
+	});
+	$('#callback-form').validate();
+
+
+
 	// карусель
 	$('#foo1').owlCarousel({
 		loop:false,
@@ -29,9 +38,9 @@ $(document).ready(function(){
 	});
 
 	$('.policy input').click(function(){
-		console.log("policy");
 		var $this = $(this),
 			$submit = $this.closest('.form-policy');
+
 		if ($this.is(':checked')){
 			$submit.find('.input, .form-control, .submit, textarea, input[type=radio]').removeAttr('disabled');
 		} else {
