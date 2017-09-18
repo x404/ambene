@@ -819,6 +819,7 @@ footer{
 
 input.submit:disabled{
 	background: rgba(128, 128, 128, .3) !important;
+	cursor: default;
 	&:hover{
 		opacity: 1 !important;
 	}

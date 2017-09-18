@@ -1025,7 +1025,8 @@ footer {
 
 /* Показываем получение фокуса. */
 input.submit:disabled {
-  background: rgba(128, 128, 128, 0.3) !important; }
+  background: rgba(128, 128, 128, 0.3) !important;
+  cursor: default; }
   input.submit:disabled:hover {
     opacity: 1 !important; }
 
