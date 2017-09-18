@@ -69,7 +69,48 @@ $(document).ready(function(){
 	});
 
 
+	// products counters
+	$('.products__count .plus').on('click', function(e){
+		e.preventDefault();
+		let $this = $(this),
+			priceEl = $this.closest('form').find('.products__price span'),
+			countEl = $this.prev('input'),
+			price = countEl.data('price'),
+			cnt = parseInt(countEl.val())+1,
+			cost = 1;
+
+		cost = cnt *  price;
+		countEl.val(cnt);
+		priceEl.text(splitNums('.', cost.toString()));
+	});
+
+	$('.products__count .minus').on('click', function(e){
+		e.preventDefault();
+		let $this = $(this),
+			priceEl = $this.closest('form').find('.products__price span'),
+			countEl = $this.next('input'),
+			price = countEl.data('price'),
+			cnt = parseInt(countEl.val())-1,
+			cost = 1;
+
+		(cnt < 0) ? cnt = 0 : '';
+		cost = cnt *  price;
+		countEl.val(cnt);
+		priceEl.text(splitNums('.', cost.toString()));
+	});
+
 });
+
+
+function splitNums(delimiter, str){   
+	str = str.replace(/(\d+)(\.\d+)?/g,
+	function(c,b,a){return b.replace(/(\d)(?=(\d{3})+$)/g, '$1'+delimiter) + (a ? a : '')});
+	    return str;
+}
+
+
+
+
 
 function ajax(url, method, data) {
 	return new Promise(function(resolve, reject) {
@@ -94,50 +135,29 @@ function ajax(url, method, data) {
 
 
 
-new Vue({
-	el: "#app",
-	data() {
-		return {
-			qty : 0
-		}
-	},
-	methods: {
-		inc: function(event){
-			console.log($(event.currentTarget));
-			this.qty++;
-		},
-		dec: function(event){
-			this.qty--;
-			// if (item.qty <= 0){
-			// 	qty = 0;
-			// }
-		}
-	}
-})
+// new Vue({
+// 	el: "#app",
+// 	data() {
+// 		return {
+// 			qty : 0
+// 		}
+// 	},
+// 	methods: {
+// 		inc: function(event){
+// 			console.log($(event.currentTarget));
+// 			this.qty++;
+// 		},
+// 		dec: function(event){
+// 			this.qty--;
+// 			// if (item.qty <= 0){
+// 			// 	qty = 0;
+// 			// }
+// 		}
+// 	}
+// })
 
 
-	// $('.price .plus').live('click', function(e){
-	// 	e.preventDefault();
-	// 	priceEl = $(this).closest('.price');
-	// 	var cnt = (parseInt(priceEl.find('i').html())+1),
-	// 		cost = cnt *  priceEl.find('p').attr('data-price');
 
-	// 	priceEl.find('i').html(cnt).attr('data-count', cnt);
-	// 	priceEl.find('.decl').html(declOfNum(cnt, ['картридж','картриджа','картриджей']));
-	// 	priceEl.find('p').html(cost);
-	// });
-
-	// $('.price .minus').live("click", function(e){
-	// 	e.preventDefault();
-	// 	priceEl = $(this).closest('.price');
-	// 	var cnt = (parseInt(priceEl.find('i').html())-1);
-
-	// 	(cnt < 1) ? cnt = 1 : '';
-	// 	cost = cnt *  priceEl.find('p').attr('data-price');
-	// 	priceEl.find('p').html(cost);
-	// 	priceEl.find('.decl').html(declOfNum(cnt, ['картридж','картриджа','картриджей']));
-	// 	priceEl.find('i').html(cnt).attr('data-count', cnt);
-	// });
 
 // =заглушка для IE
 //event listener: DOM ready

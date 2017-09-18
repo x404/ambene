@@ -141,7 +141,7 @@
 			</div>
 		</div>
 
-		<div class="tab-content" id="app">
+		<div class="tab-content">
 			<div class="tab-pane fade flexbox products__tab tab_1 show active" id="nav-ampule" aria-labelledby="nav-ampule-tab">
 				<div class="products__tab-cell">
 					<h3 class="products__title">АМБЕНЕ ИНЪЕКЦИЯ ДЛЯ УКОЛОВ : 3 шт!</h3>
@@ -150,9 +150,9 @@
 					<img src="template/images/ampule.jpg" alt="Амбене инъекция для уколов" />
 					<form action="#" method="post">
 						<div class="products__count">
-							<a href="#" class="minus" v-on:click.prevent="dec">-</a>
-							<input name="ampule_count_1" class="form-control" type="text" value="0" v-model="qty" />
-							<a href="#" class="plus" v-on:click.prevent="inc">+</a>
+							<a href="#" class="minus">-</a>
+							<input name="ampule_count_1" class="form-control" type="text" value="0" data-price="1700" />
+							<a href="#" class="plus">+</a>
 						</div>
 						<div class="products__price"><span>0</span> руб.</div>
 						<button type="button" class="products__submit"><span>купить</span></button>
@@ -167,13 +167,15 @@
 					<div class="products__subtitle">СТОИМОСТЬ 5-ти АМПУЛ</div>
 					<div class="products__pricetitle"><span>2.700</span> рублей!</div>
 					<img src="template/images/ampule.jpg" alt="Амбене инъекция для уколов" />
-					<div class="products__count">
-						<a href="#" class="minus" v-on:click.prevent="dec($event)">-</a>
-						<input name="ampule_count_2" class="form-control" type="text" value="1" v-model="qty" />
-						<a href="#" class="plus" v-on:click.prevent="inc($event)">+</a>
-					</div>
-					<div class="products__price"><span>2.700</span> руб.</div>
-					<button type="button" class="products__submit"><span>купить</span></button>
+					<form action="#" method="post">
+						<div class="products__count">
+							<a href="#" class="minus">-</a>
+							<input name="ampule_count_2" class="form-control" type="text" value="1" data-price="2700" />
+							<a href="#" class="plus">+</a>
+						</div>
+						<div class="products__price"><span>2.700</span> руб.</div>
+						<button type="button" class="products__submit"><span>купить</span></button>
+					</form>
 					<div class="products__text">
 						<p>Доставка по Москве 300 рублей!</p>
 						<p>Доставка в Регионы России почтой!</p>
@@ -184,13 +186,15 @@
 					<div class="products__subtitle">СТОИМОСТЬ 10-x АМПУЛ</div>
 					<div class="products__pricetitle"><span>4.700</span> рублей!</div>
 					<img src="template/images/ampule.jpg" alt="Амбене инъекция для уколов" />
-					<div class="products__count">
-						<a href="#" class="minus" v-on:click.prevent="dec">-</a>
-						<input name="ampule_count_3" class="form-control" type="text" value="0" v-model="qty" />
-						<a href="#" class="plus" v-on:click.prevent="inc">+</a>
-					</div>
-					<div class="products__price"><span>0</span> руб.</div>
-					<button type="button" class="products__submit"><span>купить</span></button>
+					<form action="#" method="post">
+						<div class="products__count">
+							<a href="#" class="minus">-</a>
+							<input name="ampule_count_3" class="form-control" type="text" value="0" data-price="4700" />
+							<a href="#" class="plus">+</a>
+						</div>
+						<div class="products__price"><span>0</span> руб.</div>
+						<button type="button" class="products__submit"><span>купить</span></button>
+					</form>
 					<div class="products__text">
 						<p>БЕСПЛАТНАЯ доставка по Москве на следующий день!</p>
 						<p>Доставка в Регионы России почтой!</p>
@@ -206,7 +210,7 @@
 					<form action="#" method="post">
 						<div class="products__count">
 							<a href="#" class="minus">-</a>
-							<input name="ampule_count_1" class="form-control" type="text" value="0" />
+							<input name="ampule_count_1" class="form-control" type="text" value="0" data-price="2800"/>
 							<a href="#" class="plus">+</a>
 						</div>
 						<div class="products__price"><span>0</span> руб.</div>
@@ -222,13 +226,15 @@
 					<div class="products__subtitle">СТОИМОСТЬ УПАКОВКИ</div>
 					<div class="products__pricetitle"><span>4.500</span> рублей!</div>
 					<img src="template/images/ampule.jpg" alt="Амбене инъекция для уколов" />
-					<div class="products__count">
-						<a href="#" class="minus">-</a>
-						<input name="ampule_count_2" class="form-control" type="text" value="1" />
-						<a href="#" class="plus">+</a>
-					</div>
-					<div class="products__price"><span>4.500</span> руб.</div>
-					<button type="button" class="products__submit"><span>купить</span></button>
+					<form action="#" method="post">
+						<div class="products__count">
+							<a href="#" class="minus">-</a>
+							<input name="ampule_count_1" class="form-control" type="text" value="1" data-price="4500"/>
+							<a href="#" class="plus">+</a>
+						</div>
+						<div class="products__price"><span>4.500</span> руб.</div>
+						<button type="button" class="products__submit"><span>купить</span></button>
+					</form>
 					<div class="products__text">
 						<p>Доставка по Москве 300 рублей!</p>
 						<p>Доставка в Регионы России почтой!</p>
@@ -675,6 +681,8 @@
 <link rel="stylesheet" property="stylesheet" href="template/css/owl.carousel.css" />
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.0/vue.js"></script>
+
+<!-- <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script> -->
 
 <script src="//yastatic.net/share2/share.js"></script>
 <script src="/template/js/engine.js"></script>
