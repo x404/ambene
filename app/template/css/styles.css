@@ -1103,7 +1103,9 @@ input.submit:disabled {
     font-size: 1.8rem;
     color: #218ee0;
     font-size: 18px;
-    font-size: 1.8rem; }
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    padding-bottom: 1rem; }
 
 .modal-content {
   position: relative;

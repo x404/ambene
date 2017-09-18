@@ -98,7 +98,7 @@
 					<p>Все препараты Ambene Parenteral торговой марки Recordati Pharma, Germany привезены из Германии. Мы на 100% уверены в качестве предоставляемого продукта.</p>
 					<p>Наша компания соблюдает все необходимые условия транспортировки и хранения препарата.</p>
 				</div>
-				<div class="delivery__more text-center">< <a href="#" title="" class="more-link" data-more="">подробнее</a> ></div>
+				<div class="delivery__more text-center">< <a href="#" title="" class="more-link" data-toggle="modal" data-target="#infomodal" data-id="1.php" data-title="Прямые поставки из Германии">подробнее</a> ></div>
 			</div>
 			<div class="delivery__cell">
 				<div class="delivery__icon">
@@ -109,7 +109,7 @@
 					<p>Все препараты Ambene Parenteral торговой марки Recordati Pharma, Germany привезены из Германии. Мы на 100% уверены в качестве предоставляемого продукта.</p>
 					<p>Наша компания соблюдает все необходимые условия транспортировки и хранения препарата.</p>
 				</div>
-				<div class="delivery__more text-center">< <a href="#" title="" class="more-link" data-more="">подробнее</a> ></div>
+				<div class="delivery__more text-center">< <a href="#" title="" class="more-link" data-toggle="modal" data-target="#infomodal" data-id="1.php" data-title="Бесплатная доставка по Москве">подробнее</a> ></div>
 			</div>
 			<div class="delivery__cell">
 				<div class="delivery__icon">
@@ -120,7 +120,7 @@
 					<p>Наша компания осуществляет доставку препарата Амбене во все города России. Вы можете выбрать для себя наиболее удобный способ получения препарата.</p>
 					<p>Почтой России, наложенным платежом. Срок доставки до 7-ми рабочих дней.</p>
 				</div>
-				<div class="delivery__more text-center">< <a href="#" title="" class="more-link" data-more="">подробнее</a> ></div>
+				<div class="delivery__more text-center">< <a href="#" title="" class="more-link" data-toggle="modal" data-target="#infomodal" data-id="1.php" data-title="Доставка по всей России!">подробнее</a> ></div>
 			</div>
 		</div>
 	</div>
@@ -141,7 +141,7 @@
 			</div>
 		</div>
 
-		<div class="tab-content">
+		<div class="tab-content" id="app">
 			<div class="tab-pane fade flexbox products__tab tab_1 show active" id="nav-ampule" aria-labelledby="nav-ampule-tab">
 				<div class="products__tab-cell">
 					<h3 class="products__title">АМБЕНЕ ИНЪЕКЦИЯ ДЛЯ УКОЛОВ : 3 шт!</h3>
@@ -150,9 +150,9 @@
 					<img src="template/images/ampule.jpg" alt="Амбене инъекция для уколов" />
 					<form action="#" method="post">
 						<div class="products__count">
-							<a href="#" class="minus">-</a>
-							<input name="ampule_count_1" class="form-control" type="text" value="0" />
-							<a href="#" class="plus">+</a>
+							<a href="#" class="minus" v-on:click.prevent="dec">-</a>
+							<input name="ampule_count_1" class="form-control" type="text" value="0" v-model="qty" />
+							<a href="#" class="plus" v-on:click.prevent="inc">+</a>
 						</div>
 						<div class="products__price"><span>0</span> руб.</div>
 						<button type="button" class="products__submit"><span>купить</span></button>
@@ -168,9 +168,9 @@
 					<div class="products__pricetitle"><span>2.700</span> рублей!</div>
 					<img src="template/images/ampule.jpg" alt="Амбене инъекция для уколов" />
 					<div class="products__count">
-						<a href="#" class="minus">-</a>
-						<input name="ampule_count_2" class="form-control" type="text" value="1" />
-						<a href="#" class="plus">+</a>
+						<a href="#" class="minus" v-on:click.prevent="dec($event)">-</a>
+						<input name="ampule_count_2" class="form-control" type="text" value="1" v-model="qty" />
+						<a href="#" class="plus" v-on:click.prevent="inc($event)">+</a>
 					</div>
 					<div class="products__price"><span>2.700</span> руб.</div>
 					<button type="button" class="products__submit"><span>купить</span></button>
@@ -185,9 +185,9 @@
 					<div class="products__pricetitle"><span>4.700</span> рублей!</div>
 					<img src="template/images/ampule.jpg" alt="Амбене инъекция для уколов" />
 					<div class="products__count">
-						<a href="#" class="minus">-</a>
-						<input name="ampule_count_3" class="form-control" type="text" value="0" />
-						<a href="#" class="plus">+</a>
+						<a href="#" class="minus" v-on:click.prevent="dec">-</a>
+						<input name="ampule_count_3" class="form-control" type="text" value="0" v-model="qty" />
+						<a href="#" class="plus" v-on:click.prevent="inc">+</a>
 					</div>
 					<div class="products__price"><span>0</span> руб.</div>
 					<button type="button" class="products__submit"><span>купить</span></button>
@@ -674,6 +674,7 @@
 <script src="/template/js/owl.carousel.min.js"></script>
 <link rel="stylesheet" property="stylesheet" href="template/css/owl.carousel.css" />
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.0/vue.js"></script>
 
 <script src="//yastatic.net/share2/share.js"></script>
 <script src="/template/js/engine.js"></script>

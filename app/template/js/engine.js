@@ -1,4 +1,5 @@
 $(document).ready(function(){
+	'use strict';
 
 	// карусель
 	$('#foo1').owlCarousel({
@@ -91,6 +92,52 @@ function ajax(url, method, data) {
 	});
 }
 
+
+
+new Vue({
+	el: "#app",
+	data() {
+		return {
+			qty : 0
+		}
+	},
+	methods: {
+		inc: function(event){
+			console.log($(event.currentTarget));
+			this.qty++;
+		},
+		dec: function(event){
+			this.qty--;
+			// if (item.qty <= 0){
+			// 	qty = 0;
+			// }
+		}
+	}
+})
+
+
+	// $('.price .plus').live('click', function(e){
+	// 	e.preventDefault();
+	// 	priceEl = $(this).closest('.price');
+	// 	var cnt = (parseInt(priceEl.find('i').html())+1),
+	// 		cost = cnt *  priceEl.find('p').attr('data-price');
+
+	// 	priceEl.find('i').html(cnt).attr('data-count', cnt);
+	// 	priceEl.find('.decl').html(declOfNum(cnt, ['картридж','картриджа','картриджей']));
+	// 	priceEl.find('p').html(cost);
+	// });
+
+	// $('.price .minus').live("click", function(e){
+	// 	e.preventDefault();
+	// 	priceEl = $(this).closest('.price');
+	// 	var cnt = (parseInt(priceEl.find('i').html())-1);
+
+	// 	(cnt < 1) ? cnt = 1 : '';
+	// 	cost = cnt *  priceEl.find('p').attr('data-price');
+	// 	priceEl.find('p').html(cost);
+	// 	priceEl.find('.decl').html(declOfNum(cnt, ['картридж','картриджа','картриджей']));
+	// 	priceEl.find('i').html(cnt).attr('data-count', cnt);
+	// });
 
 // =заглушка для IE
 //event listener: DOM ready

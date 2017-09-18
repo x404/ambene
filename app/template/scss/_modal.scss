@@ -61,6 +61,8 @@
 		color: $color10;
 		@include font-size(1.8);
 		@extend .italic;
+		text-transform: uppercase;
+		padding-bottom: 1rem;
 	}
 }
 
