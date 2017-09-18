@@ -331,7 +331,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="reviews__add text-center">< <a href="#" title="" data-more="" class="add-link">оставить отзыв</a> ></div>
+		<div class="reviews__add text-center">< <a href="#" title="" data-more="" class="add-link" data-toggle="modal" data-target="#addreview">оставить отзыв</a> ></div>
 	</div>
 </section>
 <!-- =/reviews -->
@@ -635,6 +635,28 @@
 	</div>
 </div>
 <!-- =/modal about -->
+
+
+<!-- =modal addreview -->
+<div class="addreview modal fade" id="addreview" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="container">
+			<button type="button" data-dismiss="modal" class="close-modal">< <span>закрыть окно</span> ></button>
+			<div class="modal__content">
+				<form action="#" method="post">
+					<fieldset>
+						<div class="modal__text">
+							<h2 class="title">НАПИШИТЕ ВАШ ОТЗЫВ</h2>
+							<textarea name="msg" class="addreview__msg" cols="30" rows="10"></textarea>
+						</div>
+						<button class="submit" type="button">ОТПРАВИТЬ ОТЗЫВ</button>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- =/modal addreview -->
 
 
 <div id="outdated"></div>

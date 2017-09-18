@@ -172,7 +172,7 @@ input::-moz-focus-inner {
   font-family: 'CenturyGothicBold'; }
 
 .bold, .visual, .delivery__title, .products__head, .products__tabs, .products__title, .products__subtitle, .products__pricetitle, .products__count .minus,
-.products__count .plus, .products__count .form-control, .products__price, .about__left, .about__subtitle, .reviews__title strong, .reviews__who, .info__title, .manual__title, .works .works__title {
+.products__count .plus, .products__count .form-control, .products__price, .about__left, .about__subtitle, .reviews__title strong, .reviews__who, .info__title, .manual__title, .works .works__title, .addreview .submit {
   font-family: "SegoeUIBold"; }
 
 .italic, .add-link, .visual__button, .products__submit, .qorder__form-control, .qorder__form .submit, .qorder__form .policy, .feedback__form .row input.form-control, .feedback__form .row textarea, .feedback__form .row .submit, .modal-dialog .title, .close-modal, #callback form, #callback form .flexbox .form-control, #callback form .flexbox .submit, #about .modal__content {
@@ -1028,6 +1028,39 @@ input.submit:disabled {
   background: rgba(128, 128, 128, 0.3) !important; }
   input.submit:disabled:hover {
     opacity: 1 !important; }
+
+.addreview .modal-dialog {
+  padding-bottom: 2.5rem; }
+
+.addreview .modal__text {
+  background-color: #fff;
+  border: 1px solid #0563bf;
+  padding: 1rem; }
+  .addreview .modal__text .title {
+    padding-bottom: .7rem; }
+
+.addreview__msg {
+  border: none;
+  font-family: "SegoeUIRegular";
+  height: 14rem;
+  margin-top: 0;
+  resize: none;
+  width: 100%; }
+
+.addreview .submit {
+  -webkit-transition: opacity 0.2s ease-out;
+  transition: opacity 0.2s ease-out;
+  background-color: #0563bf;
+  border-radius: 3px;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  margin: 2rem auto 0;
+  padding: 1rem 1.5rem;
+  text-transform: uppercase; }
+  .addreview .submit:hover {
+    opacity: .85; }
 
 .modal-open {
   overflow: hidden; }
