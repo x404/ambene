@@ -69,6 +69,11 @@
 		}
 	}
 
+	form.active{
+
+	}
+
+
 	&__count{
 		display: flex;
 		justify-content: center;
@@ -142,9 +147,19 @@
 			width: 218px;
 			z-index: 1;
 		}
+		&-active, 
 		&:hover{
 			&:before{
 				opacity: 1;
+			}
+		}
+
+		&:disabled{
+			cursor: default;
+			&:hover{
+				&:before{
+					display: none;
+				}
 			}
 		}
 	}
@@ -823,6 +838,11 @@ input.submit:disabled{
 	&:hover{
 		opacity: 1 !important;
 	}
+}
+
+.form-control,
+textarea{
+	@include transition-param(background);
 }
 
 

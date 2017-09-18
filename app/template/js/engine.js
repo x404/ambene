@@ -73,7 +73,9 @@ $(document).ready(function(){
 	$('.products__count .plus').on('click', function(e){
 		e.preventDefault();
 		let $this = $(this),
-			priceEl = $this.closest('form').find('.products__price span'),
+			form = $this.closest('form'),
+			submit = form.find('.products__submit'),
+			priceEl = form.find('.products__price span'),
 			countEl = $this.prev('input'),
 			price = countEl.data('price'),
 			cnt = parseInt(countEl.val())+1,
@@ -82,21 +84,37 @@ $(document).ready(function(){
 		cost = cnt *  price;
 		countEl.val(cnt);
 		priceEl.text(splitNums('.', cost.toString()));
+		$('.products__tab-cell').find('.products__submit-active').removeClass('products__submit-active');
+		submit.addClass('products__submit-active');
+		submit.removeAttr('disabled');
 	});
 
 	$('.products__count .minus').on('click', function(e){
 		e.preventDefault();
 		let $this = $(this),
+			form = $this.closest('form'),
+			submit = form.find('.products__submit'),
 			priceEl = $this.closest('form').find('.products__price span'),
 			countEl = $this.next('input'),
 			price = countEl.data('price'),
 			cnt = parseInt(countEl.val())-1,
 			cost = 1;
 
-		(cnt < 0) ? cnt = 0 : '';
+
+		$('.products__tab-cell').find('.products__submit-active').removeClass('products__submit-active');
+
+		if ( cnt <= 0 ) {
+			cnt = 0;
+			submit.prop('disabled', 'disabled');
+		} else {
+			submit.addClass('products__submit-active');
+			
+		};
+
 		cost = cnt *  price;
 		countEl.val(cnt);
 		priceEl.text(splitNums('.', cost.toString()));
+
 	});
 
 });
