@@ -919,6 +919,6 @@ label.error{
 .form-control,
 textarea{
 	&.error{
-		border-color: red !important
+		border:1px solid red !important
 	}
 }

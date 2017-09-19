@@ -26,6 +26,27 @@ $(document).ready(function(){
 	$('#callback-form').validate();
 
 
+	$('#addreview-form .submit').click(function(){
+		$('#addreview-form').submit();
+		return false;
+	});
+	$('#addreview-form').validate();
+
+
+	$('#qorder-form .submit').click(function(){
+		$('#qorder-form').submit();
+		return false;
+	});
+	$('#qorder-form').validate();
+
+
+	$('#feedback-form .submit').click(function(){
+		$('#feedback-form').submit();
+		return false;
+	});
+	$('#feedback-form').validate();
+
+
 
 	// карусель
 	$('#foo1').owlCarousel({

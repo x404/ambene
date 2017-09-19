@@ -54,7 +54,7 @@
 				<div class="header__phone">
 					<a href="tel:+74957840948">+7 <span>(495)</span> 784 0948</a>
 				</div>
-				<a href="#" class="header__callback" data-toggle="modal" data-target="#callback">Заказать звонок</a>
+				<a href="#" class="header__callback" data-toggle="modal" data-target="#callback" role="button">Заказать звонок</a>
 			</div>
 			<!-- =/contacts -->
 
@@ -78,7 +78,7 @@
 		<p class="visual__desc text-right">препарат от боли<br> и воспалений в суставах</p>
 		<p class="visual__title">AMBENE</p>
 		<p class="visual__slogan">С нами надежно и выгодно сотрудничать!</p>
-		<a href="#products" class="visual__button">купить</a>
+		<a href="#products" class="visual__button" role="button">купить</a>
 	</div>
 </section>
 <!-- =/visual -->
@@ -336,7 +336,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="reviews__add text-center">< <a href="#" title="" data-more="" class="add-link" data-toggle="modal" data-target="#addreview">оставить отзыв</a> ></div>
+		<div class="reviews__add text-center">< <a href="#" title="" data-more="" class="add-link" data-toggle="modal" data-target="#addreview" role="button">оставить отзыв</a> ></div>
 	</div>
 </section>
 <!-- =/reviews -->
@@ -474,17 +474,17 @@
 		</div>
 		<div class="qorder__box">
 			<p class="qorder__title">Для заказа лекарства заполните пожалуйста форму:</p>
-			<form action="#" method="post" class="qorder__form form-policy">
+			<form action="#" method="post" class="qorder__form form-policy" id="qorder-form">
 				<fieldset>
 					<div class="qorder__form-row flexbox qorder__form-rowflexbox">
-						<input class="qorder__form-control form-control required" type="text" name="name" placeholder="ваше имя" value="" />
-						<input class="qorder__form-control form-control required" type="text" name="" placeholder="название препарата" value="" />
-						<input class="qorder__form-control form-control" type="tel" name="tel" placeholder="ваш номер телефона" value="" />
-						<input class="qorder__form-control form-control" type="text" name="" placeholder="ваш e-mail" value="" />
+						<input class="qorder__form-control form-control required" required type="text" name="name" placeholder="ваше имя" value="" />
+						<input class="qorder__form-control form-control required" required type="text" name="" placeholder="название препарата" value="" />
+						<input class="qorder__form-control form-control required" required type="tel" name="tel" placeholder="ваш номер телефона" value="" />
+						<input class="qorder__form-control form-control required" required type="email" name="" placeholder="ваш e-mail" value="" />
 					</div>
 					<div class="qorder__form-row flexbox qorder__form-rowflexbox">
-						<textarea class="qorder__form-control" name="" id="" cols="30" rows="10" placeholder="текст вашего сообщения"></textarea>
-						<input type="submit" class="submit" value="отправить" />
+						<textarea class="qorder__form-control required" name="msg" cols="30" rows="10" placeholder="текст вашего сообщения"></textarea>
+						<button type="button" class="submit">отправить</button>
 					</div>
 					<div class="qorder__form-row policy">
 						<input type="checkbox" id="checkbox2" value="" name="checkbox" checked="checked" class="user-access" />
@@ -526,7 +526,7 @@
 				</div>
 				<div class="row">
 					<textarea name="msg" id="msg" cols="30" rows="10" placeholder="ваш вопрос или сообщение ..." class="required"></textarea>
-					<input type="submit" class="submit" value="Отправить" />
+					<button type="button" class="submit">Отправить</button>
 				</div>
 			</fieldset>
 		</form>
@@ -632,11 +632,11 @@
 		<div class="container">
 			<button type="button" data-dismiss="modal" class="close-modal">< <span>закрыть окно</span> ></button>
 			<div class="modal__content">
-				<form action="#" method="post">
+				<form action="#" method="post" id="addreview-form">
 					<fieldset>
 						<div class="modal__text">
 							<h2 class="title">НАПИШИТЕ ВАШ ОТЗЫВ</h2>
-							<textarea name="msg" class="addreview__msg" cols="30" rows="10"></textarea>
+							<textarea name="msg" class="addreview__msg required" cols="30" rows="10"></textarea>
 						</div>
 						<button class="submit" type="button">ОТПРАВИТЬ ОТЗЫВ</button>
 					</fieldset>

@@ -1088,7 +1088,7 @@ label.error {
 
 .form-control.error,
 textarea.error {
-  border-color: red !important; }
+  border: 1px solid red !important; }
 
 .modal-open {
   overflow: hidden; }
