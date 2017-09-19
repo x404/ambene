@@ -1272,7 +1272,7 @@ textarea.error {
 ---------------------------*/
 @media (max-width: 767px) {
   .navbar-toggle {
-    background-color: green;
+    background-color: #0563bf;
     border: none;
     cursor: pointer;
     display: block;
@@ -1292,7 +1292,11 @@ textarea.error {
     .navbar-toggle:hover {
       background-color: #fff; }
       .navbar-toggle:hover .icon-bar {
-        background-color: green; }
+        background-color: #0563bf; }
+  .o-menu .header__nav ul {
+    display: block;
+    padding-left: 15px;
+    padding-right: 0; }
   .o-menu .close-menu {
     display: block;
     transform: translate(0, 0); }
@@ -1309,48 +1313,39 @@ textarea.error {
     cursor: pointer;
     padding: 0;
     left: 215px;
-    background-color: green;
+    background-color: #0563bf;
     border: none;
     height: 70px;
-    position: absolute;
+    position: fixed;
     text-align: center;
     top: 0;
     width: 70px;
     z-index: 99; }
   #navbar {
     transition: all .2s ease-out;
-    background-color: green;
-    color: green;
+    background-color: #0563bf;
+    color: #0563bf;
     display: block;
     left: 0;
     padding-top: 15px;
-    position: absolute;
+    position: fixed;
     top: 0;
     transform: translate(-305px, 0);
     width: 230px; }
     #navbar .container {
       padding: 0; }
-    #navbar ul.mainnav {
+    #navbar ul.nav-tabs {
       background: none;
       display: block;
       font-size: 15px;
       margin-top: 0;
       padding-left: 15px; }
-      #navbar ul.mainnav ul {
-        position: static;
-        opacity: 1;
-        background: none;
-        font-size: 14px !important; }
-        #navbar ul.mainnav ul li:after {
-          top: 12px; }
-      #navbar ul.mainnav > li.folder > a:after,
-      #navbar ul.mainnav > li.folder > span:after {
-        top: 24px !important; }
-      #navbar ul.mainnav > li.active > a {
+      #navbar ul.nav-tabs > li.active > a {
         text-decoration: underline; }
-      #navbar ul.mainnav li {
+      #navbar ul.nav-tabs li {
         border-bottom: 1px solid #fff; }
-        #navbar ul.mainnav li a, #navbar ul.mainnav li span {
+        #navbar ul.nav-tabs li a {
+          border-bottom: none !important;
           color: #fff;
           display: block;
           height: auto;
@@ -1358,80 +1353,16 @@ textarea.error {
           padding: 18px 0 18px 10px;
           text-decoration: none;
           text-transform: none; }
-          #navbar ul.mainnav li a:hover, #navbar ul.mainnav li span:hover {
+          #navbar ul.nav-tabs li a:hover {
             color: #fff;
             text-decoration: underline; }
-        #navbar ul.mainnav li.active, #navbar ul.mainnav li:hover {
+          #navbar ul.nav-tabs li a.active {
+            text-decoration: underline; }
+        #navbar ul.nav-tabs li.active, #navbar ul.nav-tabs li:hover {
           border-bottom: 1px solid #fff;
           color: #fff; }
-          #navbar ul.mainnav li.active a, #navbar ul.mainnav li.active span, #navbar ul.mainnav li:hover a, #navbar ul.mainnav li:hover span {
-            background: none; }
-        #navbar ul.mainnav li.folder > a,
-        #navbar ul.mainnav li.folder > span {
-          position: relative; }
-          #navbar ul.mainnav li.folder > a:after,
-          #navbar ul.mainnav li.folder > span:after {
-            background: url(../images/arrow.png) no-repeat left bottom;
-            content: "";
-            display: block;
-            height: 12px;
-            position: absolute;
-            right: 10px;
-            top: 9px;
-            width: 8px; }
-        #navbar ul.mainnav li.folder ul.show {
-          display: block; }
-        #navbar ul.mainnav li.folder.open > a:after,
-        #navbar ul.mainnav li.folder.open > span:after {
-          background-position: left top;
-          width: 12px;
-          height: 8px; }
-        #navbar ul.mainnav li.folder .folder {
-          padding-left: .5rem;
-          padding-right: 0; }
-          #navbar ul.mainnav li.folder .folder > a:after,
-          #navbar ul.mainnav li.folder .folder > span:after {
-            display: none; }
-          #navbar ul.mainnav li.folder .folder li ul li {
-            position: relative; }
-            #navbar ul.mainnav li.folder .folder li ul li a:before {
-              content: "-";
-              z-index: 10;
-              position: absolute;
-              left: 4px;
-              top: 8px; }
-          #navbar ul.mainnav li.folder .folder li ul.folder > ul {
-            display: none !important; }
-        #navbar ul.mainnav li.active a:hover {
-          color: #fff; }
-        #navbar ul.mainnav li.active > ul {
-          display: block; }
-          #navbar ul.mainnav li.active > ul .active .active a {
-            font-weight: bold;
-            text-decoration: underline; }
-        #navbar ul.mainnav li ul {
-          display: none;
-          font-size: 12px;
-          width: auto !important;
-          border-top: none; }
-          #navbar ul.mainnav li ul li {
-            border-bottom: none;
-            padding-left: 7px; }
-            #navbar ul.mainnav li ul li a, #navbar ul.mainnav li ul li span {
-              padding: 10px 0 10px 10px; }
-            #navbar ul.mainnav li ul li.active, #navbar ul.mainnav li ul li:hover {
-              border-bottom: none;
-              color: green; }
-            #navbar ul.mainnav li ul li ul {
-              padding-top: 0; }
-              #navbar ul.mainnav li ul li ul li {
-                padding-right: 0; }
-                #navbar ul.mainnav li ul li ul li:hover {
-                  background: none; }
-                #navbar ul.mainnav li ul li ul li.folder.active > a {
-                  text-decoration: underline; }
-                #navbar ul.mainnav li ul li ul li ul li.active a {
-                  text-decoration: underline; } }
+          #navbar ul.nav-tabs li.active a, #navbar ul.nav-tabs li:hover a {
+            background: none; } }
 
 ::-ms-clear {
   display: none; }
@@ -1527,7 +1458,8 @@ textarea.error {
     .header__nav {
       flex-basis: 100%; }
     .header__contacts {
-      flex-basis: 50%; }
+      flex-basis: 340px;
+      padding-left: 4rem; }
     .header__qcart {
       margin-top: 2rem; }
       .header__qcart-box {
@@ -1692,7 +1624,16 @@ textarea.error {
   .visual__title {
     font-size: 38px;
     font-size: 3.8rem;
-    right: 60px; } }
+    right: 60px; }
+  #callback-form .flexbox {
+    display: block; }
+    #callback-form .flexbox .form-control {
+      margin-bottom: 1rem;
+      width: 100%; }
+    #callback-form .flexbox .submit {
+      height: 4rem !important;
+      margin-left: 0 !important;
+      width: 100%; } }
 
 @media (max-width: 490px) {
   .visual {
@@ -1720,6 +1661,11 @@ textarea.error {
   .qorder__form-row {
     margin-top: 0; } }
 
+@media (max-width: 385px) {
+  .header__phone a {
+    font-size: 26px;
+    font-size: 2.6rem; } }
+
 @media (max-width: 360px) {
   .about__content, .pere__content {
     padding: 0; }
@@ -1727,9 +1673,30 @@ textarea.error {
   .manual__title {
     font-size: 50px;
     font-size: 5rem; }
+  .delivery__cell,
+  .delivery__text,
+  .pere__text,
+  .info__cell,
+  .partners__cell {
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    text-align: justify; }
   .manual {
     text-align: justify; }
     .manual__title {
       padding-top: 2rem; }
     .manual__column {
-      padding-left: 0; } }
+      padding-left: 0; }
+  .footer__menu {
+    justify-content: space-between;
+    flex-wrap: nowrap; }
+    .footer__menu ul:last-child {
+      padding-right: 0; } }
+
+@media (max-width: 340px) {
+  .header__phone a {
+    font-size: 24px;
+    font-size: 2.4rem;
+    margin-left: 2.5rem; } }

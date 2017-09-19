@@ -1,7 +1,3 @@
-$color2: #fff; 
-$color5: green;
-
-
 /* =mobile-menu
 ---------------------------*/
 .navbar-toggle,
@@ -16,7 +12,7 @@ $color5: green;
 
 @media (max-width: 767px){
 	.navbar-toggle{
-		background-color: $color5;
+		background-color: $color4;
 		border: none;
 		cursor: pointer;
 		display: block;
@@ -37,14 +33,18 @@ $color5: green;
 		&:hover{
 			background-color: $color2;
 			.icon-bar{
-				background-color: $color5;
+				background-color: $color4;
 			}
 		}
 	}
 
-
 	.o-menu{
 		.header{
+			&__nav ul{
+				display: block;
+				padding-left: 15px;
+				padding-right: 0;
+			}
 		}
 		.close-menu{
 			display: block;
@@ -65,10 +65,10 @@ $color5: green;
 		cursor: pointer;
 		padding: 0;
 		left: 215px;
-		background-color: $color5;
+		background-color: $color4;
 		border: none;
 		height: 70px;
-		position: absolute;
+		position: fixed;
 		text-align: center;
 		top: 0;
 		width: 70px;
@@ -78,46 +78,31 @@ $color5: green;
 
 	#navbar{
 		transition: all .2s ease-out;
-		background-color: $color5;
-		color: $color5;
+		background-color: $color4;
+		color: $color4;
 		display: block;
 		left: 0;
 		padding-top: 15px;
-		position: absolute;
+		position: fixed;
 		top: 0;
 		transform: translate(-305px, 0);
 		width: 230px;
 		.container{
 			padding: 0;
 		}
-		ul.mainnav{
+		ul.nav-tabs{
 			background: none;
 			display: block;
 			font-size: 15px;
 			margin-top: 0;
 			padding-left: 15px;
-			ul{
-				position: static; 
-				opacity: 1;
-				background: none;
-				font-size: 14px !important;
-				li:after{
-					top: 12px;
-				}
-			}
-			& > li.folder > a,
-			& > li.folder > span
-			{
-				&:after{
-					top: 24px !important;
-				}
-			}
 			& > li.active > a{
 				text-decoration: underline;				
 			}
 			li{ // 1 level
 				border-bottom: 1px solid #fff;
-				a, span{
+				a{
+					border-bottom: none !important;
 					color: $color2;
 					display: block;
 					height: auto;
@@ -129,133 +114,17 @@ $color5: green;
 						color: #fff;
 						text-decoration: underline;
 					}
+					&.active{
+						text-decoration: underline;
+					}
 				}
 				&.active,
 				&:hover{
-					a, span{
+					a{
 						background: none;
 					}
 					border-bottom: 1px solid #fff;
 					color: #fff;
-				}
-
-				&.folder{
-					& > a,
-					& > span{
-						position: relative;
-						&:after{
-							background: url(../images/arrow.png) no-repeat left bottom;
-							content: "";
-							display: block;
-							height: 12px;
-							position: absolute;
-							right: 10px;
-							top: 9px;
-							width: 8px;
-						}
-					}
-					ul.show{
-						display: block;
-					}
-					&.open > a,
-					&.open > span{
-						&:after{
-							background-position: left top;
-							width: 12px;
-							height: 8px;
-						}						
-					}
-
-					.folder{ // 2 level
-						padding-left: .5rem;
-						padding-right: 0;
-						& > a,
-						& > span{
-							&:after{
-								display: none;
-							}
-						}
-						li{
-							ul{
-								li{
-									position: relative;
-									a:before{
-										content: "-";
-										z-index: 10;
-										position: absolute;
-										left: 4px;
-										top: 8px;
-									}
-								}
-								&.folder{
-									& > ul{
-										display: none !important;										
-									}
-								}
-							}
-						}
-					}
-				}
-
-				&.active{
-					a, span{
-						// text-decoration: underline;
-					}
-					a{
-						&:hover{
-							color : #fff;
-						}						
-					}
-
-					& > ul{
-						display: block;
-						.active .active a{
-							font-weight: bold;
-							text-decoration: underline;
-						}
-					}
-				}
-
-				ul{
-					display: none;
-					font-size: 12px;
-					width: auto !important;
-					border-top: none;
-					li{
-						border-bottom: none;
-						padding-left: 7px;
-						a, span{
-							padding: 10px 0 10px 10px;
-
-						}
-						&.active,
-						&:hover{
-							border-bottom: none;
-							color: $color5;
-						}
-
-						ul{ // 2level
-							padding-top: 0;
-							li{
-								padding-right: 0;
-								&:hover{
-									background: none;
-								}
-								&.folder.active > a{
-									text-decoration: underline;
-								}
-								ul{
-									li{
-										&.active{
-											a{
-												text-decoration: underline;
-											}
-										}
-									}
-								}
-							}
-						}
-					}
 				}
 			}
 		}

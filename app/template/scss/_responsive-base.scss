@@ -155,7 +155,6 @@
 
 		.flexbox{
 			height: auto;
-			// flex-direction: column;
 			flex-wrap: wrap;
 		}
 
@@ -164,7 +163,9 @@
 		}
 
 		&__contacts{
-			flex-basis: 50%;			
+			flex-basis: 340px;
+			// width: 330px;
+			padding-left: 4rem;	
 		}
 	
 		&__qcart{
@@ -454,6 +455,22 @@
 			right: 60px;
 		}
 	}
+	
+	#callback-form{
+		.flexbox{
+			display: block;
+			.form-control{
+				margin-bottom: 1rem;
+				width: 100%;
+			}
+			.submit{
+				height: 4rem !important;
+				margin-left: 0 !important;
+				width: 100%;
+			}
+		}
+	}
+
 }
 
 
@@ -507,6 +524,13 @@
 }
 
 
+@media (max-width: 385px){
+	.header__phone a{
+		@include font-size(2.6);
+	}
+}
+
+
 @media (max-width: 360px){
 	.about, .pere{
 		&__content{
@@ -519,6 +543,20 @@
 		@include font-size(5);
 	}
 
+
+	.delivery__cell,
+	.delivery__text,
+	.pere__text,
+	.info__cell,
+	.partners__cell
+	{
+		margin-left: 0;
+		margin-right: 0;
+		padding-left: 0;
+		padding-right: 0;
+		text-align: justify;
+	}
+
 	.manual{
 		text-align: justify;
 		&__title{
@@ -527,5 +565,22 @@
 		&__column{
 			padding-left: 0;
 		}
+	}
+
+	.footer__menu{
+		justify-content: space-between;
+		flex-wrap: nowrap;
+		ul:last-child(){
+			padding-right: 0;
+		}
+	}
+}
+
+
+
+@media (max-width: 340px){
+	.header__phone a{
+		@include font-size(2.4);
+		margin-left: 2.5rem;
 	}
 }

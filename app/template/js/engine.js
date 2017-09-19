@@ -82,10 +82,9 @@ $(document).ready(function(){
 			},
 			openMenu = function(e){
 				e.preventDefault();
-				h = $(document).height();
+				var h = $(window).height();
 				$('body').addClass('o-menu');
 				$('#navbar').height(h);
-
 			},
 			closeMenu = function(e){
 				e.preventDefault();
@@ -94,6 +93,16 @@ $(document).ready(function(){
 			};
 		init();
 	});	
+
+
+
+	$(window).resize(function(){
+		if ($('body').width() > 640) {
+			$('body').removeClass('o-menu');
+			$('#navbar').css('height', 'auto');
+		}
+	});
+
 
 
 	$('#infomodal').on('show.bs.modal', function (e) {
