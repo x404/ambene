@@ -1,0 +1,289 @@
+<!DOCTYPE HTML>
+<html lang="ru">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+
+<meta name="robots" content="noindex,nofollow" />
+
+<title>Корзина</title>
+<link rel="stylesheet" href="/template/css/styles.min.css" />
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>  -->
+<script src="/template/js/libs.min.js"></script>
+<!-- <script src="/template/js/bootstrap.min.js"></script> -->
+
+<!--[if !IE]><!-->
+<script>if(/*@cc_on!@*/false){document.documentElement.className+=' ie10';}</script>
+<!--<![endif]-->
+
+<!--[if IE]>
+	<link href="css/styles-ie.css" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+<!--[if lt IE 9]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+</head>
+<body data-spy="scroll" data-target="#navbar" data-offset="98">
+
+<div class="outerwrapper">
+	<!-- =header -->
+	<header class="header">
+		<div class="container">
+			<div class="flexbox">
+				<!-- =navbar -->
+				<nav id="navbar" class="header__nav">
+					<ul class="nav nav-tabs" role="tablist">
+						<li><a class="nav-link" href="/#home" title="">Главная</a></li>
+						<li><a class="nav-link" href="/#products" title="">Купить</a></li>
+						<li><a class="nav-link" href="/#about" title="">Применение</a></li>
+						<li><a class="nav-link" href="/#reviews" title="">Отзывы</a></li>
+						<li><a class="nav-link" href="/#manual" title="">Инструкции</a></li>
+						<li><a class="nav-link" href="/#map" title="">Контакты</a></li>
+					</ul>
+				</nav>
+				<button type="button" class="navbar-toggle">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<button type="button" class="close-menu"><img src="/template/images/close-modal.png" alt=""></button>
+				<!-- =/navbar -->
+
+				<!-- =contacts -->
+				<div class="header__contacts text-center">
+					<div class="header__phone">
+						<a href="tel:+74957840948">+7 <span>(495)</span> 784 0948</a>
+					</div>
+					<a href="#" class="header__callback" data-toggle="modal" data-target="#callback" role="button">Заказать звонок</a>
+				</div>
+				<!-- =/contacts -->
+
+				<!-- =qcart -->
+				<div class="header__qcart">
+					<div class="header__qcart-box">
+						<a href="#" class="header__qcart-link">2 шт.</a>					
+					</div>
+				</div>
+				<!-- =/qcart -->
+			</div>
+		</div>
+	</header>	
+	<!-- =/header -->
+	
+	
+	<!-- =cart -->
+	<div class="cart">
+		<div class="container">
+			<h1>КОРЗИНА</h1>
+			<div class="flexbox">
+				<div class="cart__column">
+					<div class="cart__column-head">Товары</div>
+					<div class="cart__column-body">
+					</div>
+				</div>
+				<div class="cart__column">
+					<div class="cart__column-head">Цена</div>
+					<div class="cart__column-body">
+						
+					</div>
+				</div>
+				<div class="cart__column">
+					<div class="cart__column-head">Количество</div>
+					<div class="cart__column-body">
+						
+					</div>
+				</div>
+				<div class="cart__column">
+					<div class="cart__column-head">Сумма</div>
+					<div class="cart__column-body">
+					</div>
+				</div>
+			</div>
+
+
+			<h1>ОФОРМЛЕНИЕ ЗАКАЗА</h1>
+			
+			<div class="flexbox">
+				<div class="cart__column">
+					<div class="cart__column-head">Данные получателя:</div>
+					<div class="cart__column-body">
+						<label for="name">имя *</label><input id="name" class="form-control required" name="name" type="text" value="" />
+						<label for="email">e-mail *</label><input id="email" class="form-control required" name="email" type="email" value="" />
+						<label for="tel">телефон *</label><input id="tel" class="form-control required" name="tel" type="tel" value="" />
+					</div>
+				</div>
+				<div class="cart__column">
+					<div class="cart__column-head">Варианты доставки:</div>
+					<div class="cart__column-body">
+						
+					</div>
+				</div>
+				<div class="cart__column">
+					<div class="cart__column-head">Способы оплаты:</div>
+					<div class="cart__column-body">
+						
+					</div>
+				</div>
+				<div class="cart__column">
+					<div class="cart__column-head">Адрес доставки:</div>
+					<div class="cart__column-body">
+						<label for="zip">почтовый индекс *</label><input type="text" name="zip" id="zip" class="form-control required" required="required" value="" >
+						<label for="region">область *</label><input type="text" name="region" id="region" class="form-control required" required="required" value="" >
+						<label for="city">город *</label><input type="text" name="city" id="city" class="form-control required" required="required" value="" >
+						<label for="house">улица/дом/квартира *</label><input type="text" name="house" id="house" class="form-control required" required="required" value="" >
+					</div>
+				</div>
+			</div>
+
+			<div class="cart__row cart__row-footer flexbox">
+				<p><strong>Итого</strong>, с доставкой: <strong class="cost">7.500</strong> руб. </p>
+				<button type="button" class="submit">оформить заказ</button>
+			</div>
+
+
+			<div class="cart__text">
+				<p>После отправки заказа с Вами свяжутся наши консультанты по указанным контактным данным, для того чтобы подтвердить заказ, уточнить детали, сроки доставки и стоимость медикамента. После подтверждения заказа необходимо вызвать нашего курьера и сделать предоплату. Стоимость доставки и наших услуг зависит от суммы заказа.</p>
+			</div>
+		</div>
+	</div>
+	<!-- =/cart -->
+
+</div>
+
+
+<!-- =footer -->
+<footer>
+	<div class="container flexbox">
+		<div class="footer__menu">
+			<ul>
+				<li><a href="#" title="" data-toggle="modal" data-target="#infomodal" data-id="1.php" data-title="Заголовок">Главная</a></li>
+				<li><a href="#" title="" data-toggle="modal" data-target="#infomodal" data-id="1.php" data-title="Заголовок">Радикулит</a></li>
+				<li><a href="#" title="" data-toggle="modal" data-target="#infomodal" data-id="1.php" data-title="Заголовок">Заказать</a></li>
+			</ul>
+			<ul>
+				<li><a href="#" title="" data-toggle="modal" data-target="#infomodal" data-id="1.php" data-title="Заголовок">Купить</a></li>
+				<li><a href="#" title="" data-toggle="modal" data-target="#infomodal" data-id="1.php" data-title="Заголовок">Артрит</a></li>
+				<li><a href="#" title="" data-toggle="modal" data-target="#infomodal" data-id="1.php" data-title="Заголовок">Инструкция</a></li>
+			</ul>
+			<ul>
+				<li><a href="#" title="" data-toggle="modal" data-target="#infomodal" data-id="1.php" data-title="Заголовок">Отзывы</a></li>
+				<li><a href="#" title="" data-toggle="modal" data-target="#infomodal" data-id="1.php" data-title="Заголовок">Невралгия</a></li>
+				<li><a href="#" title="" data-toggle="modal" data-target="#infomodal" data-id="1.php" data-title="Заголовок">Доставка</a></li>
+			</ul>
+		</div>
+		<div class="footer__center text-center">
+			<img src="template/images/logo.png" alt="Ambene" />
+			<div class="footer__copyright">
+				© 2015 Shop-Recovery <br>
+				<a href="#home" class="toTop" title="">Центр восстановления</a>
+			</div>
+		</div>
+		<div class="footer__right text-right">
+			<div class="footer__social">
+				МЫ В СОЦСЕТЯХ:
+				<div class="footer__social-icons">
+					<a href="#" title="" target="_blank"><img src="template/images/social/fb.gif" width="35" height="35" alt="Facebook"/></a>
+					<a href="#" title="" target="_blank"><img src="template/images/social/vk.gif" width="35" height="35" alt="Вконтакте"/></a>
+					<a href="#" title="" target="_blank"><img src="template/images/social/twitter.gif" width="35" height="35" alt="Twitter"/></a>
+					<a href="#" title="" target="_blank"><img src="template/images/social/odn.gif" width="35" height="35" alt="Одноклассники"/></a>
+					<a href="#" title="" target="_blank"><img src="template/images/social/inst.gif" width="35" height="35" alt="Instagram"/></a>
+					<a href="#" title="" target="_blank"><img src="template/images/social/googleplus.gif" width="35" height="35" alt="Google Plus"/></a>
+				</div>
+			</div>	
+			<div class="footer__kreotif">
+				<p>Разработано в <a href="http://kreotif.com" title="" target="_blank">Digital Agency Kreotif</a></p>
+				<p><a href="http://kreotif.com" title="" target="_blank">Информация о сайте</a></p>
+			</div>		
+		</div>
+	</div>
+</footer>
+<!-- =/footer -->
+
+
+<!-- =modal callback -->
+<div class="modal fade" id="callback" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="container">
+			<button type="button" data-dismiss="modal" class="close-modal">< <span>закрыть окно</span> ></button>
+			<form action="#" method="post" class="form-policy" id="callback-form">
+				<fieldset>
+					<div class="flexbox">
+						<input type="tel" name="tel" class="form-control required" value="" placeholder="" tabindex="0" autofocus />
+						<button type="button" class="submit" tabindex="1" >позвонить мне</button>
+					</div>
+					<div class="policy">
+						<input type="checkbox" id="checkbox1" value="" name="checkbox" checked="checked" class="user-access" />
+						<label for="checkbox1">Я Согласен на обработку персональных данных и принимаю условия <a href="#.pdf" title="" target="_blank">Пользовательского соглашения</a></label>
+					</div>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+</div>
+<!-- =/modal callback -->
+
+
+<!-- =modal addreview -->
+<div class="addreview modal fade" id="addreview" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="container">
+			<button type="button" data-dismiss="modal" class="close-modal">< <span>закрыть окно</span> ></button>
+			<div class="modal__content">
+				<form action="#" method="post" id="addreview-form">
+					<fieldset>
+						<div class="modal__text">
+							<h2 class="title">НАПИШИТЕ ВАШ ОТЗЫВ</h2>
+							<textarea name="msg" class="addreview__msg required" cols="30" rows="10"></textarea>
+						</div>
+						<button class="submit" type="button">ОТПРАВИТЬ ОТЗЫВ</button>
+					</fieldset>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- =/modal addreview -->
+
+
+
+<!-- =modal info -->
+<div class="modal fade" id="infomodal" tabindex="-1" role="dialog" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="container">
+			<button type="button" data-dismiss="modal" class="close-modal">< <span>закрыть окно</span> ></button>
+			<div class="modal__content">
+				<h2 class="title"></h2>
+				<div class="modal__text">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- =/modal info -->
+
+
+
+
+
+<div id="outdated"></div>
+<link rel="stylesheet" property="stylesheet" href="outdatedbrowser/outdatedbrowser.min.css" />
+<script src="outdatedbrowser/outdatedbrowser.min.js"></script>
+
+<script src="/template/js/owl.carousel.min.js"></script>
+<link rel="stylesheet" property="stylesheet" href="template/css/owl.carousel.css" />
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.0/vue.js"></script> -->
+
+<script src="//yastatic.net/share2/share.js"></script>
+<script src="http://api-maps.yandex.ru/2.1.26/?lang=ru_RU"></script>
+
+<script src="/template/js/engine.js"></script>
+
+</body>
+</html>

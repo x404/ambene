@@ -83,12 +83,19 @@ html {
 body {
   font-size: 14px;
   font-size: 1.4rem;
+  display: flex;
+  flex-flow: column;
+  height: 100vh;
   font-family: "SegoeUIRegular", Arial;
   font-display: swap;
   position: relative; }
 
 html, body {
   height: 100%; }
+
+.outerwrapper {
+  -webkit-flex: 1;
+  flex: 1; }
 
 *:focus {
   outline: none; }
@@ -160,10 +167,10 @@ input::-moz-focus-inner {
   font-family: 'CenturyGothicBold'; }
 
 .bold, .visual, .delivery__title, .products__head, .products__tabs, .products__title, .products__subtitle, .products__pricetitle, .products__count .minus,
-.products__count .plus, .products__count .form-control, .products__price, .about__left, .pere__subtitle, .reviews__title strong, .reviews__who, .info__title, .manual__title, .works .works__title, .addreview .submit {
+.products__count .plus, .products__count .form-control, .products__price, .about__left, .pere__subtitle, .reviews__title strong, .reviews__who, .info__title, .manual__title, .works .works__title, .addreview .submit, .cart h1 {
   font-family: "SegoeUIBold"; }
 
-.italic, .add-link, .visual__button, .products__submit, .qorder__form-control, .qorder__form .submit, .qorder__form .policy, .feedback__form .row input.form-control, .feedback__form .row textarea, .feedback__form .row .submit, .modal-dialog .title, .close-modal, #callback form, #callback form .flexbox .form-control, #callback form .flexbox .submit, #about .modal__content {
+.italic, .add-link, .visual__button, .products__submit, .qorder__form-control, .qorder__form .submit, .qorder__form .policy, .feedback__form .row input.form-control, .feedback__form .row textarea, .feedback__form .row .submit, .cart__column label, .cart__column .form-control, .modal-dialog .title, .close-modal, #callback form, #callback form .flexbox .form-control, #callback form .flexbox .submit, #about .modal__content {
   font-family: "SegoeUIItalic"; }
 
 .tdn, .more-link,
@@ -953,7 +960,8 @@ input::-moz-focus-inner {
 footer {
   background: url(../images/footer-bg.png) no-repeat center bottom #e6e6e6;
   padding: 1rem 0 .2rem;
-  font-style: italic; }
+  font-style: italic;
+  min-height: 153px; }
 
 .footer__menu {
   display: flex;
@@ -1098,6 +1106,31 @@ textarea.error {
   position: absolute;
   left: 0;
   top: 0; }
+
+.cart {
+  margin-top: 140px; }
+  .cart h1 {
+    color: #0563bf;
+    padding-bottom: 2rem; }
+  .cart__column {
+    flex-basis: 25%; }
+    .cart__column-head {
+      background-color: #f5f5f5;
+      color: #808080;
+      padding: 1rem 0 1rem .5rem; }
+    .cart__column label {
+      display: block;
+      color: #808080;
+      padding-left: 1.2rem;
+      margin: 1rem 0 .5rem; }
+    .cart__column .form-control {
+      padding: .5rem 1rem;
+      color: #0563bf;
+      width: 24rem;
+      -webkit-transition: all 0.2s ease-out;
+      transition: all 0.2s ease-out; }
+      .cart__column .form-control:focus, .cart__column .form-control:active {
+        outline: 1px solid #0563bf; }
 
 .modal-open {
   overflow: hidden; }

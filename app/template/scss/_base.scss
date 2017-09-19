@@ -12,6 +12,7 @@ $color7:#333;
 $color8:#d9d9d9;
 $color9:#e6e6e6;
 $color10:#218ee0;
+$color11:#f5f5f5;
 
 
 
@@ -37,6 +38,9 @@ html {
 
 body{
 	@include font-size(1.4);
+	display: flex;
+	flex-flow: column;
+	height: 100vh;
 	font-family: "SegoeUIRegular", Arial;
 	font-display: swap;
 	position: relative;
@@ -45,6 +49,11 @@ body{
 
 html, body{
 	height: 100%
+}
+
+.outerwrapper{
+	-webkit-flex: 1;
+	flex: 1;
 }
 
 
