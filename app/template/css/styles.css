@@ -1090,6 +1090,13 @@ label.error {
 textarea.error {
   border: 1px solid red !important; }
 
+#ymap {
+  height: 435px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0; }
+
 .modal-open {
   overflow: hidden; }
 

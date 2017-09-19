@@ -170,7 +170,7 @@ $(document).ready(function(){
 function splitNums(delimiter, str){   
 	str = str.replace(/(\d+)(\.\d+)?/g,
 	function(c,b,a){return b.replace(/(\d)(?=(\d{3})+$)/g, '$1'+delimiter) + (a ? a : '')});
-	    return str;
+		return str;
 }
 
 
@@ -249,3 +249,38 @@ addLoadEvent(function(){
 	})
 });
 // =/заглушка для IE
+
+
+
+
+var map;
+var myCollection;	
+ymaps.ready(function () {
+	map = new ymaps.Map('ymap', {
+		center: [55.764014, 37.655299],
+		zoom: 16
+	});
+
+	myCollection = new ymaps.GeoObjectCollection(null, {
+		preset: 'islands#redDotIcon'
+	});
+	myCollection.add(new ymaps.Placemark(
+		[55.764394, 37.655095],
+		{
+			hintContent: 'Ambene',
+			balloonContent: 'Садовая-Черногрязская улица, 22с1'
+		}
+	));
+
+	map.behaviors.disable('scrollZoom'); 
+
+	map.geoObjects.add(myCollection);
+
+	map.events.add('click', function onMapClick(e) {
+		if(map.behaviors.isEnabled('scrollZoom')) {
+			map.events.remove('click', onMapClick);
+		} else {
+			map.behaviors.enable(['scrollZoom']);
+		}
+	});
+})

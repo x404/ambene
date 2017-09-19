@@ -893,7 +893,6 @@ textarea{
 		resize: none;
 		width: 100%;
 	}
-
 	.submit{
 		@extend .bold;
 		@include transition-param();
@@ -921,4 +920,12 @@ textarea{
 	&.error{
 		border:1px solid red !important
 	}
+}
+
+#ymap{
+	height: 435px;
+	width: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
 }
