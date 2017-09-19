@@ -1,14 +1,531 @@
-@media (max-width: 1199px){
+@media (max-width: 1400px){
+	.products{
+		&__subtitle, 
+		&__title{
+			@include font-size(1.7);
+		}
+	}
+
+	.about{
+		background-size: cover;
+
+		&__cell{
+			width: 275px;
+			img{
+				max-width: 100%;
+			}
+		}
+
+		&__title{
+			$w: 217px;
+			width: $w;
+			&:before{
+				width: $w;
+			}
+		}
+	}
+
+	.pere{
+		&__text{
+			width: 83%;
+		}
+	}
+
+	.footer__menu{
+		flex-basis: 335px;
+	}
 }
 
-@media (max-width: 1024px){
+@media (max-width: 1199px){
+	.visual{
+		height: 300px;
+		&__label{
+			left: 330px;
+			top: 30px;
+		}
+
+		&__desc{
+			top: 20px;
+		}
+
+		&__title{
+			@include font-size(6.2);
+			top: 90px;
+		}
+
+		&__slogan{
+			top: 180px;
+		}
+
+		&__button{
+			top: 240px;
+		}
+	}
+
+	.products{
+		&__subtitle, 
+		&__title{
+			@include font-size(1.6);
+			padding-left: 1rem;
+			padding-right: 1rem;
+		}
+	}
+
+	.reviews .owl-nav{
+		// margin-left: -50%;
+		// width: 100%;
+	}
+
+	.pere,
+	.about{
+		&__content{
+			flex-wrap: wrap;
+		}
+		&__cell{
+			left: 0 !important;
+			flex-basis: 50%;
+			margin-bottom: 3rem;
+			img{
+				max-width: 100%;
+			}
+		}
+	}
+
+	.pere{
+		&__text{
+			padding-right: 2rem;
+			width: 100%;
+		}
+	}
+
+	.about{
+		&__pic{
+			top: 0;
+			display: flex;
+			justify-content: center;
+		}
+
+		&__title{
+			$w: 258px;
+			width: $w;
+			margin-left: -149px ;
+			left: 50%;
+			&:before{
+				// left: 50%;
+				left: 0;
+				width: $w;
+			}
+		}
+	}
+
+	.reviews{
+		padding-bottom: 2rem;
+		&__item{
+			width: 60rem;
+		}
+		.owl-nav{
+			width: 100%;
+			margin-left: -50%;
+		}
+	}
+
+	.qorder{
+		&__form{
+			width: 100%;
+			textarea.qorder__form-control{
+				width: 82%;
+			}
+		}
+	}
+
+	.footer{
+		&__menu{
+			flex-basis: 335px;
+		}
+		&__center{
+			flex-basis: 270px;
+		}
+	}
 }
 
 @media (max-width: 991px){
+	.header{
+		padding: 2rem 0;
+		height: auto;
+
+		.flexbox{
+			height: auto;
+			// flex-direction: column;
+			flex-wrap: wrap;
+		}
+
+		&__nav{
+			flex-basis: 100%;
+		}
+
+		&__contacts{
+			flex-basis: 50%;			
+		}
+	
+		&__qcart{
+			margin-top: 2rem;
+			&-box{
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
+	}
+	
+	.about{
+		&__head{
+			height: auto;
+		}
+
+		&__left{
+			padding-right: 7rem;
+			@include font-size(6);
+		}
+
+		&__right{
+			@include font-size(1.4);
+		}
+	}
+
+	.visual{
+		margin-top: 140px;
+		&__label{
+			left: 75px;
+		}
+	}
+
+	.reviews__title{
+		margin-bottom: 3rem;
+		strong{
+			display: block;
+			top: -5px;
+		}
+	}
+
+	footer{
+		.flexbox{
+			flex-direction: column;
+			align-items: center;
+		}
+	}
+
+	.footer{
+		.container{
+			// flex-wrap: wrap;
+		}
+
+		&__menu{
+			flex-wrap: wrap;
+			flex-basis: auto;
+		}
+		&__center{
+			margin-top: 3rem;
+			flex-basis: auto;
+			margin-bottom: 2rem;
+		}
+		&__right{
+			text-align: center;
+		}
+	}
 }
 
-@media (max-width: 767px){
+@media (max-width: 820px){
+	.feedback{
+		width: 90%;
+		margin-left: -45%;
+		&__form{
+			.row input.form-control{
+				width: 212px;
+			}
+		}
+	}
 }
 
-@media (max-width: 545px){
+@media (max-width: 768px){
+	.delivery{
+		.flexbox{
+			display: block;
+		}
+		&__cell{
+			margin-bottom: 3rem;
+		}
+		&__more{
+			margin-top: 1rem;
+		}
+	}
+
+	.products{
+		&__tab{
+			display: block;
+			&-cell{
+				margin-bottom: 3rem;
+			}
+		}
+	}
+
+	.tab-content>.active{
+		display: block;
+	}
+
+	.info,
+	.partners{
+		.flexbox{
+			display: block;
+		}
+		&__cell{
+			margin-bottom: 2rem;
+		}
+	}
+}
+
+
+
+@media (max-width: 750px){
+	.qorder{
+		&__form-rowflexbox{
+			flex-direction: column;
+			align-items: center;
+		}
+	}
+
+	.qorder__form{
+		input.qorder__form-control,
+		textarea.qorder__form-control
+		{
+			margin-bottom: 1rem;
+			margin-right: 0;
+			width: 70%;
+		}
+		.submit{
+			height: 5rem;
+			padding-left: 2.5rem;
+			padding-right: 2.5rem;
+		}
+	}
+
+	.about{
+		&__head{
+			display: block;
+			text-align: center;
+		}
+		&__left{
+			padding-left: 0;
+			padding-right: 0;
+			padding-top: 1rem;
+			padding-bottom: 1rem;
+		}
+	}
+	
+
+	.map{
+		height: auto;
+	}
+	#ymap{
+		position: static;
+	}
+
+	.feedback{
+		margin-left: auto;
+		margin-right: auto;
+		position: static;
+		&__form{
+			.row{
+				display: block;
+				// flex-direction: column;
+				.form-control{
+					margin-bottom: 1rem;
+				}
+				input.form-control,
+				textarea
+				{
+					display: block;
+					width: 80%;
+					margin-left: auto;
+					margin-right: auto;
+				}
+				.submit{
+					height: 4rem;
+					margin-left: auto;
+					margin-right: auto;
+					margin-top: 2rem;
+					display: block;
+				}
+			}
+		}
+	}
+}
+
+
+
+@media (max-width: 730px){
+	.about__title{
+		margin-left: -135px;
+		width: 232px;
+		&:before{
+			width: 235px;
+		}
+	}
+
+
+	.manual__flexbox{
+		display: block;
+	}
+	.about, 
+	.pere{
+		&__content{
+			display: block;
+		}
+		&__cell{
+			margin-left: auto;
+			margin-right: auto;
+			margin-bottom: 0 !important;
+			padding-bottom: 3rem;
+		}
+	}
+
+	.pere{
+		&__cell{
+			padding-bottom: 0;
+		}
+	}
+}
+
+
+@media (max-width: 710px){
+	.reviews{
+		&__item{
+			width: 80%
+		}
+	}
+}
+
+
+@media (max-width: 660px){
+	.visual{
+		@include font-size(2.1);
+		&__label{
+			left: 18px;			
+		}
+		&__title{
+			@include font-size(5);			
+		}
+
+	}	
+}
+
+@media (max-width: 600px){
+	.header{
+		.flexbox{
+			display: block;
+		}
+	}
+
+	.visual{
+		margin-top: 192px;
+	}
+
+	.products{
+		&__head{
+			@include font-size(1.8)
+		}
+	}
+}
+
+
+@media (max-width: 560px){
+	.visual{
+		@include font-size(1.8)
+		&__title{
+			@include font-size(3.8)
+		}
+	}
+}
+
+
+
+@media (max-width: 520px){
+	.visual{
+		&__title{
+			@include font-size(3.8);
+			right: 60px;
+		}
+	}
+}
+
+
+
+
+@media (max-width: 490px){
+	.visual{
+		display: none;
+	}
+
+	.header{
+		position: static;
+	}
+}
+
+
+@media (max-width: 450px){
+	.products{
+		.nav-tabs{
+			display: flex;
+			flex-direction: column;
+			.separator{
+				margin-bottom: 1rem;
+			}
+		}
+	}
+}
+
+
+@media (max-width: 400px){
+	.reviews{
+		.owl-nav{
+			display: none !important;
+		}
+		&__item{
+			width: 100%;
+		}
+	}
+
+	.feedback__form .row,
+	.qorder__form{
+		input.form-control,
+		textarea{
+			width: 100% !important;
+		}
+	}
+
+	.qorder__form-row{
+		margin-top: 0;
+	}
+}
+
+
+@media (max-width: 360px){
+	.about, .pere{
+		&__content{
+			padding: 0;
+		}
+	}
+
+	.reviews__title strong,
+	.manual__title{
+		@include font-size(5);
+	}
+
+	.manual{
+		text-align: justify;
+		&__title{
+			padding-top: 2rem;
+		}
+		&__column{
+			padding-left: 0;
+		}
+	}
 }
