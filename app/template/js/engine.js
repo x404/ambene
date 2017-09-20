@@ -1,6 +1,24 @@
 $(document).ready(function(){
 	'use strict';
 
+	$.fn.ForceNumericOnly =
+	function(){
+		return this.each(function()	{
+			$(this).keydown(function(e){
+				var key = e.charCode || e.keyCode || 0;
+				// Разрешаем backspace, tab, delete, стрелки, обычные цифры и цифры на дополнительной клавиатуре
+				return (
+					key == 8 ||
+					key == 9 ||
+					key == 46 ||
+					(key >= 37 && key <= 40) ||
+					(key >= 48 && key <= 57) ||
+					(key >= 96 && key <= 105));
+			});
+		});
+	};
+
+	
 
 	// scroll page
 	$('nav a[href*=\\#]:not([href=\\#]), .visual__button, .toTop').click(function() {
@@ -176,9 +194,10 @@ $(document).ready(function(){
 			submit = form.find('.products__submit'),
 			priceEl = form.find('.products__price span'),
 			countEl = $this.prev('input'),
-			price = countEl.data('price'),
-			cnt = parseInt(countEl.val())+1,
-			cost = 1;
+			price = countEl.data('price');
+
+		var cnt = parseInt(countEl.val())+1,
+			cost = 0;
 
 		cost = cnt *  price;
 		countEl.val(cnt);
@@ -195,9 +214,10 @@ $(document).ready(function(){
 			submit = form.find('.products__submit'),
 			priceEl = $this.closest('form').find('.products__price span'),
 			countEl = $this.next('input'),
-			price = countEl.data('price'),
-			cnt = parseInt(countEl.val())-1,
-			cost = 1;
+			price = countEl.data('price');
+
+		var cnt = parseInt(countEl.val())-1,
+			cost = 0;
 
 
 		$('.products__tab-cell').find('.products__submit-active').removeClass('products__submit-active');
@@ -206,8 +226,7 @@ $(document).ready(function(){
 			cnt = 0;
 			submit.prop('disabled', 'disabled');
 		} else {
-			submit.addClass('products__submit-active');
-			
+			submit.addClass('products__submit-active');			
 		};
 
 		cost = cnt *  price;
@@ -237,13 +256,17 @@ $(document).ready(function(){
 
 
 	// products counters
+
+	$('.cart__table .count').ForceNumericOnly();
+
 	$('.cart__table .plus').on('click', function(e){
 		e.preventDefault();
 		let $this = $(this),
 			priceEl = $this.closest('tr').find('.cost'),
 			countEl = $this.prev('input'),
-			price = countEl.data('price'),
-			cnt = parseInt(countEl.val()) + 1,
+			price = countEl.data('price');
+
+		var cnt = parseInt(countEl.val()) + 1,
 			cost = 1;
 
 		cost = cnt *  price;
@@ -255,19 +278,45 @@ $(document).ready(function(){
 	$('.cart__table .minus').on('click', function(e){
 		e.preventDefault();
 		let $this = $(this),
-			priceEl = $this.closest('tr').find('.cost'),			
+			priceEl = $this.closest('tr').find('.cost'),
 			countEl = $this.next('input'),
-			price = countEl.data('price'),
-			cnt = parseInt(countEl.val()) - 1,
-			cost = 1;
+			price = countEl.data('price');
 
-		(cnt <= 1) ? cnt = 1 : '';
+		var	cnt = parseInt(countEl.val()) - 1,
+			cost = 0;
+
+		if ($this.data('flag') == 'additional'){
+			(cnt <= 0) ? cnt = 0 : '';
+		} else{
+			(cnt <= 1) ? cnt = 1 : '';
+		}
 		cost = cnt *  price;
 		countEl.val(cnt);
 		priceEl.text(splitNums('.', cost.toString()));
-	});	
+	});
+
+	$('.cart__table .reset').on('click', function(e){
+		e.preventDefault();
+		let $this = $(this);
+
+		$this.closest('tr').find('.count').val('0');
+	});
 
 
+	$('.cart__table .count').keyup(function() {
+		let $this = $(this),
+			priceEl = $this.closest('tr').find('.cost'),
+			price = $this.data('price');
+		
+		var cnt = 0,
+			cost = 0;
+
+		console.log(cnt);
+		cnt = $(this).val(),
+
+		cost = cnt *  price;
+		priceEl.text(splitNums('.', cost.toString()));
+	});
 });
 
 

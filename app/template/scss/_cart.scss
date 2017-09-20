@@ -1,9 +1,10 @@
 .cart{
 	margin-top: 140px;
-	h1{
-		color: $color4;
+	h1,
+	.title{
 		@extend .bold;
 		@include font-size(2.4);
+		color: $color4;
 		padding-bottom: 2rem;
 	}
 
@@ -116,7 +117,8 @@
 		width: 130px;
 	}
 
-	.del{
+	.del,
+	.reset{
 		@include font-size(1.4);
 		@extend .italic;
 	}
@@ -161,6 +163,14 @@
 		}
 		&-del{
 			padding-right: 0;
+		}
+
+		&-naim{
+			width: 535px;
+		}
+		
+		&-price{
+			width: 145px;
 		}
 	}
 	

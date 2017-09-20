@@ -167,10 +167,12 @@ input::-moz-focus-inner {
   font-family: 'CenturyGothicBold'; }
 
 .bold, .visual, .delivery__title, .products__head, .products__tabs, .products__title, .products__subtitle, .products__pricetitle, .products__count .minus,
-.products__count .plus, .products__count .form-control, .products__price, .about__left, .pere__subtitle, .reviews__title strong, .reviews__who, .info__title, .manual__title, .works .works__title, .addreview .submit, .cart h1, .cart .product-count a, .cart .product-count .count {
+.products__count .plus, .products__count .form-control, .products__price, .about__left, .pere__subtitle, .reviews__title strong, .reviews__who, .info__title, .manual__title, .works .works__title, .addreview .submit, .cart h1,
+.cart .title, .cart .product-count a, .cart .product-count .count {
   font-family: "SegoeUIBold"; }
 
-.italic, .add-link, .visual__button, .products__submit, .qorder__form-control, .qorder__form .submit, .qorder__form .policy, .feedback__form .row input.form-control, .feedback__form .row textarea, .feedback__form .row .submit, .cart__column label, .cart__column .form-control, .cart .del, .modal-dialog .title, .close-modal, #callback form, #callback form .flexbox .form-control, #callback form .flexbox .submit, #about .modal__content {
+.italic, .add-link, .visual__button, .products__submit, .qorder__form-control, .qorder__form .submit, .qorder__form .policy, .feedback__form .row input.form-control, .feedback__form .row textarea, .feedback__form .row .submit, .cart__column label, .cart__column .form-control, .cart .del,
+.cart .reset, .modal-dialog .title, .close-modal, #callback form, #callback form .flexbox .form-control, #callback form .flexbox .submit, #about .modal__content {
   font-family: "SegoeUIItalic"; }
 
 .tdn, .more-link,
@@ -1141,10 +1143,11 @@ textarea.error {
 
 .cart {
   margin-top: 140px; }
-  .cart h1 {
-    color: #0563bf;
+  .cart h1,
+  .cart .title {
     font-size: 24px;
     font-size: 2.4rem;
+    color: #0563bf;
     padding-bottom: 2rem; }
   .cart .radio + label {
     cursor: pointer; }
@@ -1216,7 +1219,8 @@ textarea.error {
     padding-left: 1rem;
     padding-right: 2rem;
     width: 130px; }
-  .cart .del {
+  .cart .del,
+  .cart .reset {
     font-size: 14px;
     font-size: 1.4rem; }
   .cart .product-count {
@@ -1244,6 +1248,10 @@ textarea.error {
       width: 40px; }
   .cart .product-del {
     padding-right: 0; }
+  .cart .product-naim {
+    width: 535px; }
+  .cart .product-price {
+    width: 145px; }
   .cart__row-footer {
     font-size: 18px;
     font-size: 1.8rem;
