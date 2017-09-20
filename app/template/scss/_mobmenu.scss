@@ -1,5 +1,6 @@
 /* =mobile-menu
 ---------------------------*/
+.show-sm,
 .navbar-toggle,
 .close-menu{
 	display: none;
@@ -38,12 +39,17 @@
 		}
 	}
 
+	.show-sm{
+		display: block;
+
+	}
 	.o-menu{
 		.header{
 			&__nav ul{
 				display: block;
 				padding-left: 15px;
 				padding-right: 0;
+				height: auto;
 			}
 		}
 		.close-menu{
@@ -54,6 +60,19 @@
 			display: block;
 			transform: translate(-15px, 0);
 			z-index: 9999;
+			.show-sm{
+				@include font-size(1.5);
+				padding-left: 3rem;
+				a{
+					color: $color2;
+					display: block;
+					margin: 1.8rem 0;
+					text-decoration: none;
+					&:hover{
+						text-decoration: underline;
+					}
+				}
+			}
 		}
 	}
 

@@ -47,6 +47,10 @@
 						<li><a class="nav-link" href="#manual" title="">Инструкции</a></li>
 						<li><a class="nav-link" href="#map" title="">Контакты</a></li>
 					</ul>
+					<div class="show-sm">
+						<a class="hover-a" href="tel:74957840948">+7 (495) 784 0948</a>
+						<a class="hover-a" href="mailto:sales@shop-recovery.ru">sales@shop-recovery.ru</a>
+					</div>
 				</nav>
 				<button type="button" class="navbar-toggle">
 					<span class="icon-bar"></span>
@@ -157,7 +161,7 @@
 						<form action="#" method="post">
 							<div class="products__count">
 								<a href="#" class="minus" role="button">-</a>
-								<input name="ampule_count_1" class="form-control" type="text" value="0" data-price="1700" />
+								<input name="ampule_count_1" class="form-control count" type="number" value="0" data-price="1700" />
 								<a href="#" class="plus" role="button">+</a>
 							</div>
 							<div class="products__price"><span>0</span> руб.</div>
@@ -176,7 +180,7 @@
 						<form action="#" method="post">
 							<div class="products__count">
 								<a href="#" class="minus" role="button">-</a>
-								<input name="ampule_count_2" class="form-control" type="text" value="1" data-price="2700" />
+								<input name="ampule_count_2" class="form-control count" type="number" value="1" data-price="2700" />
 								<a href="#" class="plus" role="button">+</a>
 							</div>
 							<div class="products__price"><span>2.700</span> руб.</div>
@@ -195,7 +199,7 @@
 						<form action="#" method="post">
 							<div class="products__count">
 								<a href="#" class="minus" role="button">-</a>
-								<input name="ampule_count_3" class="form-control" type="text" value="0" data-price="4700" />
+								<input name="ampule_count_3" class="form-control count" type="number" value="0" data-price="4700" />
 								<a href="#" class="plus" role="button">+</a>
 							</div>
 							<div class="products__price"><span>0</span> руб.</div>
@@ -216,7 +220,7 @@
 						<form action="#" method="post">
 							<div class="products__count">
 								<a href="#" class="minus" role="button">-</a>
-								<input name="ampule_count_1" class="form-control" type="text" value="0" data-price="2800"/>
+								<input name="ampule_count_1" class="form-control count" type="number" value="0" data-price="2800"/>
 								<a href="#" class="plus" role="button">+</a>
 							</div>
 							<div class="products__price"><span>0</span> руб.</div>
@@ -235,7 +239,7 @@
 						<form action="#" method="post">
 							<div class="products__count">
 								<a href="#" class="minus" role="button">-</a>
-								<input name="ampule_count_1" class="form-control" type="text" value="0" data-price="4500"/>
+								<input name="ampule_count_1" class="form-control count" type="number" value="0" data-price="4500"/>
 								<a href="#" class="plus" role="button">+</a>
 							</div>
 							<div class="products__price"><span>0</span> руб.</div>
@@ -503,9 +507,9 @@
 					<fieldset>
 						<div class="qorder__form-row flexbox qorder__form-rowflexbox">
 							<input class="qorder__form-control form-control required" required type="text" name="name" placeholder="ваше имя" value="" />
-							<input class="qorder__form-control form-control required" required type="text" name="" placeholder="название препарата" value="" />
+							<input class="qorder__form-control form-control required" required type="text" name="title" placeholder="название препарата" value="" />
 							<input class="qorder__form-control form-control required" required type="tel" name="tel" placeholder="ваш номер телефона" value="" />
-							<input class="qorder__form-control form-control required" required type="email" name="" placeholder="ваш e-mail" value="" />
+							<input class="qorder__form-control form-control required email" required type="email" name="email" placeholder="ваш e-mail" value="" />
 						</div>
 						<div class="qorder__form-row flexbox qorder__form-rowflexbox">
 							<textarea class="qorder__form-control required" name="msg" cols="30" rows="10" placeholder="текст вашего сообщения"></textarea>
@@ -698,11 +702,9 @@
 
 <script src="/template/js/owl.carousel.min.js"></script>
 <link rel="stylesheet" property="stylesheet" href="template/css/owl.carousel.css" />
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.0/vue.js"></script> -->
 
-<script src="//yastatic.net/share2/share.js"></script>
-<script src="http://api-maps.yandex.ru/2.1.26/?lang=ru_RU"></script>
-
+<!-- <script src="//yastatic.net/share2/share.js"></script> -->
+<!-- <script src="http://api-maps.yandex.ru/2.1.26/?lang=ru_RU"></script> -->
 <script src="/template/js/engine.js"></script>
 
 </body>

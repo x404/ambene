@@ -15,4 +15,26 @@ _::-webkit-:host:not(:root:root), .header{
 
 //ie11
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+	body{
+		display: block;
+	}
+	textarea{
+		overflow: hidden;
+	}
+}
+
+.ie10{
+	.delivery__cell,
+	.info__cell,
+	.partners__cell {
+		width: 33%;
+	}
+
+	.qorder__form input.qorder__form-control{
+		width: 25%;
+	}
+
+	.about__right{
+		width: 50%;
+	}
 }

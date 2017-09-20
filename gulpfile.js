@@ -139,6 +139,8 @@ gulp.task('build', ['clean', 'img', 'scss', 'compress'], function(){
 	var buildFonts = gulp.src(config.sourceDir + '/fonts/**/*').pipe(gulp.dest('dist/template/fonts')); // Переносим шрифты в продакшен
 	var buildJs = gulp.src(config.sourceDir + '/js/**/*').pipe(gulp.dest('dist/template/js'));
 	var buildHtml = gulp.src('app/*.html').pipe(gulp.dest('dist'));
+	
+	var buildTmp = gulp.src('app/tmp/*').pipe(gulp.dest('dist/tmp'));
 
 	var buildOutdate = gulp.src('app/outdatedbrowser/**/*').pipe(gulp.dest('dist/outdatedbrowser'));
 

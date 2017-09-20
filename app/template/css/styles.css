@@ -840,7 +840,7 @@ input::-moz-focus-inner {
       padding-bottom: 0;
       padding-top: 0;
       width: 100%; }
-      .qorder__form input.qorder__form-control:nth-child(4) {
+      .qorder__form input.qorder__form-control.email {
         margin-right: 0; }
     .qorder__form textarea.qorder__form-control {
       width: 90rem;
@@ -1140,6 +1140,13 @@ textarea.error {
   position: absolute;
   left: 0;
   top: 0; }
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0; }
 
 .cart {
   margin-top: 140px; }
@@ -1469,6 +1476,7 @@ form .thank {
 
 /* =mobile-menu
 ---------------------------*/
+.show-sm,
 .navbar-toggle,
 .close-menu {
   display: none; }
@@ -1498,10 +1506,13 @@ form .thank {
       background-color: #fff; }
       .navbar-toggle:hover .icon-bar {
         background-color: #0563bf; }
+  .show-sm {
+    display: block; }
   .o-menu .header__nav ul {
     display: block;
     padding-left: 15px;
-    padding-right: 0; }
+    padding-right: 0;
+    height: auto; }
   .o-menu .close-menu {
     display: block;
     transform: translate(0, 0); }
@@ -1509,6 +1520,17 @@ form .thank {
     display: block;
     transform: translate(-15px, 0);
     z-index: 9999; }
+    .o-menu #navbar .show-sm {
+      font-size: 15px;
+      font-size: 1.5rem;
+      padding-left: 3rem; }
+      .o-menu #navbar .show-sm a {
+        color: #fff;
+        display: block;
+        margin: 1.8rem 0;
+        text-decoration: none; }
+        .o-menu #navbar .show-sm a:hover {
+          text-decoration: underline; }
   .close-menu {
     -webkit-transition: all 0.2s ease-out;
     transition: all 0.2s ease-out;
@@ -1571,6 +1593,23 @@ form .thank {
 
 ::-ms-clear {
   display: none; }
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  body {
+    display: block; }
+  textarea {
+    overflow: hidden; } }
+
+.ie10 .delivery__cell,
+.ie10 .info__cell,
+.ie10 .partners__cell {
+  width: 33%; }
+
+.ie10 .qorder__form input.qorder__form-control {
+  width: 25%; }
+
+.ie10 .about__right {
+  width: 50%; }
 
 @media (max-width: 1400px) {
   .products__subtitle, .products__title {
@@ -1843,13 +1882,19 @@ form .thank {
       font-size: 5rem; } }
 
 @media (max-width: 600px) {
-  .header .flexbox {
-    display: block; }
+  .header {
+    position: static;
+    padding-top: 0; }
+    .header .flexbox {
+      display: block; }
   .visual {
-    margin-top: 192px; }
+    margin-top: 0; }
   .products__head {
     font-size: 18px;
-    font-size: 1.8rem; } }
+    font-size: 1.8rem; }
+  .about__content, .pere__content {
+    padding-left: 0;
+    padding-right: 0; } }
 
 @media (max-width: 560px) {
   .visual {

@@ -175,7 +175,7 @@ $(document).ready(function(){
 
 
 	$('#infomodal').on('show.bs.modal', function (e) {
-		let $this = $(e.relatedTarget),
+		var $this = $(e.relatedTarget),
 			id = $this.data('id'),
 			title = $this.data('title'),
 			url = id,
@@ -197,17 +197,16 @@ $(document).ready(function(){
 	// products counters
 	$('.products__count .plus').on('click', function(e){
 		e.preventDefault();
-		let $this = $(this),
+		var $this = $(this),
 			form = $this.closest('form'),
 			submit = form.find('.products__submit'),
 			priceEl = form.find('.products__price span'),
 			countEl = $this.prev('input'),
-			price = countEl.data('price');
-
-		var cnt = parseInt(countEl.val())+1,
+			price = countEl.data('price'),
+			cnt = parseInt(countEl.val())+1,
 			cost = 0;
 
-		cost = cnt *  price;
+		cost = cnt * price;
 		countEl.val(cnt);
 		priceEl.text(splitNums('.', cost.toString()));
 		$('.products__tab-cell').find('.products__submit-active').removeClass('products__submit-active');
@@ -217,14 +216,13 @@ $(document).ready(function(){
 
 	$('.products__count .minus').on('click', function(e){
 		e.preventDefault();
-		let $this = $(this),
+		var $this = $(this),
 			form = $this.closest('form'),
 			submit = form.find('.products__submit'),
 			priceEl = $this.closest('form').find('.products__price span'),
 			countEl = $this.next('input'),
-			price = countEl.data('price');
-
-		var cnt = parseInt(countEl.val())-1,
+			price = countEl.data('price'),
+			cnt = parseInt(countEl.val())-1,
 			cost = 0;
 
 
@@ -237,18 +235,41 @@ $(document).ready(function(){
 			submit.addClass('products__submit-active');			
 		};
 
-		cost = cnt *  price;
+		cost = cnt * price;
 		countEl.val(cnt);
 		priceEl.text(splitNums('.', cost.toString()));
-
 	});
+
+
+	$('.products__count .count').keyup(function() {
+		var $this = $(this),
+			form = $this.closest('form'),
+			submit = form.find('.products__submit'),
+			priceEl = form.find('.products__price span'),
+			price = $this.data('price'),
+			cnt = 0,
+			cost = 0;
+
+		cnt = $(this).val();
+		if ( cnt <= 0 ) {
+			cnt = 0;
+			submit.prop('disabled', 'disabled');
+			submit.removeClass('products__submit-active');			
+		} else {
+			submit.addClass('products__submit-active');			
+		};
+
+		cost = cnt *  price;
+		priceEl.text(splitNums('.', cost.toString()));
+	});
+
 
 
 	/*  =cart */
 	//delete row
 	$(".cart__table .del").click(function(e){
 		e.preventDefault();
-		let $this = $(this);
+		var $this = $(this);
 		if ($this.closest("table").find("tr").length<=1){
 			$this.closest("tr").addClass("remove").fadeOut("slow", function(){
 				$this.closest("form").remove();
@@ -265,16 +286,15 @@ $(document).ready(function(){
 
 	// products counters
 
-	$('.cart__table .count').ForceNumericOnly();
+	$('.cart__table .count, .products__count .count').ForceNumericOnly();
 
 	$('.cart__table .plus').on('click', function(e){
 		e.preventDefault();
-		let $this = $(this),
+		var $this = $(this),
 			priceEl = $this.closest('tr').find('.cost'),
 			countEl = $this.prev('input'),
-			price = countEl.data('price');
-
-		var cnt = parseInt(countEl.val()) + 1,
+			price = countEl.data('price'),
+			cnt = parseInt(countEl.val()) + 1,
 			cost = 1;
 
 		cost = cnt *  price;
@@ -285,12 +305,11 @@ $(document).ready(function(){
 
 	$('.cart__table .minus').on('click', function(e){
 		e.preventDefault();
-		let $this = $(this),
+		var $this = $(this),
 			priceEl = $this.closest('tr').find('.cost'),
 			countEl = $this.next('input'),
-			price = countEl.data('price');
-
-		var	cnt = parseInt(countEl.val()) - 1,
+			price = countEl.data('price'),
+			cnt = parseInt(countEl.val()) - 1,
 			cost = 0;
 
 		if ($this.data('flag') == 'additional'){
@@ -305,18 +324,17 @@ $(document).ready(function(){
 
 	$('.cart__table .reset').on('click', function(e){
 		e.preventDefault();
-		let $this = $(this);
+		var $this = $(this);
 
 		$this.closest('tr').find('.count').val('0');
 	});
 
 
 	$('.cart__table .count').keyup(function() {
-		let $this = $(this),
+		var $this = $(this),
 			priceEl = $this.closest('tr').find('.cost'),
-			price = $this.data('price');
-		
-		var cnt = 0,
+			price = $this.data('price'),
+			cnt = 0,
 			cost = 0;
 
 		cnt = $(this).val(),

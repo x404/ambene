@@ -476,19 +476,26 @@
 
 @media (max-width: 600px){
 	.header{
+		position: static;
+		padding-top: 0;
 		.flexbox{
 			display: block;
 		}
 	}
 
 	.visual{
-		margin-top: 192px;
+		margin-top: 0;
 	}
 
 	.products{
 		&__head{
 			@include font-size(1.8)
 		}
+	}
+
+	.about__content, .pere__content{
+		padding-left: 0;
+		padding-right: 0;
 	}
 }
 
