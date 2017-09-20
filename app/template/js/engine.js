@@ -251,10 +251,11 @@ $(document).ready(function(){
 			cost = 0;
 
 		cnt = $(this).val();
+
+		$('.products__submit-active').removeClass('products__submit-active');		
 		if ( cnt <= 0 ) {
 			cnt = 0;
 			submit.prop('disabled', 'disabled');
-			submit.removeClass('products__submit-active');			
 		} else {
 			submit.addClass('products__submit-active');			
 		};
@@ -430,38 +431,6 @@ addLoadEvent(function(){
 
 
 
-
-var map;
-var myCollection;	
-ymaps.ready(function () {
-	map = new ymaps.Map('ymap', {
-		center: [55.764014, 37.655299],
-		zoom: 16
-	});
-
-	myCollection = new ymaps.GeoObjectCollection(null, {
-		preset: 'islands#redDotIcon'
-	});
-	myCollection.add(new ymaps.Placemark(
-		[55.764394, 37.655095],
-		{
-			hintContent: 'Ambene',
-			balloonContent: 'Садовая-Черногрязская улица, 22с1'
-		}
-	));
-
-	map.behaviors.disable('scrollZoom'); 
-
-	map.geoObjects.add(myCollection);
-
-	map.events.add('click', function onMapClick(e) {
-		if(map.behaviors.isEnabled('scrollZoom')) {
-			map.events.remove('click', onMapClick);
-		} else {
-			map.behaviors.enable(['scrollZoom']);
-		}
-	});
-})
 
 
 var timer,

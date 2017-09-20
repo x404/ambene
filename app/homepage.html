@@ -311,29 +311,37 @@
 			<div class="flexbox pere__content">
 				<div class="pere__cell">
 					<div class="pere__text">
-						<h4 class="pere__subtitle">Лечение Радикулита!</h4>
-						<p>Амбене – препарат, отлично зарекомендовавший себя в лечении широкого спектра невралгических заболеваний. Его универсальность обусловлена одновременным наличием противовоспалительных и обезболивающих компонентов в составе.</p>
+						<div class="pere__text-inner">
+							<h4 class="pere__subtitle">Лечение Радикулита!</h4>
+							<p>Амбене – препарат, отлично зарекомендовавший себя в лечении широкого спектра невралгических заболеваний. Его универсальность обусловлена одновременным наличием противовоспалительных и обезболивающих компонентов в составе.</p>
+						</div>
 						<p class="more text-center">< <a href="#" title="подробнее" class="more-link" data-toggle="modal" data-target="#infomodal" data-title="Лечение Радикулита!" data-id="2.php">подробнее</a> ></p>
 					</div>			
 				</div>
 				<div class="pere__cell">
 					<div class="pere__text">
-						<h4 class="pere__subtitle">Лечение Артрита!</h4>
-						<p>Медицинский препарат Амбене оказывает комплексное воздействие в лечении артритов различной тяжести: быстро снимает болезненный синдром (анальгетик); купирует воспалительный процесс в суставах; способствует выведению мочевой кислоты из организма (урикозурический эффект).</p>
+						<div class="pere__text-inner">
+							<h4 class="pere__subtitle">Лечение Артрита!</h4>
+							<p>Медицинский препарат Амбене оказывает комплексное воздействие в лечении артритов различной тяжести: быстро снимает болезненный синдром (анальгетик); купирует воспалительный процесс в суставах; способствует выведению мочевой кислоты из организма (урикозурический эффект).</p>
+						</div>
 						<p class="more text-center">< <a href="#" title="подробнее" class="more-link" data-toggle="modal" data-target="#infomodal" data-title="Лечение Артрита!" data-id="1.php">подробнее</a> ></p>
 					</div>			
 				</div>
 				<div class="pere__cell">
 					<div class="pere__text">
-						<h4 class="pere__subtitle">Лечение Невралгии!</h4>
-						<p>Невралгия – заболевание, вызванное поражением периферических нервов в результате их раздражения или компрессии (защемление нерва). В зоне поражения возникают приступообразные, а иногда непрерывные боли. Чувствительность пораженного участка и двигательная ...</p>
+						<div class="pere__text-inner">
+							<h4 class="pere__subtitle">Лечение Невралгии!</h4>
+							<p>Невралгия – заболевание, вызванное поражением периферических нервов в результате их раздражения или компрессии (защемление нерва). В зоне поражения возникают приступообразные, а иногда непрерывные боли. Чувствительность пораженного участка и двигательная ...</p>
+						</div>
 						<p class="more text-center">< <a href="#" title="подробнее" class="more-link" data-toggle="modal" data-target="#infomodal" data-title="Лечение Невралгии!" data-id="1.php">подробнее</a> ></p>
 					</div>			
 				</div>
 				<div class="pere__cell">
 					<div class="pere__text">
-						<h4 class="pere__subtitle">Спортивные травмы!</h4>
-						<p>Препарат Амбене - это средство, которое обладает противовоспалительным и болеутоляющим действием. Оно оказывает комплексный и длительный эффект. Благодаря своему фармакологическому действию Амбене в уколах применяется при ...</p>
+						<div class="pere__text-inner">
+							<h4 class="pere__subtitle">Спортивные травмы!</h4>
+							<p>Препарат Амбене - это средство, которое обладает противовоспалительным и болеутоляющим действием. Оно оказывает комплексный и длительный эффект. Благодаря своему фармакологическому действию Амбене в уколах применяется при ...</p>
+						</div>
 						<p class="more text-center">< <a href="#" title="подробнее" class="more-link" data-toggle="modal" data-target="#infomodal" data-title="Лечение Радикулита!" data-id="1.php">подробнее</a> ></p>
 					</div>			
 				</div>
@@ -706,6 +714,40 @@
 <script src="//yastatic.net/share2/share.js"></script>
 <script src="http://api-maps.yandex.ru/2.1.26/?lang=ru_RU"></script>
 <script src="/template/js/engine.js"></script>
+
+<script>
+var map;
+var myCollection;	
+ymaps.ready(function () {
+	map = new ymaps.Map('ymap', {
+		center: [55.764014, 37.655299],
+		zoom: 16
+	});
+
+	myCollection = new ymaps.GeoObjectCollection(null, {
+		preset: 'islands#redDotIcon'
+	});
+	myCollection.add(new ymaps.Placemark(
+		[55.764394, 37.655095],
+		{
+			hintContent: 'Ambene',
+			balloonContent: 'Садовая-Черногрязская улица, 22с1'
+		}
+	));
+
+	map.behaviors.disable('scrollZoom'); 
+
+	map.geoObjects.add(myCollection);
+
+	map.events.add('click', function onMapClick(e) {
+		if(map.behaviors.isEnabled('scrollZoom')) {
+			map.events.remove('click', onMapClick);
+		} else {
+			map.behaviors.enable(['scrollZoom']);
+		}
+	});
+})
+</script>
 
 </body>
 </html>

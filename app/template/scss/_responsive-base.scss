@@ -37,6 +37,15 @@
 	}
 }
 
+
+
+@media (max-width: 1366px){
+	.visual__label{
+		left: 340px;
+	}
+}
+
+
 @media (max-width: 1199px){
 	.visual{
 		height: 300px;
@@ -453,6 +462,12 @@
 	.pere{
 		&__cell{
 			padding-bottom: 0;
+		}
+		&__text{
+			display: block;
+			.more{
+				margin-top: 0;
+			}
 		}
 	}
 }

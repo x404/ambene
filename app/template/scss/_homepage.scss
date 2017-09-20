@@ -296,15 +296,22 @@
 .pere{
 	padding-bottom: 3rem;
 	&__text{
+		display: flex;
+		flex-direction: column;
 		line-height: 1.25;
 		min-height: 14.5rem;
 		padding-top: 1.2rem;
 		width: 25.7rem;
+		height: 100%;
 
 		.more{
 			margin-top: 1.7rem;
 		}
-	}	
+
+		&-inner{
+			flex-grow: 1;
+		}
+	}
 	&__subtitle{
 		@extend .bold;
 		@include font-size(1.5);
