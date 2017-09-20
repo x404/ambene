@@ -83,49 +83,7 @@
 		<div class="container">
 			<h1>КОРЗИНА</h1>
 
-			<div class="table-responsive">
-				<table cellpadding="0" cellspacing="0" class="cart__table">
-					<tr>
-						<th colspan="2">Товары</th>
-						<th>Цена</th>
-						<th>Количество</th>
-						<th>Сумма</th>
-						<th></th>
-					</tr>
-					<tr>
-						<td><a href="#" class="pic"><img src="tmp/amp.jpg" alt="Амбене инъекция для уколов" /></a></td>
-						<td class="product-naim"><a href="#" class="naim-link">Амбене инъекция для уколов : 5 шт</a></td>
-						<td class="product-price">2.700 руб.</td>
-						<td class="product-count">
-							<div class="flexbox">
-								<a href="#" role="button" class="minus">-</a>
-								<input type="text" name="count" class="count" value="1" data-price="2700" />
-								<a href="#" role="button" class="plus">+</a> шт.
-							</div>
-						</td>
-						<td class="product-cost"><span class="cost">2.700</span> руб.</td>
-						<td class="product-del"><a href="#" title="удалить" class="del" role="button">удалить</a></td>
-					</tr>
-					<tr>
-						<td><a href="#" class="pic"><img src="tmp/amp.jpg" alt="Амбене инъекция для уколов" /></a></td>
-						<td class="product-naim"><a href="#" class="naim-link">Амбене инъекция для уколов : 50 шт</a></td>
-						<td class="product-price">4.500 руб.</td>
-						<td class="product-count">
-							<div class="flexbox">
-								<a href="#" role="button" class="minus">-</a>
-								<input type="text" name="count" class="count" value="1" data-price="4500" />
-								<a href="#" role="button" class="plus">+</a> шт.
-							</div>
-						</td>
-						<td class="product-cost"><span class="cost">4.500</span> руб.</td>
-						<td class="product-del"><a href="#" title="удалить" class="del" role="button">удалить</a></td>
-					</tr>
-				</table>
-			</div>
-
-
-			<section class="additional">
-				<p class="title">ДОПОЛНИТЕЛЬНО</p>
+			<form action="#" method="post" class="form-policy cart__form" id="cart-form">
 				<div class="table-responsive">
 					<table cellpadding="0" cellspacing="0" class="cart__table">
 						<tr>
@@ -137,73 +95,123 @@
 						</tr>
 						<tr>
 							<td><a href="#" class="pic"><img src="tmp/amp.jpg" alt="Амбене инъекция для уколов" /></a></td>
-							<td class="product-naim"><a href="#" class="naim-link">Амбене инъекция для уколов : 1 шт</a></td>
-							<td class="product-price">500 руб.</td>
+							<td class="product-naim"><a href="#" class="naim-link">Амбене инъекция для уколов : 5 шт</a></td>
+							<td class="product-price">2.700 руб.</td>
 							<td class="product-count">
 								<div class="flexbox">
-									<a href="#" role="button" class="minus" data-flag="additional">-</a>
-									<input type="text" name="count" class="count" value="0" data-price="500" />
+									<a href="#" role="button" class="minus">-</a>
+									<input type="text" name="count" class="count" value="1" data-price="2700" />
 									<a href="#" role="button" class="plus">+</a> шт.
 								</div>
 							</td>
-							<td class="product-cost"><span class="cost">0</span> руб.</td>
-							<td class="product-del"><a href="#" title="сбросить" class="reset" role="button">сбросить</a></td>
+							<td class="product-cost"><span class="cost">2.700</span> руб.</td>
+							<td class="product-del"><a href="#" title="удалить" class="del" role="button">удалить</a></td>
+						</tr>
+						<tr>
+							<td><a href="#" class="pic"><img src="tmp/amp.jpg" alt="Амбене инъекция для уколов" /></a></td>
+							<td class="product-naim"><a href="#" class="naim-link">Амбене инъекция для уколов : 50 шт</a></td>
+							<td class="product-price">4.500 руб.</td>
+							<td class="product-count">
+								<div class="flexbox">
+									<a href="#" role="button" class="minus">-</a>
+									<input type="text" name="count" class="count" value="1" data-price="4500" />
+									<a href="#" role="button" class="plus">+</a> шт.
+								</div>
+							</td>
+							<td class="product-cost"><span class="cost">4.500</span> руб.</td>
+							<td class="product-del"><a href="#" title="удалить" class="del" role="button">удалить</a></td>
 						</tr>
 					</table>
 				</div>
-			</section>
 
 
-			<section>
-				<p class="title">ОФОРМЛЕНИЕ ЗАКАЗА</p>
-				
-				<div class="cart__orderinfo flexbox">
-					<div class="cart__column">
-						<div class="cart__column-head">Данные получателя:</div>
-						<div class="cart__column-body">
-							<label for="name">имя *</label><input id="name" class="form-control required" name="name" type="text" value="" />
-							<label for="email">e-mail *</label><input id="email" class="form-control required" name="email" type="email" value="" />
-							<label for="tel">телефон *</label><input id="tel" class="form-control required" name="tel" type="tel" value="" />
-						</div>
+				<section class="additional">
+					<p class="title">ДОПОЛНИТЕЛЬНО</p>
+					<div class="table-responsive">
+						<table cellpadding="0" cellspacing="0" class="cart__table">
+							<tr>
+								<th colspan="2">Товары</th>
+								<th>Цена</th>
+								<th>Количество</th>
+								<th>Сумма</th>
+								<th></th>
+							</tr>
+							<tr>
+								<td><a href="#" class="pic"><img src="tmp/amp.jpg" alt="Амбене инъекция для уколов" /></a></td>
+								<td class="product-naim"><a href="#" class="naim-link">Амбене инъекция для уколов : 1 шт</a></td>
+								<td class="product-price">500 руб.</td>
+								<td class="product-count">
+									<div class="flexbox">
+										<a href="#" role="button" class="minus" data-flag="additional">-</a>
+										<input type="text" name="count" class="count" value="0" data-price="500" />
+										<a href="#" role="button" class="plus">+</a> шт.
+									</div>
+								</td>
+								<td class="product-cost"><span class="cost">0</span> руб.</td>
+								<td class="product-del"><a href="#" title="сбросить" class="reset" role="button">сбросить</a></td>
+							</tr>
+						</table>
 					</div>
-					<div class="cart__column">
-						<div class="cart__column-head">Варианты доставки:</div>
-						<div class="cart__column-body">
-							<div class="item">
-								<input type="radio" name="delivery[]" class="radio" value="0" id="delivery_0" checked="checked" /> <label for="delivery_0">самовывоз</label>
+				</section>
+
+
+				<section>
+					<p class="title">ОФОРМЛЕНИЕ ЗАКАЗА</p>
+					
+					<div class="cart__orderinfo flexbox">
+						<div class="cart__column">
+							<div class="cart__column-head">Данные получателя:</div>
+							<div class="cart__column-body">
+								<label for="name">имя *</label><input id="name" class="form-control required" name="name" type="text" value="" />
+								<label for="email">e-mail *</label><input id="email" class="form-control required" name="email" type="email" value="" />
+								<label for="tel">телефон *</label><input id="tel" class="form-control required" name="tel" type="tel" value="" />
 							</div>
-							<div class="item">
-								<input type="radio" name="delivery[]" class="radio" value="300" id="delivery_1" /> <label for="delivery_1">доставка курьером (300 руб.)</label>
+						</div>
+						<div class="cart__column">
+							<div class="cart__column-head">Варианты доставки:</div>
+							<div class="cart__column-body">
+								<div class="item">
+									<input type="radio" name="delivery[]" class="radio" value="0" id="delivery_0" checked="checked" /> <label for="delivery_0">самовывоз</label>
+								</div>
+								<div class="item">
+									<input type="radio" name="delivery[]" class="radio" value="300" id="delivery_1" /> <label for="delivery_1">доставка курьером (300 руб.)</label>
+								</div>
+							</div>
+						</div>
+						<div class="cart__column">
+							<div class="cart__column-head">Способы оплаты:</div>
+							<div class="cart__column-body">
+								<div class="item">
+									<input type="radio" name="payment[]" class="radio" value="0" id="payment_0" checked="checked" /> <label for="payment_0">оплата наличными</label>
+								</div>
+								<div class="item">
+									<input type="radio" name="payment[]" class="radio" value="300" id="payment_1" /> <label for="payment_1">оплата картой</label>
+								</div>					
+							</div>
+						</div>
+						<div class="cart__column">
+							<div class="cart__column-head">Адрес доставки:</div>
+							<div class="cart__column-body">
+								<label for="zip">почтовый индекс *</label><input type="text" name="zip" id="zip" class="form-control required" required="required" value="" >
+								<label for="region">область *</label><input type="text" name="region" id="region" class="form-control required" required="required" value="" >
+								<label for="city">город *</label><input type="text" name="city" id="city" class="form-control required" required="required" value="" >
+								<label for="house">улица/дом/квартира *</label><input type="text" name="house" id="house" class="form-control required" required="required" value="" >
 							</div>
 						</div>
 					</div>
-					<div class="cart__column">
-						<div class="cart__column-head">Способы оплаты:</div>
-						<div class="cart__column-body">
-							<div class="item">
-								<input type="radio" name="payment[]" class="radio" value="0" id="payment_0" checked="checked" /> <label for="payment_0">оплата наличными</label>
-							</div>
-							<div class="item">
-								<input type="radio" name="payment[]" class="radio" value="300" id="payment_1" /> <label for="payment_1">оплата картой</label>
-							</div>					
-						</div>
-					</div>
-					<div class="cart__column">
-						<div class="cart__column-head">Адрес доставки:</div>
-						<div class="cart__column-body">
-							<label for="zip">почтовый индекс *</label><input type="text" name="zip" id="zip" class="form-control required" required="required" value="" >
-							<label for="region">область *</label><input type="text" name="region" id="region" class="form-control required" required="required" value="" >
-							<label for="city">город *</label><input type="text" name="city" id="city" class="form-control required" required="required" value="" >
-							<label for="house">улица/дом/квартира *</label><input type="text" name="house" id="house" class="form-control required" required="required" value="" >
-						</div>
-					</div>
+				</section>
+
+				<div class="policy">
+					<input type="checkbox" id="checkbox1" value="" name="checkbox" checked="checked" class="user-access" />
+					<label for="checkbox1">Я Согласен на обработку персональных данных и принимаю условия <a href="#.pdf" title="" target="_blank">Пользовательского соглашения</a></label>
 				</div>
-			</section>
 
-			<div class="cart__row cart__row-footer flexbox">
-				<p><strong>Итого</strong>, с доставкой: <strong class="cost">7.500</strong> руб. </p>
-				<button type="button" class="submit">оформить заказ</button>
-			</div>
+				<div class="cart__row cart__row-footer flexbox">
+					<p><strong>Итого</strong>, с доставкой: <strong class="cost">7.500</strong> руб. </p>
+					<button type="button" class="submit">оформить заказ</button>
+				</div>
+			</form>
+
 
 
 			<div class="cart__text text-center">

@@ -106,8 +106,16 @@ $(document).ready(function(){
 		}
 	});
 
-
-
+	$('#cart-form .submit').click(function(){
+		$('#cart-form').submit();
+		return false;
+	});
+	$('#cart-form').validate({
+		submitHandler: function(form){
+			$('.cart').html(thank).addClass('cart-thank');
+			// startClock('cart-form');
+		}
+	}); 	
 
 	// карусель
 	$('#foo1').owlCarousel({
@@ -311,7 +319,6 @@ $(document).ready(function(){
 		var cnt = 0,
 			cost = 0;
 
-		console.log(cnt);
 		cnt = $(this).val(),
 
 		cost = cnt *  price;
@@ -461,7 +468,14 @@ function showTime(sendform){
 					$('.feedback .form-control, .feedback textarea').val('');
 					$('.feedback__form fieldset').show();
 				});
-				break;				
+				break;
+			case 'cart-form':
+				$('.cart .thank').fadeOut('normal',function(){
+					$('.cart .thank').remove();
+					// $('.cart .form-control, .cart textarea').val('');
+					// $('.cart__form fieldset').show();
+				});
+				break;	
 			default:
 				modal = $("#" + sendform).closest('.modal');
 				modal.fadeOut('normal',function(){

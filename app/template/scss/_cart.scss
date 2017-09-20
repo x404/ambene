@@ -8,6 +8,12 @@
 		padding-bottom: 2rem;
 	}
 
+	&-thank{
+		display: flex;
+		height: calc(100% - 140px);
+		justify-content: center;
+		align-items: center;
+	}
 
 	.radio + label {
 		cursor: pointer;
@@ -28,6 +34,19 @@
 	.radio:checked + label{
 		background-color: $color4;
 		color: $color2;
+	}
+
+	&__form{
+		.policy{
+			@extend .italic;
+			display: flex;
+			color: $color3;
+			justify-content: center;
+			margin-top: 2rem;
+			a{
+				color: $color4;
+			}
+		}
 	}
 
 	&__column{

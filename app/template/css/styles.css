@@ -171,7 +171,7 @@ input::-moz-focus-inner {
 .cart .title, .cart .product-count a, .cart .product-count .count {
   font-family: "SegoeUIBold"; }
 
-.italic, .add-link, .visual__button, .products__submit, .qorder__form-control, .qorder__form .submit, .qorder__form .policy, .feedback__form .row input.form-control, .feedback__form .row textarea, .feedback__form .row .submit, .cart__column label, .cart__column .form-control, .cart .del,
+.italic, .add-link, .visual__button, .products__submit, .qorder__form-control, .qorder__form .submit, .qorder__form .policy, .feedback__form .row input.form-control, .feedback__form .row textarea, .feedback__form .row .submit, .cart__form .policy, .cart__column label, .cart__column .form-control, .cart .del,
 .cart .reset, .modal-dialog .title, .close-modal, #callback form, #callback form .flexbox .form-control, #callback form .flexbox .submit, #about .modal__content {
   font-family: "SegoeUIItalic"; }
 
@@ -1149,6 +1149,11 @@ textarea.error {
     font-size: 2.4rem;
     color: #0563bf;
     padding-bottom: 2rem; }
+  .cart-thank {
+    display: flex;
+    height: calc(100% - 140px);
+    justify-content: center;
+    align-items: center; }
   .cart .radio + label {
     cursor: pointer; }
   .cart .radio:not(checked) {
@@ -1164,6 +1169,13 @@ textarea.error {
   .cart .radio:checked + label {
     background-color: #0563bf;
     color: #fff; }
+  .cart__form .policy {
+    display: flex;
+    color: #808080;
+    justify-content: center;
+    margin-top: 2rem; }
+    .cart__form .policy a {
+      color: #0563bf; }
   .cart__column {
     flex-basis: 25%; }
     .cart__column-head {
