@@ -129,6 +129,16 @@
 	}
 }
 
+form{
+	.thank{
+		color: $color3;
+		background-color: $color2;
+		border: 1px solid $color4;
+		margin-bottom: 3rem;
+		padding: 2rem 0;
+	}
+}
+
 #callback{
 	.modal-dialog{
 		margin-left: 0;
@@ -140,6 +150,7 @@
 
 
 	form{
+		// background-color: $color2;
 		@extend .italic;
 		$color: $color10;
 		.flexbox{

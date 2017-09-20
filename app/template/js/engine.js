@@ -17,34 +17,77 @@ $(document).ready(function(){
 	});
 
 
+	var thank = '<div class="thank text-center"><p>Спасибо за заказ продукта на нашем сайте. В ближайщее время с вами свяжутся наши менеджеры для уточнения всех деталей.</p></div>';
+	var thankcallback = '<div class="thank text-center"><p>В ближайщее время с вами свяжутся наши менеджеры для уточнения всех деталей.</p></div>';
+	var thankreview = '<div class="thank text-center"><p>Спасибо за оставленный отзыв.</p></div>';
+	var thankqorder = '<div class="thank text-center"><p>Спасибо за заказ продукта на нашем сайте. В ближайщее время с вами свяжутся наши менеджеры для уточнения всех деталей.</p></div>';
+	var errorTxt = 'Возникла ошибка при отправке заявки!';
+
 
 	// validation quick form
 	$('#callback-form .submit').click(function(){
 		$('#callback-form').submit();
 		return false;
 	});
-	$('#callback-form').validate();
+	$('#callback-form').validate({
+		submitHandler: function(form){
+			$('#callback-form').html(thankcallback);
+
+			startClock('callback-form');
+			// strSubmit=$(form).serialize();
+			// $.ajax({type: "POST",url: "/order.ajax.php",data: strSubmit,
+			// 	success: function(){
+			// 		$('#orderModal').modal('hide').find('.form-control').val('');
+			// 		$('body').append('<div class="modal-backdrop fade in"></div>');
+			// 		$('body').addClass('modal-open');
+			// 		$('body').append(thank);
+			// 	}
+			// }).fail(function(error){alert(errorTxt)});
+		}
+	}); 
+
+
 
 
 	$('#addreview-form .submit').click(function(){
 		$('#addreview-form').submit();
 		return false;
 	});
-	$('#addreview-form').validate();
+	$('#addreview-form').validate({
+		submitHandler: function(form){
+			$('#addreview-form').html(thankreview);
+			startClock('addreview-form');
+		}
+	}); 
+
 
 
 	$('#qorder-form .submit').click(function(){
 		$('#qorder-form').submit();
 		return false;
 	});
-	$('#qorder-form').validate();
+	$('#qorder-form').validate({
+		submitHandler: function(form){
+			// $('#qorder-form').html(thankreview);
+			$('.qorder__box').append(thankqorder);
+			startClock('qorder-form');
+		}
+	});
+
 
 
 	$('#feedback-form .submit').click(function(){
 		$('#feedback-form').submit();
 		return false;
 	});
-	$('#feedback-form').validate();
+	$('#feedback-form').validate({
+		submitHandler: function(form){
+			$('.feedback__form').append(thankcallback);
+			$('.feedback__form fieldset').hide();
+			startClock('feedback-form');
+		}
+	});
+
 
 
 
@@ -345,3 +388,47 @@ ymaps.ready(function () {
 		}
 	});
 })
+
+
+var timer,
+	sec = 3;
+
+
+function showTime(sendform){
+	sec = sec-1;
+	if (sec <=0) {
+		stopClock();
+
+		switch (sendform){
+			case 'qorder-form':
+				$('.qorder__box .thank').fadeOut('normal',function(){
+					$('.qorder__box .thank').remove();
+					$('.qorder__box .form-control, .qorder__box textarea').val('');
+				});
+				break;
+			case 'feedback-form':
+				$('.feedback .thank').fadeOut('normal',function(){
+					$('.feedback .thank').remove();
+					$('.feedback .form-control, .feedback textarea').val('');
+					$('.feedback__form fieldset').show();
+				});
+				break;				
+			default:
+				modal = $("#" + sendform).closest('.modal');
+				modal.fadeOut('normal',function(){
+					modal.modal('hide');
+				});
+				break;
+		}
+	}
+}
+function stopClock(){
+	window.clearInterval(timer);
+	timer = null;
+	sec = 3;
+}
+
+function startClock(sendform){
+	if (!timer)
+		timer = window.setInterval("showTime('" + sendform + "')",1000);
+}

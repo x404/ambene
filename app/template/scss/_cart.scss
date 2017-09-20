@@ -37,12 +37,16 @@
 			padding: 1rem 3rem 1rem .5rem;
 		}
 		&-body{
-			padding-right: 1rem;
+			padding-right: 2.5rem;
 			.item{
 				margin-top: 1rem;
 				label{
 					display: inline-block;
 					margin: 0;
+				}
+
+				&:first-child{
+					margin-top: 1.7rem;
 				}
 			}
 		}
@@ -64,6 +68,12 @@
 			{
 				outline: 1px solid $color4;
 			}
+		}
+
+		&:last-child{
+			.cart__column-body{
+				padding-right: 0;
+			}	
 		}
 	}
 
