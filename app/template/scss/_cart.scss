@@ -3,7 +3,30 @@
 	h1{
 		color: $color4;
 		@extend .bold;
+		@include font-size(2.4);
 		padding-bottom: 2rem;
+	}
+
+
+	.radio + label {
+		cursor: pointer;
+	}
+
+	.radio:not(checked) {
+		position: absolute;
+		opacity: 0;
+	}
+	.radio:not(checked) + label {
+		background-color: $color9;
+		display: block;
+		position: relative;
+		padding: .7rem 1.2rem;
+		@include transition;
+	}
+
+	.radio:checked + label{
+		background-color: $color4;
+		color: $color2;
 	}
 
 	&__column{
@@ -11,7 +34,17 @@
 		&-head{
 			background-color: $color11;
 			color: $color3;
-			padding: 1rem 0 1rem .5rem;
+			padding: 1rem 3rem 1rem .5rem;
+		}
+		&-body{
+			padding-right: 1rem;
+			.item{
+				margin-top: 1rem;
+				label{
+					display: inline-block;
+					margin: 0;
+				}
+			}
 		}
 		label{
 			@extend .italic;
@@ -22,15 +55,143 @@
 		}
 		.form-control{
 			@extend .italic;
+			@include transition;
 			padding: .5rem 1rem;
 			color: $color4;
 			width: 24rem;
-			@include transition;
 			&:focus,
 			&:active
 			{
 				outline: 1px solid $color4;
 			}
 		}
+	}
+
+	&__table
+	{
+		margin-bottom: 3rem;
+		width: 100%;
+		th{
+			background-color: $color11;
+			color: $color3;			
+			padding: 1rem 0 1rem 0;
+			text-align: left;
+			font-weight: normal;
+		}
+
+		th, td{
+			&:first-child{
+				padding-left: .5rem;
+			}
+		}
+
+		td{
+			@include font-size(1.8);
+			color: $color4;
+			padding-top: 1rem;
+			a{
+				color: $color4;
+				@extend .tdn;
+			}
+			.pic{
+				display: inline-block;
+				border: 1px solid $color11;
+			}
+		}
+	}
+
+	.product-cost{
+		padding-left: 1rem;
+		padding-right: 2rem;
+		width: 130px;
+	}
+
+	.del{
+		@include font-size(1.4);
+		@extend .italic;
+	}
+
+	.product{
+		&-count{
+			color: $color4;
+			$color: $color13;
+			.flexbox{
+				align-items: center
+			}
+
+			a, .count{
+				@extend .bold;
+				@include font-size(1.8);
+				border: 1px solid $color;
+				color: $color1;
+				display: block;
+				height: 32px;
+				text-align: center;
+				width: 18px;
+			}
+
+			a:hover{
+				text-decoration: none;
+			}
+
+			.minus{
+				border-right: none;
+			}
+
+			.plus{
+				border-left: none;
+				margin-right: .5rem;
+			}
+
+
+			.count{
+				background-color: $color12;
+				width: 40px;
+			}
+		}
+		&-del{
+			padding-right: 0;
+		}
+	}
+	
+
+
+	&__row-footer{
+		@include font-size(1.8);
+		background-color: $color11;
+		color: $color3;
+		justify-content: center;
+		margin-top: 3rem;
+		padding: 1rem 0;
+
+		strong{
+			color: $color4;
+		}
+
+		.submit{
+			@include font-size(1.5);
+			background-color: $color4;
+			border-radius: 4px;
+			border:none;
+			color: $color2;
+			cursor: pointer;
+			margin-left: 1rem;
+			padding-left: 2rem;
+			padding-right: 2rem;
+			@include transition-param;
+			&:hover{
+				opacity: .8;
+			}
+		}
+	}
+
+	&__text{
+		@include font-size(1.5);
+		color: $color3;
+		padding: 3.5rem 0;
+	}
+
+	tr.remove{
+		background-color: $color14;
 	}
 }

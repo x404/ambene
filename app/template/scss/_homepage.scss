@@ -825,6 +825,8 @@ footer{
 }
 /* =/footer
 ---------------------------*/
+
+
 .user-access + label {
   cursor: pointer;
 }
@@ -848,9 +850,7 @@ footer{
   height: 30px;
   border: 1px solid $color3;
 }
-/* Оформление второй части чекбокса в выключенном состоянии (переключатель). */
-.user-access:not(checked) + label:after {
-}
+
 /* Меняем фон чекбокса, когда он включен. */
 .user-access:checked + label:before {
 	border-color: $color4;
@@ -865,10 +865,6 @@ footer{
 	height: 22px;
 	font-size: 30px;
 }
-/* Показываем получение фокуса. */
-.user-access:focus + label:before {
-}
-
 
 input.submit:disabled{
 	background: rgba(128, 128, 128, .3) !important;

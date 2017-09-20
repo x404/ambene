@@ -173,6 +173,58 @@ $(document).ready(function(){
 
 	});
 
+
+	/*  =cart */
+	//delete row
+	$(".cart__table .del").click(function(e){
+		e.preventDefault();
+		let $this = $(this);
+		if ($this.closest("table").find("tr").length<=1){
+			$this.closest("tr").addClass("remove").fadeOut("slow", function(){
+				$this.closest("form").remove();
+				// costOne();
+			})
+		} else {
+			$this.closest("tr").addClass("remove").fadeOut("slow", function(){
+				$("tr.remove").remove();
+				// costOne();
+			});
+		};
+	})
+
+
+	// products counters
+	$('.cart__table .plus').on('click', function(e){
+		e.preventDefault();
+		let $this = $(this),
+			priceEl = $this.closest('tr').find('.cost'),
+			countEl = $this.prev('input'),
+			price = countEl.data('price'),
+			cnt = parseInt(countEl.val()) + 1,
+			cost = 1;
+
+		cost = cnt *  price;
+		countEl.val(cnt);
+		priceEl.text(splitNums('.', cost.toString()));
+	});	
+
+
+	$('.cart__table .minus').on('click', function(e){
+		e.preventDefault();
+		let $this = $(this),
+			priceEl = $this.closest('tr').find('.cost'),			
+			countEl = $this.next('input'),
+			price = countEl.data('price'),
+			cnt = parseInt(countEl.val()) - 1,
+			cost = 1;
+
+		(cnt <= 1) ? cnt = 1 : '';
+		cost = cnt *  price;
+		countEl.val(cnt);
+		priceEl.text(splitNums('.', cost.toString()));
+	});	
+
+
 });
 
 

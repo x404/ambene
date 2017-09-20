@@ -1,3 +1,4 @@
+
 @media (max-width: 1400px){
 	.products{
 		&__subtitle, 
@@ -149,6 +150,14 @@
 }
 
 @media (max-width: 991px){
+	.table-responsive {
+		display: block;
+		width: 100%;
+		overflow-x: auto;
+		-ms-overflow-style: -ms-autohiding-scrollbar;
+	}
+
+
 	.header{
 		padding: 2rem 0;
 		height: auto;
@@ -208,6 +217,8 @@
 	}
 
 	footer{
+		min-height: auto;
+		background-size: cover;
 		.flexbox{
 			flex-direction: column;
 			align-items: center;
@@ -231,6 +242,35 @@
 		&__right{
 			text-align: center;
 		}
+	}
+
+	.cart__table{
+		min-width: 700px;
+		td{
+			@include font-size(1.5);
+			padding-left: 1rem;
+			padding-right: 1rem;
+		}
+
+		th{
+			padding-left: 1rem;
+		}
+		.product{
+			&-naim{
+				width: 270px;
+			}
+			&-price{
+				padding-right: 1rem;
+				width: 12rem;
+			}
+			&-cost{
+				padding-right: 0;
+			}
+		}
+	}	
+
+	.cart__column .form-control{
+		width: 18rem;
 	}
 }
 
@@ -358,6 +398,19 @@
 			}
 		}
 	}
+
+	.cart{
+		&__orderinfo{
+			display: block;
+		}
+
+		&__column{
+			padding-bottom: 1rem;
+			.form-control{
+				width: 100%;
+			}
+		}
+	}
 }
 
 
@@ -471,6 +524,18 @@
 		}
 	}
 
+	.cart__row-footer{
+		flex-direction: column;
+		justify-content: center;
+		text-align: center;
+		.submit{
+			width: 280px;
+			margin: 1rem auto;
+			padding-top: 1rem;
+			padding-bottom: 1rem;
+		}
+	}
+
 }
 
 
@@ -483,6 +548,10 @@
 
 	.header{
 		position: static;
+	}
+
+	.cart{
+		margin-top: 20px;
 	}
 }
 

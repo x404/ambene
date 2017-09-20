@@ -82,35 +82,51 @@
 	<div class="cart">
 		<div class="container">
 			<h1>КОРЗИНА</h1>
-			<div class="flexbox">
-				<div class="cart__column">
-					<div class="cart__column-head">Товары</div>
-					<div class="cart__column-body">
-					</div>
-				</div>
-				<div class="cart__column">
-					<div class="cart__column-head">Цена</div>
-					<div class="cart__column-body">
-						
-					</div>
-				</div>
-				<div class="cart__column">
-					<div class="cart__column-head">Количество</div>
-					<div class="cart__column-body">
-						
-					</div>
-				</div>
-				<div class="cart__column">
-					<div class="cart__column-head">Сумма</div>
-					<div class="cart__column-body">
-					</div>
-				</div>
+
+			<div class="table-responsive">
+				<table cellpadding="0" cellspacing="0" class="cart__table">
+					<tr>
+						<th colspan="2">Товары</th>
+						<th>Цена</th>
+						<th>Количество</th>
+						<th>Сумма</th>
+						<th></th>
+					</tr>
+					<tr>
+						<td><a href="#" class="pic"><img src="tmp/amp.jpg" alt="Амбене инъекция для уколов" /></a></td>
+						<td class="product-naim"><a href="#" class="naim-link">Амбене инъекция для уколов : 5 шт</a></td>
+						<td class="product-price">2.700 руб.</td>
+						<td class="product-count">
+							<div class="flexbox">
+								<a href="#" role="button" class="minus">-</a>
+								<input type="text" name="count" class="count" value="1" data-price="2700" />
+								<a href="#" role="button" class="plus">+</a> шт.
+							</div>
+						</td>
+						<td class="product-cost"><span class="cost">2.700</span> руб.</td>
+						<td class="product-del"><a href="#" title="удалить" class="del" role="button">удалить</a></td>
+					</tr>
+					<tr>
+						<td><a href="#" class="pic"><img src="tmp/amp.jpg" alt="Амбене инъекция для уколов" /></a></td>
+						<td class="product-naim"><a href="#" class="naim-link">Амбене инъекция для уколов : 50 шт</a></td>
+						<td class="product-price">4.500 руб.</td>
+						<td class="product-count">
+							<div class="flexbox">
+								<a href="#" role="button" class="minus">-</a>
+								<input type="text" name="count" class="count" value="1" data-price="4500" />
+								<a href="#" role="button" class="plus">+</a> шт.
+							</div>
+						</td>
+						<td class="product-cost"><span class="cost">4.500</span> руб.</td>
+						<td class="product-del"><a href="#" title="удалить" class="del" role="button">удалить</a></td>
+					</tr>
+				</table>
 			</div>
 
 
 			<h1>ОФОРМЛЕНИЕ ЗАКАЗА</h1>
 			
-			<div class="flexbox">
+			<div class="cart__orderinfo flexbox">
 				<div class="cart__column">
 					<div class="cart__column-head">Данные получателя:</div>
 					<div class="cart__column-body">
@@ -122,13 +138,23 @@
 				<div class="cart__column">
 					<div class="cart__column-head">Варианты доставки:</div>
 					<div class="cart__column-body">
-						
+						<div class="item">
+							<input type="radio" name="delivery[]" class="radio" value="0" id="delivery_0" checked="checked" /> <label for="delivery_0">самовывоз</label>
+						</div>
+						<div class="item">
+							<input type="radio" name="delivery[]" class="radio" value="300" id="delivery_1" /> <label for="delivery_1">доставка курьером (300 руб.)</label>
+						</div>
 					</div>
 				</div>
 				<div class="cart__column">
 					<div class="cart__column-head">Способы оплаты:</div>
 					<div class="cart__column-body">
-						
+						<div class="item">
+							<input type="radio" name="payment[]" class="radio" value="0" id="payment_0" checked="checked" /> <label for="payment_0">оплата наличными</label>
+						</div>
+						<div class="item">
+							<input type="radio" name="payment[]" class="radio" value="300" id="payment_1" /> <label for="payment_1">оплата картой</label>
+						</div>					
 					</div>
 				</div>
 				<div class="cart__column">
@@ -148,7 +174,7 @@
 			</div>
 
 
-			<div class="cart__text">
+			<div class="cart__text text-center">
 				<p>После отправки заказа с Вами свяжутся наши консультанты по указанным контактным данным, для того чтобы подтвердить заказ, уточнить детали, сроки доставки и стоимость медикамента. После подтверждения заказа необходимо вызвать нашего курьера и сделать предоплату. Стоимость доставки и наших услуг зависит от суммы заказа.</p>
 			</div>
 		</div>

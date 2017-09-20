@@ -167,17 +167,17 @@ input::-moz-focus-inner {
   font-family: 'CenturyGothicBold'; }
 
 .bold, .visual, .delivery__title, .products__head, .products__tabs, .products__title, .products__subtitle, .products__pricetitle, .products__count .minus,
-.products__count .plus, .products__count .form-control, .products__price, .about__left, .pere__subtitle, .reviews__title strong, .reviews__who, .info__title, .manual__title, .works .works__title, .addreview .submit, .cart h1 {
+.products__count .plus, .products__count .form-control, .products__price, .about__left, .pere__subtitle, .reviews__title strong, .reviews__who, .info__title, .manual__title, .works .works__title, .addreview .submit, .cart h1, .cart .product-count a, .cart .product-count .count {
   font-family: "SegoeUIBold"; }
 
-.italic, .add-link, .visual__button, .products__submit, .qorder__form-control, .qorder__form .submit, .qorder__form .policy, .feedback__form .row input.form-control, .feedback__form .row textarea, .feedback__form .row .submit, .cart__column label, .cart__column .form-control, .modal-dialog .title, .close-modal, #callback form, #callback form .flexbox .form-control, #callback form .flexbox .submit, #about .modal__content {
+.italic, .add-link, .visual__button, .products__submit, .qorder__form-control, .qorder__form .submit, .qorder__form .policy, .feedback__form .row input.form-control, .feedback__form .row textarea, .feedback__form .row .submit, .cart__column label, .cart__column .form-control, .cart .del, .modal-dialog .title, .close-modal, #callback form, #callback form .flexbox .form-control, #callback form .flexbox .submit, #about .modal__content {
   font-family: "SegoeUIItalic"; }
 
 .tdn, .more-link,
-.add-link, .about__title a, .qorder__form .policy a, .feedback .vcard .email, .footer__menu ul li a, .footer__center a, .footer__right a, #callback form .policy a {
+.add-link, .about__title a, .qorder__form .policy a, .feedback .vcard .email, .footer__menu ul li a, .footer__center a, .footer__right a, .cart__table td a, #callback form .policy a {
   text-decoration: none; }
   .tdn:hover, .more-link:hover,
-  .add-link:hover, .about__title a:hover, .qorder__form .policy a:hover, .feedback .vcard .email:hover, .footer__menu ul li a:hover, .footer__center a:hover, .footer__right a:hover, #callback form .policy a:hover {
+  .add-link:hover, .about__title a:hover, .qorder__form .policy a:hover, .feedback .vcard .email:hover, .footer__menu ul li a:hover, .footer__center a:hover, .footer__right a:hover, .cart__table td a:hover, #callback form .policy a:hover {
     text-decoration: underline; }
 
 .tdu {
@@ -193,6 +193,9 @@ input::-moz-focus-inner {
 
 .text-right {
   text-align: right; }
+
+.table {
+  border-collapse: collapse !important; }
 
 .before, .products__submit:before, .about:before, .about__title:before, .reviews__item:before, .reviews__item:after, .works:after {
   content: "";
@@ -1033,7 +1036,6 @@ footer {
   height: 30px;
   border: 1px solid #808080; }
 
-/* Оформление второй части чекбокса в выключенном состоянии (переключатель). */
 /* Меняем фон чекбокса, когда он включен. */
 .user-access:checked + label:before {
   border-color: #0563bf; }
@@ -1048,7 +1050,6 @@ footer {
   height: 22px;
   font-size: 30px; }
 
-/* Показываем получение фокуса. */
 input.submit:disabled {
   background: rgba(128, 128, 128, 0.3) !important;
   cursor: default; }
@@ -1111,26 +1112,135 @@ textarea.error {
   margin-top: 140px; }
   .cart h1 {
     color: #0563bf;
+    font-size: 24px;
+    font-size: 2.4rem;
     padding-bottom: 2rem; }
+  .cart .radio + label {
+    cursor: pointer; }
+  .cart .radio:not(checked) {
+    position: absolute;
+    opacity: 0; }
+  .cart .radio:not(checked) + label {
+    background-color: #e6e6e6;
+    display: block;
+    position: relative;
+    padding: .7rem 1.2rem;
+    -webkit-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out; }
+  .cart .radio:checked + label {
+    background-color: #0563bf;
+    color: #fff; }
   .cart__column {
     flex-basis: 25%; }
     .cart__column-head {
       background-color: #f5f5f5;
       color: #808080;
-      padding: 1rem 0 1rem .5rem; }
+      padding: 1rem 3rem 1rem .5rem; }
+    .cart__column-body {
+      padding-right: 1rem; }
+      .cart__column-body .item {
+        margin-top: 1rem; }
+        .cart__column-body .item label {
+          display: inline-block;
+          margin: 0; }
     .cart__column label {
       display: block;
       color: #808080;
       padding-left: 1.2rem;
       margin: 1rem 0 .5rem; }
     .cart__column .form-control {
+      -webkit-transition: all 0.2s ease-out;
+      transition: all 0.2s ease-out;
       padding: .5rem 1rem;
       color: #0563bf;
-      width: 24rem;
-      -webkit-transition: all 0.2s ease-out;
-      transition: all 0.2s ease-out; }
+      width: 24rem; }
       .cart__column .form-control:focus, .cart__column .form-control:active {
         outline: 1px solid #0563bf; }
+  .cart__table {
+    margin-bottom: 3rem;
+    width: 100%; }
+    .cart__table th {
+      background-color: #f5f5f5;
+      color: #808080;
+      padding: 1rem 0 1rem 0;
+      text-align: left;
+      font-weight: normal; }
+    .cart__table th:first-child, .cart__table td:first-child {
+      padding-left: .5rem; }
+    .cart__table td {
+      font-size: 18px;
+      font-size: 1.8rem;
+      color: #0563bf;
+      padding-top: 1rem; }
+      .cart__table td a {
+        color: #0563bf; }
+      .cart__table td .pic {
+        display: inline-block;
+        border: 1px solid #f5f5f5; }
+  .cart .product-cost {
+    padding-left: 1rem;
+    padding-right: 2rem;
+    width: 130px; }
+  .cart .del {
+    font-size: 14px;
+    font-size: 1.4rem; }
+  .cart .product-count {
+    color: #0563bf; }
+    .cart .product-count .flexbox {
+      align-items: center; }
+    .cart .product-count a, .cart .product-count .count {
+      font-size: 18px;
+      font-size: 1.8rem;
+      border: 1px solid #e0e0e0;
+      color: #000;
+      display: block;
+      height: 32px;
+      text-align: center;
+      width: 18px; }
+    .cart .product-count a:hover {
+      text-decoration: none; }
+    .cart .product-count .minus {
+      border-right: none; }
+    .cart .product-count .plus {
+      border-left: none;
+      margin-right: .5rem; }
+    .cart .product-count .count {
+      background-color: #f7f7f9;
+      width: 40px; }
+  .cart .product-del {
+    padding-right: 0; }
+  .cart__row-footer {
+    font-size: 18px;
+    font-size: 1.8rem;
+    background-color: #f5f5f5;
+    color: #808080;
+    justify-content: center;
+    margin-top: 3rem;
+    padding: 1rem 0; }
+    .cart__row-footer strong {
+      color: #0563bf; }
+    .cart__row-footer .submit {
+      font-size: 15px;
+      font-size: 1.5rem;
+      background-color: #0563bf;
+      border-radius: 4px;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      margin-left: 1rem;
+      padding-left: 2rem;
+      padding-right: 2rem;
+      -webkit-transition: opacity 0.2s ease-out;
+      transition: opacity 0.2s ease-out; }
+      .cart__row-footer .submit:hover {
+        opacity: .8; }
+  .cart__text {
+    font-size: 15px;
+    font-size: 1.5rem;
+    color: #808080;
+    padding: 3.5rem 0; }
+  .cart tr.remove {
+    background-color: #ffb5b5; }
 
 .modal-open {
   overflow: hidden; }
@@ -1482,6 +1592,11 @@ textarea.error {
     flex-basis: 270px; } }
 
 @media (max-width: 991px) {
+  .table-responsive {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar; }
   .header {
     padding: 2rem 0;
     height: auto; }
@@ -1516,9 +1631,12 @@ textarea.error {
     .reviews__title strong {
       display: block;
       top: -5px; }
-  footer .flexbox {
-    flex-direction: column;
-    align-items: center; }
+  footer {
+    min-height: auto;
+    background-size: cover; }
+    footer .flexbox {
+      flex-direction: column;
+      align-items: center; }
   .footer__menu {
     flex-wrap: wrap;
     flex-basis: auto; }
@@ -1527,7 +1645,25 @@ textarea.error {
     flex-basis: auto;
     margin-bottom: 2rem; }
   .footer__right {
-    text-align: center; } }
+    text-align: center; }
+  .cart__table {
+    min-width: 700px; }
+    .cart__table td {
+      font-size: 15px;
+      font-size: 1.5rem;
+      padding-left: 1rem;
+      padding-right: 1rem; }
+    .cart__table th {
+      padding-left: 1rem; }
+    .cart__table .product-naim {
+      width: 270px; }
+    .cart__table .product-price {
+      padding-right: 1rem;
+      width: 12rem; }
+    .cart__table .product-cost {
+      padding-right: 0; }
+  .cart__column .form-control {
+    width: 18rem; } }
 
 @media (max-width: 820px) {
   .feedback {
@@ -1600,7 +1736,13 @@ textarea.error {
         margin-left: auto;
         margin-right: auto;
         margin-top: 2rem;
-        display: block; } }
+        display: block; }
+  .cart__orderinfo {
+    display: block; }
+  .cart__column {
+    padding-bottom: 1rem; }
+    .cart__column .form-control {
+      width: 100%; } }
 
 @media (max-width: 730px) {
   .about__title {
@@ -1666,13 +1808,24 @@ textarea.error {
     #callback-form .flexbox .submit {
       height: 4rem !important;
       margin-left: 0 !important;
-      width: 100%; } }
+      width: 100%; }
+  .cart__row-footer {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center; }
+    .cart__row-footer .submit {
+      width: 280px;
+      margin: 1rem auto;
+      padding-top: 1rem;
+      padding-bottom: 1rem; } }
 
 @media (max-width: 490px) {
   .visual {
     display: none; }
   .header {
-    position: static; } }
+    position: static; }
+  .cart {
+    margin-top: 20px; } }
 
 @media (max-width: 450px) {
   .products .nav-tabs {
