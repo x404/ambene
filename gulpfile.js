@@ -15,8 +15,8 @@ var gulp 		= require('gulp'),
 	pngquant 	= require('imagemin-pngquant'), // Подключаем библиотеку для работы с png
 	cache 		= require('gulp-cache'); // Подключаем библиотеку кеширования
 
-	// var devip = require('dev-ip');
-	// devip();
+	var realFavicon = require ('gulp-real-favicon');
+	var fs = require('fs');	
 
 
 var config = {
@@ -127,6 +127,94 @@ gulp.task('img', function() {
 
 
 
+// File where the favicon markups are stored
+var FAVICON_DATA_FILE = 'faviconData.json';
+
+// Generate the icons. This task takes a few seconds to complete.
+// You should run it at least once to create the icons. Then,
+// you should run it whenever RealFaviconGenerator updates its
+// package (see the check-for-favicon-update task below).
+gulp.task('generate-favicon', function(done) {
+	realFavicon.generateFavicon({
+		masterPicture: 'app/favicon.png',
+		dest: 'app/the_favicon',
+		iconsPath: '/',
+		design: {
+			ios: {
+				pictureAspect: 'noChange',
+				assets: {
+					ios6AndPriorIcons: false,
+					ios7AndLaterIcons: false,
+					precomposedIcons: false,
+					declareOnlyDefaultIcon: true
+				}
+			},
+			desktopBrowser: {},
+			windows: {
+				pictureAspect: 'noChange',
+				backgroundColor: '#da532c',
+				onConflict: 'override',
+				assets: {
+					windows80Ie10Tile: false,
+					windows10Ie11EdgeTiles: {
+						small: false,
+						medium: true,
+						big: false,
+						rectangle: false
+					}
+				}
+			},
+			androidChrome: {
+				pictureAspect: 'noChange',
+				themeColor: '#ffffff',
+				manifest: {
+					display: 'standalone',
+					orientation: 'notSet',
+					onConflict: 'override',
+					declared: true
+				},
+				assets: {
+					legacyIcon: false,
+					lowResolutionIcons: false
+				}
+			},
+			safariPinnedTab: {
+				pictureAspect: 'silhouette',
+				themeColor: '#5bbad5'
+			}
+		},
+		settings: {
+			scalingAlgorithm: 'Mitchell',
+			errorOnImageTooSmall: false
+		},
+		markupFile: FAVICON_DATA_FILE
+	}, function() {
+		done();
+	});
+});
+
+// Inject the favicon markups in your HTML pages. You should run
+// this task whenever you modify a page. You can keep this task
+// as is or refactor your existing HTML pipeline.
+gulp.task('inject-favicon-markups', function() {
+	return gulp.src([ 'app/*.html' ])
+		.pipe(realFavicon.injectFaviconMarkups(JSON.parse(fs.readFileSync(FAVICON_DATA_FILE)).favicon.html_code))
+		.pipe(gulp.dest('app'));
+});
+
+// Check for updates on RealFaviconGenerator (think: Apple has just
+// released a new Touch icon along with the latest version of iOS).
+// Run this task from time to time. Ideally, make it part of your
+// continuous integration system.
+gulp.task('check-for-favicon-update', function(done) {
+	var currentVersion = JSON.parse(fs.readFileSync(FAVICON_DATA_FILE)).version;
+	realFavicon.checkForUpdates(currentVersion, function(err) {
+		if (err) {
+			throw err;
+		}
+	});
+});
+
 
 gulp.task('build', ['clean', 'img', 'scss', 'compress'], function(){
 	// переносим css файлы
@@ -136,11 +224,13 @@ gulp.task('build', ['clean', 'img', 'scss', 'compress'], function(){
 	])
 	.pipe(gulp.dest('dist/template/css'));
 
+	var buildHtml = gulp.src('app/the_favicon/*.*').pipe(gulp.dest('dist/the_favicon'));
 	var buildHtml = gulp.src('app/*.html').pipe(gulp.dest('dist'));
-	var buildHtaccess = gulp.src('app/1.php').pipe(gulp.dest('dist'));	
-	var buildHtaccess = gulp.src('app/2.php').pipe(gulp.dest('dist'));	
+	var buildPHP1 = gulp.src('app/1.php').pipe(gulp.dest('dist'));	
+	var buildPHP2 = gulp.src('app/2.php').pipe(gulp.dest('dist'));	
 	var buildHtaccess = gulp.src('app/.htaccess').pipe(gulp.dest('dist'));	
 	var buildrobots = gulp.src('app/robots.txt').pipe(gulp.dest('dist'));	
+	var buildrobots = gulp.src('app/*.ico').pipe(gulp.dest('dist'));	
 	var buildJs = gulp.src(config.sourceDir + '/js/**/*').pipe(gulp.dest('dist/template/js'));	
 	var buildTmp = gulp.src('app/tmp/*').pipe(gulp.dest('dist/tmp'));
 	var buildFonts = gulp.src(config.sourceDir + '/fonts/**/*').pipe(gulp.dest('dist/template/fonts')); // Переносим шрифты в продакшен
